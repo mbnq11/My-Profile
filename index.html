@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Nawaf - Cybersecurity Specialist</title>
+    <title>Mohammed Nawaf</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Tajawal:wght@300;400;700;900&display=swap"
         rel="stylesheet">
@@ -598,7 +598,7 @@
     <div class="scroll-indicator"></div>
 
     <div class="language-toggle" onclick="toggleLanguage()">
-        <span id="langBtn">🇸🇦 AR</span>
+        <span id="langBtn">AR</span>
     </div>
 
     <div class="container">
@@ -923,11 +923,11 @@
                         <span data-ar="اللغات" data-en="Languages">Languages</span>
                     </h2>
                     <div class="side-item">
-                        <h4 data-ar="🇺🇸 الإنجليزية" data-en="🇺🇸 English">🇺🇸 English</h4>
+                        <h4 data-ar="الإنجليزية" data-en="English">English</h4>
                         <p data-ar="طلاقة مهنية" data-en="Professional">Professional</p>
                     </div>
                     <div class="side-item">
-                        <h4 data-ar="🇸🇦 العربية" data-en="🇸🇦 Arabic">🇸🇦 Arabic</h4>
+                        <h4 data-ar="العربية" data-en="Arabic">Arabic</h4>
                         <p data-ar="لغة أم" data-en="Native">Native</p>
                     </div>
                 </div>
@@ -958,7 +958,7 @@
             document.querySelectorAll('[data-ar][data-en]').forEach(el => {
                 el.innerHTML = currentLanguage === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
             });
-            document.getElementById('langBtn').textContent = currentLanguage === 'ar' ? '🇬🇧 EN' : '🇸🇦 AR';
+            document.getElementById('langBtn').textContent = currentLanguage === 'ar' ? 'EN' : 'AR';
         }
 
         function updateDirection() {
