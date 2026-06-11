@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Nawaf - Cybersecurity Specialist | Professional Profile</title>
+    <title>Mohammed Nawaf - Cybersecurity Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -13,480 +15,59 @@
         }
 
         :root {
-            --primary: #0066ff;
-            --secondary: #00d4ff;
-            --dark: #0a0e27;
-            --darker: #0f1419;
-            --accent: #ff6b35;
-            --success: #00d97e;
-            --text: #e0e0e0;
-            --text-light: #a0a0a0;
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent: #b026ff;
+            --bg-color: #0b0f19;
+            --card-bg: rgba(20, 25, 40, 0.6);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --success: #10b981;
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            font-family: 'Outfit', 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(79, 172, 254, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(176, 38, 255, 0.15), transparent 25%);
+            background-attachment: fixed;
+            color: var(--text-main);
             min-height: 100vh;
-            padding: 15px;
-            color: var(--text);
+            padding: 30px 15px;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
+        /* شريط التمرير العلوي */
         .scroll-indicator {
             position: fixed;
             top: 0;
             left: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             width: 0%;
             z-index: 999;
-            transition: width 0.2s ease;
+            box-shadow: 0 0 10px var(--primary);
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: rgba(15, 20, 25, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(0, 102, 255, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Header Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
-            padding: 50px 30px;
-            text-align: center;
-            position: relative;
-            border-bottom: 2px solid rgba(0, 102, 255, 0.3);
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-        }
-
-        .profile-section {
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-img-container {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 20px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 4px solid var(--primary);
-            object-fit: cover;
-            box-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
-        }
-
-        .online-badge {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 25px;
-            height: 25px;
-            background: var(--success);
-            border-radius: 50%;
-            border: 3px solid var(--darker);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 217, 126, 0.7); }
-            50% { box-shadow: 0 0 0 10px rgba(0, 217, 126, 0); }
-        }
-
-        .hero h1 {
-            font-size: 2.8em;
-            margin-bottom: 5px;
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .hero .title {
-            font-size: 1.3em;
-            color: var(--secondary);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .hero .location {
-            font-size: 1em;
-            color: var(--text-light);
-            margin-bottom: 25px;
-        }
-
-        .contact-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .contact-card {
-            background: rgba(0, 102, 255, 0.1);
-            border: 1px solid rgba(0, 102, 255, 0.3);
-            padding: 12px 20px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-card:hover {
-            background: rgba(0, 102, 255, 0.2);
-            border-color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.2);
-        }
-
-        .contact-card i {
-            font-size: 1.2em;
-            color: var(--secondary);
-        }
-
-        .contact-card a {
-            color: var(--text);
-            text-decoration: none;
-            flex: 1;
-            font-size: 0.95em;
-        }
-
-        /* Content Layout */
-        .content {
-            display: grid;
-            grid-template-columns: 2.5fr 1fr;
-            gap: 25px;
-            padding: 40px 30px;
-        }
-
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        /* File Section */
-        .files-section {
-            background: rgba(0, 102, 255, 0.08);
-            border: 2px solid rgba(0, 102, 255, 0.3);
-            padding: 25px;
-            border-radius: 15px;
-            grid-column: 1 / -1;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3em;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .section-title i {
-            font-size: 1.3em;
-        }
-
-        .files-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-        }
-
-        .file-card {
-            background: rgba(10, 14, 39, 0.6);
-            border: 1.5px solid rgba(0, 102, 255, 0.3);
-            padding: 18px 15px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .file-card:hover {
-            background: rgba(0, 102, 255, 0.15);
-            border-color: var(--secondary);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 102, 255, 0.2);
-        }
-
-        .file-icon {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: var(--secondary);
-            display: block;
-        }
-
-        .file-card h4 {
-            color: var(--text);
-            margin-bottom: 8px;
-            font-size: 0.95em;
-            font-weight: 600;
-        }
-
-        .file-card p {
-            color: var(--text-light);
-            font-size: 0.8em;
-            margin-bottom: 12px;
-        }
-
-        .file-btn {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 0.8em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            font-weight: 600;
-        }
-
-        .file-card:hover .file-btn {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
-        }
-
-        /* Section Styling */
-        .section {
-            background: rgba(0, 102, 255, 0.05);
-            border: 1.5px solid rgba(0, 102, 255, 0.2);
-            padding: 25px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .section:hover {
-            border-color: rgba(0, 102, 255, 0.4);
-            background: rgba(0, 102, 255, 0.08);
-        }
-
-        .section h2 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--secondary);
-            margin-bottom: 18px;
-            font-size: 1.3em;
-            font-weight: 700;
-            padding-bottom: 12px;
-            border-bottom: 2px solid rgba(0, 102, 255, 0.2);
-        }
-
-        .section h2 i {
-            font-size: 1.2em;
-        }
-
-        /* Experience & Projects Items */
-        .experience-item {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(0, 102, 255, 0.1);
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .job-title {
-            color: var(--secondary);
-            font-weight: 700;
-            font-size: 1.05em;
-        }
-
-        .date-badge {
-            background: rgba(0, 212, 255, 0.2);
-            color: var(--secondary);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 600;
-        }
-
-        .company {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-
-        .description {
-            color: var(--text-light);
-            line-height: 1.6;
-            font-size: 0.9em;
-            margin-top: 8px;
-        }
-
-        .description li {
-            margin-bottom: 6px;
-            margin-left: 20px;
-        }
-
-        [dir="rtl"] .description li {
-            margin-left: 0;
-            margin-right: 20px;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 10px;
-        }
-
-        .skill-badge {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(0, 212, 255, 0.1));
-            border: 1px solid rgba(0, 102, 255, 0.4);
-            color: var(--secondary);
-            padding: 10px 14px;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 0.85em;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .skill-badge:hover {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.4), rgba(0, 212, 255, 0.2));
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
-            border-color: var(--secondary);
-        }
-
-        .skill-badge.security {
-            border-color: rgba(255, 107, 53, 0.4);
-            color: var(--accent);
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
-        }
-
-        .skill-badge.security:hover {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 107, 53, 0.1));
-            border-color: var(--accent);
-        }
-
-        /* QR Section */
-        .qr-section {
-            background: rgba(0, 102, 255, 0.05);
-            border: 1.5px solid rgba(0, 102, 255, 0.3);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .qr-code {
-            width: 180px;
-            height: 180px;
-            border-radius: 12px;
-            background: white;
-            padding: 10px;
-            margin: 15px auto;
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
-            transition: transform 0.3s ease;
-            display: block;
-        }
-        
-        .qr-code:hover {
-            transform: scale(1.05);
-        }
-
-        /* Certifications */
-        .cert-item {
-            background: rgba(10, 14, 39, 0.6);
-            padding: 12px;
-            border-radius: 10px;
-            border-left: 4px solid var(--secondary);
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-        }
-        
-        [dir="rtl"] .cert-item {
-            border-left: none;
-            border-right: 4px solid var(--secondary);
-        }
-
-        .cert-item:hover {
-            background: rgba(0, 102, 255, 0.1);
-            transform: translateX(5px);
-        }
-
-        [dir="rtl"] .cert-item:hover {
-            transform: translateX(-5px);
-        }
-
-        .cert-item strong {
-            color: var(--secondary);
-            display: block;
-            margin-bottom: 4px;
-            font-size: 0.95em;
-        }
-
-        .cert-item p {
-            color: var(--text-light);
-            font-size: 0.85em;
-            line-height: 1.5;
-        }
-
-        /* Language Toggle */
+        /* زر اللغة */
         .language-toggle {
             position: fixed;
             top: 20px;
             left: 20px;
             z-index: 1000;
-            background: rgba(0, 102, 255, 0.2);
-            border: 2px solid var(--secondary);
-            border-radius: 50px;
-            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            padding: 10px 20px;
             cursor: pointer;
             font-weight: 700;
-            color: var(--secondary);
+            color: var(--text-main);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         [dir="rtl"] .language-toggle {
@@ -495,305 +76,717 @@
         }
 
         .language-toggle:hover {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.08);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
 
-            .hero h1 {
-                font-size: 2em;
+        /* تأثير الزجاج الشفاف للبطاقات (Glassmorphism) */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* الهيدر / الملف الشخصي */
+        .hero {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 50px 30px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 100px;
+            background: linear-gradient(180deg, rgba(79, 172, 254, 0.1) 0%, transparent 100%);
+            border-radius: 24px 24px 0 0;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid transparent;
+            background-image: linear-gradient(var(--bg-color), var(--bg-color)), linear-gradient(135deg, var(--primary), var(--accent));
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            padding: 3px;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+        }
+
+        .online-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 22px;
+            height: 22px;
+            background: var(--success);
+            border-radius: 50%;
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 0 15px var(--success);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .title {
+            font-size: 1.2em;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero .location {
+            font-size: 0.95em;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.03);
+            padding: 6px 15px;
+            border-radius: 20px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .contact-pill:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.15);
+        }
+
+        .contact-pill i {
+            color: var(--primary);
+            font-size: 1.1em;
+        }
+
+        /* تخطيط المحتوى الرئيسي */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .main-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .side-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* العناوين والأقسام */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5em;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .section-header i {
+            color: var(--primary);
+            background: rgba(0, 242, 254, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        /* شبكة الملفات السريعة */
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .file-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-card:hover {
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(176, 38, 255, 0.05));
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .file-card i {
+            font-size: 2em;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .file-card h4 {
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+
+        .file-card p {
+            font-size: 0.75em;
+            color: var(--text-muted);
+        }
+
+        /* عناصر الخبرة والمشاريع */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        [dir="rtl"] .timeline-item {
+            padding-left: 0;
+            padding-right: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 5px; bottom: -30px;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        [dir="rtl"] .timeline-item::before {
+            left: auto; right: 0;
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -4px; top: 5px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        [dir="rtl"] .timeline-item::after {
+            left: auto; right: -4px;
+        }
+
+        .job-title {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .job-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            font-size: 0.85em;
+            flex-wrap: wrap;
+        }
+
+        .company-name {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .date-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: var(--text-muted);
+        }
+
+        .description-list {
+            list-style: none;
+        }
+
+        .description-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+
+        [dir="rtl"] .description-list li {
+            padding-left: 0;
+            padding-right: 18px;
+        }
+
+        .description-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.8em;
+        }
+
+        [dir="rtl"] .description-list li::before {
+            left: auto;
+            right: 0;
+        }
+
+        /* المهارات */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag i {
+            color: var(--secondary);
+        }
+
+        .skill-tag:hover {
+            background: rgba(79, 172, 254, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .skill-tag.security i {
+            color: var(--accent);
+        }
+
+        /* القائمة الجانبية */
+        .side-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            border-left: 3px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        [dir="rtl"] .side-item {
+            border-left: none;
+            border-right: 3px solid var(--primary);
+        }
+
+        .side-item:hover {
+            background: rgba(255,255,255,0.05);
+            transform: translateX(5px);
+        }
+
+        [dir="rtl"] .side-item:hover {
+            transform: translateX(-5px);
+        }
+
+        .side-item h4 {
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .side-item p {
+            font-size: 0.8em;
+            color: var(--text-muted);
+        }
+
+        .course-highlight {
+            color: #cbd5e1;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-top: 8px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* قسم QR */
+        .qr-box {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .qr-image {
+            width: 160px;
+            height: 160px;
+            background: #fff;
+            padding: 8px;
+            border-radius: 16px;
+            margin: 0 auto 15px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .qr-image:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        /* تصميم متجاوب للجوال */
+        @media (max-width: 900px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 600px) {
-            .hero {
-                padding: 35px 20px;
-            }
-
-            .hero h1 {
-                font-size: 1.6em;
-            }
-
-            .hero .title {
-                font-size: 1.1em;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            .profile-img-container {
-                width: 120px;
-                height: 120px;
-            }
-
-            .files-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            }
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--darker);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary);
+            body { padding: 15px 10px; }
+            .glass-card { padding: 25px 20px; border-radius: 20px; }
+            
+            .hero h1 { font-size: 2.2em; }
+            .profile-img-container { width: 110px; height: 110px; }
+            
+            .contact-pill { padding: 8px 15px; font-size: 0.8em; width: 100%; justify-content: center; }
+            
+            .files-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .file-card { padding: 15px 10px; }
+            .file-card i { font-size: 1.5em; }
+            
+            .section-header { font-size: 1.3em; }
+            .section-header i { width: 35px; height: 35px; font-size: 0.85em; }
+            
+            .timeline-item { padding-left: 20px; }
+            [dir="rtl"] .timeline-item { padding-left: 0; padding-right: 20px; }
+            .job-meta { flex-direction: column; align-items: flex-start; gap: 5px; }
+            
+            .language-toggle { top: 10px; right: 10px; padding: 6px 12px; font-size: 0.8em; }
         }
     </style>
 </head>
+
 <body>
     <div class="scroll-indicator"></div>
 
-    <div class="language-toggle" onclick="toggleLanguage()" title="Toggle Language">
+    <div class="language-toggle" onclick="toggleLanguage()">
         <span id="langBtn">🇸🇦 AR</span>
     </div>
 
     <div class="container">
-        <div class="hero">
+        <div class="glass-card hero">
             <div class="profile-section">
                 <div class="profile-img-container">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Profile" class="profile-img" id="profileImg">
+                    <img src="My profile/Mohammed Nawaf.png" alt="Profile" class="profile-img">
                     <div class="online-badge"></div>
                 </div>
+                
                 <h1 data-ar="محمد نواف" data-en="Mohammed Nawaf">Mohammed Nawaf</h1>
-                <div class="title" data-ar="أخصائي أمن سيبراني" data-en="Cybersecurity Specialist">Cybersecurity Specialist</div>
-                <div class="location" data-ar="🇸🇦 المملكة العربية السعودية" data-en="🇸🇦 Saudi Arabia">🇸🇦 Saudi Arabia</div>
+                <div class="title" data-ar="بكالوريوس في نظم المعلومات" data-en="Bachelor of Information Systems">Bachelor of Information Systems</div>
+                
+                <div class="location">
+                    <i class="fas fa-map-marker-alt" style="color: var(--primary)"></i>
+                    <span data-ar="المملكة العربية السعودية - سعودي الجنسية" data-en="Saudi Arabia - Saudi National">Saudi Arabia - Saudi National</span>
+                </div>
 
                 <div class="contact-grid">
-                    <div class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:mbnq1@outlook.com">mbnq1@outlook.com</a>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+966566833453" style="direction: ltr;">+966 566 833 453</a>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://linkedin.com/in/mbnq" target="_blank">linkedin.com/in/mbnq</a>
-                    </div>
+                    <a href="mailto:mbnq1@outlook.com" class="contact-pill">
+                        <i class="fas fa-envelope"></i> mbnq1@outlook.com
+                    </a>
+                    <a href="tel:+966566833453" class="contact-pill" style="direction: ltr;">
+                        <i class="fas fa-phone"></i> +966 566 833 453
+                    </a>
+                    <a href="https://linkedin.com/in/mbnq" target="_blank" class="contact-pill">
+                        <i class="fab fa-linkedin"></i> linkedin.com/in/mbnq
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="content">
-            <div class="files-section">
-                <div class="section-title">
-                    <i class="fas fa-file-download"></i>
-                    <span data-ar="الملفات والمستندات" data-en="Files & Documents">Files & Documents</span>
+        <div class="layout-grid">
+            
+            <div class="main-column">
+                
+                <div class="glass-card">
+                    <h2 class="section-header">
+                        <i class="fas fa-cloud-download-alt"></i>
+                        <span data-ar="الملفات والمستندات" data-en="Files & Documents">Files & Documents</span>
+                    </h2>
+                    <div class="files-grid">
+                        <div class="file-card" onclick="window.open('https://drive.google.com/drive/folders/1UPtBHmH5r9QP1vgTyrR3FqllVOXvVRdk?usp=drive_link', '_blank')">
+                            <i class="fas fa-file-pdf"></i>
+                            <h4 data-ar="السيرة الذاتية" data-en="Resume/CV">Resume/CV</h4>
+                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+                        </div>
+                        <div class="file-card" onclick="window.open('https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link', '_blank')">
+                            <i class="fas fa-award"></i>
+                            <h4 data-ar="الشهادات" data-en="Certificates">Certificates</h4>
+                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+                        </div>
+                        <div class="file-card" onclick="window.open('https://drive.google.com/drive/folders/1A7ngWTAsWx_I2FbM71088numn6M-mHzC?usp=drive_link', '_blank')">
+                            <i class="fas fa-folder-open"></i>
+                            <h4 data-ar="المشاريع" data-en="Projects">Projects</h4>
+                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="files-grid">
-                    <div class="file-card" onclick="window.open('https://drive.google.com/drive/folders/1UPtBHmH5r9QP1vgTyrR3FqllVOXvVRdk?usp=drive_link', '_blank')">
-                        <i class="fas fa-file-pdf file-icon"></i>
-                        <h4 data-ar="السيرة الذاتية" data-en="Resume/CV">Resume/CV</h4>
-                        <p data-ar="PDF" data-en="PDF">PDF</p>
-                        <button class="file-btn" data-ar="عرض وتنزيل" data-en="View & Download">View & Download</button>
-                    </div>
 
-                    <div class="file-card" onclick="window.open('https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link', '_blank')">
-                        <i class="fas fa-award file-icon"></i>
-                        <h4 data-ar="الشهادات" data-en="Certificates">Certificates</h4>
-                        <p data-ar="ملفات" data-en="Files">Files</p>
-                        <button class="file-btn" data-ar="عرض وتنزيل" data-en="View & Download">View & Download</button>
-                    </div>
-
-                    <div class="file-card" onclick="window.open('https://drive.google.com/drive/folders/1A7ngWTAsWx_I2FbM71088numn6M-mHzC?usp=drive_link', '_blank')">
-                        <i class="fas fa-folder-open file-icon"></i>
-                        <h4 data-ar="المشاريع" data-en="Projects">Projects</h4>
-                        <p data-ar="تقارير" data-en="Reports">Reports</p>
-                        <button class="file-btn" data-ar="عرض وتنزيل" data-en="View & Download">View & Download</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-content">
-                <div class="section">
-                    <h2><i class="fas fa-user-tie"></i> <span data-ar="الملخص المهني" data-en="Professional Summary">Professional Summary</span></h2>
-                    <p style="color: var(--text-light); line-height: 1.7; font-size: 0.95em;" 
-                       data-ar="أخصائي نظم معلومات أتمتع بخبرة عملية في الأمن السيبراني وتقنية المعلومات وتطوير الأنظمة. أمتلك مهارات في تحليل وتصميم الأنظمة، إدارة قواعد البيانات، أتمتة مسارات العمل، وتطوير تطبيقات الويب. شاركت في مشاريع تقنية ومبادرات تهدف إلى تحسين إجراءات العمل ورفع الكفاءة التشغيلية. أتمتع بقدرات قوية في حل المشكلات، والعمل الجماعي، والتعلم المستمر. أسعى للمساهمة في بيئة عمل احترافية تتيح لي تطبيق مهاراتي التقنية، وتوسيع خبراتي، ودعم الأهداف التنظيمية." 
-                       data-en="Information Systems Specialist with practical experience in Cybersecurity, Information Technology, and Systems Development. Skilled in systems analysis and design, database management, workflow automation, and web application development. Participated in technical projects and initiatives aimed at improving business processes and operational efficiency. Possess strong problem-solving, teamwork, and continuous learning abilities. Seeking to contribute to a professional work environment where I can apply my technical skills, expand my expertise, and support organizational objectives.">
-                       Information Systems Specialist with practical experience in Cybersecurity, Information Technology, and Systems Development. Skilled in systems analysis and design, database management, workflow automation, and web application development. Participated in technical projects and initiatives aimed at improving business processes and operational efficiency. Possess strong problem-solving, teamwork, and continuous learning abilities. Seeking to contribute to a professional work environment where I can apply my technical skills, expand my expertise, and support organizational objectives.
+                <div class="glass-card">
+                    <h2 class="section-header">
+                        <i class="fas fa-user-astronaut"></i>
+                        <span data-ar="الملخص المهني" data-en="Professional Summary">Professional Summary</span>
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 0.95em; text-align: justify;"
+                        data-ar="أخصائي نظم معلومات أتمتع بخبرة عملية في الأمن السيبراني وتقنية المعلومات وتطوير الأنظمة، أمتلك مهارات في تحليل وتصميم الأنظمة، إدارة قواعد البيانات، أتمتة مسارات العمل، وتطوير تطبيقات الويب. شاركت في مشاريع تقنية ومبادرات تهدف إلى تحسين إجراءات العمل ورفع الكفاءة التشغيلية. أتمتع بقدرات قوية في حل المشكلات، والعمل الجماعي، والتعلم المستمر. أسعى للمساهمة في بيئة عمل احترافية تتيح لي تطبيق مهاراتي التقنية، وتوسيع خبراتي، ودعم الأهداف التنظيمية."
+                        data-en="Information Systems Specialist with practical experience in Cybersecurity, Information Technology, and Systems Development. Skilled in systems analysis and design, database management, workflow automation, and web application development. Participated in technical projects and initiatives aimed at improving business processes and operational efficiency. Possess strong problem-solving, teamwork, and continuous learning abilities. Seeking to contribute to a professional work environment where I can apply my technical skills, expand my expertise, and support organizational objectives.">
+                        Information Systems Specialist with practical experience in Cybersecurity, Information Technology, and Systems Development. Skilled in systems analysis and design, database management, workflow automation, and web application development. Participated in technical projects and initiatives aimed at improving business processes and operational efficiency. Possess strong problem-solving, teamwork, and continuous learning abilities. Seeking to contribute to a professional work environment where I can apply my technical skills, expand my expertise, and support organizational objectives.
                     </p>
                 </div>
 
-                <div class="section">
-                    <h2><i class="fas fa-briefcase"></i> <span data-ar="الخبرات المهنية" data-en="Professional Experience">Professional Experience</span></h2>
+                <div class="glass-card">
+                    <h2 class="section-header">
+                        <i class="fas fa-briefcase"></i>
+                        <span data-ar="الخبرات المهنية" data-en="Experience">Experience</span>
+                    </h2>
 
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div>
-                                <div class="job-title" data-ar="أخصائي أمن سيبراني" data-en="Cybersecurity Specialist">Cybersecurity Specialist</div>
-                                <div class="company" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</div>
-                            </div>
-                            <div class="date-badge">Jun 2025 – May 2026</div>
+                    <div class="timeline-item">
+                        <div class="job-title" data-ar="أخصائي أمن سيبراني" data-en="Cybersecurity Specialist">Cybersecurity Specialist</div>
+                        <div class="job-meta">
+                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</span>
+                            <span class="date-badge" data-ar="يونيو 2025 – مايو 2026" data-en="Jun 2025 – May 2026">Jun 2025 – May 2026</span>
                         </div>
-                        <ul class="description">
-                            <li data-ar="مسؤول عن تنفيذ إطار عمل لتصنيف ملفات الأمن السيبراني بالتوافق التام مع لوائح الهيئة الوطنية للأمن السيبراني (NCA)، مما عزز امتثال المؤسسة بشكل كبير." data-en="Responsible for implementing a cybersecurity file classification framework in strict compliance with NCA regulations, significantly enhancing organizational compliance.">Responsible for implementing a cybersecurity file classification framework in strict compliance with NCA regulations, significantly enhancing organizational compliance.</li>
-                            <li data-ar="ساهمت كعضو أساسي في فريق عمل الوزارة المسؤول عن تحويل إدارة الأمن السيبراني إلى إدارة عامة." data-en="Contributed as a core member of the Ministry's task force responsible for transforming the Cybersecurity Department into a General Administration.">Contributed as a core member of the Ministry's task force responsible for transforming the Cybersecurity Department into a General Administration.</li>
-                            <li data-ar="توليت مسؤولية مراجعة، إعداد، وتدقيق التقارير والوثائق الحساسة للإدارة العامة للأمن السيبراني." data-en="Took charge of reviewing, preparing, and auditing critical reports and documentation for the General Directorate of Cybersecurity.">Took charge of reviewing, preparing, and auditing critical reports and documentation for the General Directorate of Cybersecurity.</li>
-                            <li data-ar="مسؤول عن التصميم والتنفيذ الشامل لمنصة متكاملة لإدارة المهام تتميز بقدرات إنشاء التقارير الآلية." data-en="Responsible for the end-to-end design and implementation of an integrated task management platform featuring automated reporting capabilities.">Responsible for the end-to-end design and implementation of an integrated task management platform featuring automated reporting capabilities.</li>
+                        <ul class="description-list">
+                            <li data-ar="مسؤول عن تنفيذ إطار عمل لتصنيف ملفات الأمن السيبراني بالتوافق التام مع لوائح NCA." data-en="Responsible for implementing a cybersecurity file classification framework in strict compliance with NCA regulations.">Responsible for implementing a cybersecurity file classification framework in strict compliance with NCA regulations.</li>
+                            <li data-ar="ساهمت كعضو أساسي في فريق عمل الوزارة المسؤول عن تحويل إدارة الأمن السيبراني إلى إدارة عامة." data-en="Contributed as a core member of the Ministry's task force responsible for transforming the Cybersecurity Department.">Contributed as a core member of the Ministry's task force responsible for transforming the Cybersecurity Department.</li>
+                            <li data-ar="توليت مسؤولية مراجعة، إعداد، وتدقيق التقارير والوثائق الحساسة للإدارة العامة للأمن السيبراني." data-en="Took charge of reviewing, preparing, and auditing critical reports and documentation.">Took charge of reviewing, preparing, and auditing critical reports and documentation.</li>
+                            <li data-ar="مسؤول عن التصميم والتنفيذ الشامل لمنصة متكاملة لإدارة المهام تتميز بقدرات إنشاء التقارير الآلية." data-en="Responsible for the end-to-end design and implementation of an integrated task management platform with automated reporting.">Responsible for the end-to-end design and implementation of an integrated task management platform with automated reporting.</li>
                         </ul>
                     </div>
 
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div>
-                                <div class="job-title" data-ar="أخصائي تقنية المعلومات" data-en="Information Technology Specialist">Information Technology Specialist</div>
-                                <div class="company" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</div>
-                            </div>
-                            <div class="date-badge">Jun 2024 – Aug 2024</div>
+                    <div class="timeline-item">
+                        <div class="job-title" data-ar="أخصائي تقنية المعلومات" data-en="Information Technology Specialist">Information Technology Specialist</div>
+                        <div class="job-meta">
+                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</span>
+                            <span class="date-badge" data-ar="يونيو 2024 – أغسطس 2024" data-en="Jun 2024 – Aug 2024">Jun 2024 – Aug 2024</span>
                         </div>
-                        <ul class="description">
-                            <li data-ar="مسؤول عن دعم العمليات اليومية للبنية التحتية الرقمية، بما في ذلك مراقبة شبكات المؤسسة ونشر الحلول التقنية." data-en="Responsible for supporting the day-to-day operations of the digital infrastructure, including monitoring corporate networks and deploying technical solutions.">Responsible for supporting the day-to-day operations of the digital infrastructure, including monitoring corporate networks and deploying technical solutions.</li>
-                            <li data-ar="ساهمت في تطوير مبادرات التكنولوجيا الرقمية بالتعاون مع كل من الفرق الداخلية والجهات الرقمية الخارجية." data-en="Contributed to the advancement of digital technology initiatives in collaboration with both internal teams and external digital entities.">Contributed to the advancement of digital technology initiatives in collaboration with both internal teams and external digital entities.</li>
+                        <ul class="description-list">
+                            <li data-ar="دعم العمليات اليومية للبنية التحتية الرقمية ومراقبة شبكات المؤسسة ونشر الحلول التقنية." data-en="Supported day-to-day operations of digital infrastructure, monitored corporate networks, and deployed technical solutions.">Supported day-to-day operations of digital infrastructure, monitored corporate networks, and deployed technical solutions.</li>
+                            <li data-ar="ساهمت في تطوير مبادرات التكنولوجيا الرقمية بالتعاون مع كل من الفرق الداخلية والجهات الرقمية الخارجية." data-en="Contributed to digital technology initiatives in collaboration with both internal teams and external digital entities.">Contributed to digital technology initiatives in collaboration with both internal teams and external digital entities.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="section">
-                    <h2><i class="fas fa-rocket"></i> <span data-ar="المشاريع" data-en="Projects">Projects</span></h2>
-                    
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div>
-                                <div class="job-title" data-ar="نظام إدارة المهام والحوكمة" data-en="Task Management & Governance System">Task Management & Governance System</div>
-                                <div class="company" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</div>
-                            </div>
-                            <div class="date-badge">Oct 2025 – Feb 2026</div>
+                <div class="glass-card">
+                    <h2 class="section-header">
+                        <i class="fas fa-rocket"></i>
+                        <span data-ar="المشاريع البارزة" data-en="Featured Projects">Featured Projects</span>
+                    </h2>
+
+                    <div class="timeline-item">
+                        <div class="job-title" data-ar="نظام إدارة المهام والحوكمة" data-en="Task Management & Governance System">Task Management & Governance System</div>
+                        <div class="job-meta">
+                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</span>
+                            <span class="date-badge" data-ar="أكتوبر 2025 – فبراير 2026" data-en="Oct 2025 – Feb 2026">Oct 2025 – Feb 2026</span>
                         </div>
-                        <ul class="description">
-                            <li data-ar="تصميم وتطوير نظام شامل لسير العمل المؤسسي والحوكمة باستخدام إطار عمل Laravel (بنية MVC)." data-en="Architected and developed a comprehensive enterprise workflow and governance system using the Laravel framework (MVC architecture).">Architected and developed a comprehensive enterprise workflow and governance system using the Laravel framework (MVC architecture).</li>
+                        <ul class="description-list">
+                            <li data-ar="تصميم وتطوير نظام شامل لسير العمل المؤسسي والحوكمة باستخدام إطار عمل Laravel (بنية MVC)." data-en="Architected and developed a comprehensive enterprise workflow and governance system using the Laravel framework (MVC).">Architected and developed a comprehensive enterprise workflow and governance system using the Laravel framework (MVC).</li>
                             <li data-ar="تنفيذ مسارات عمل موافقة متعددة المستويات مفروضة بواسطة تحكم صارم في الوصول مبني على الأدوار (RBAC)." data-en="Executed multi-level approval workflows enforced by strict Role-Based Access Control (RBAC).">Executed multi-level approval workflows enforced by strict Role-Based Access Control (RBAC).</li>
                             <li data-ar="تطوير لوحات تحكم تنفيذية لمؤشرات الأداء الرئيسية (KPIs) وإنشاء تقارير آلية جاهزة للتدقيق (PDF و Excel)." data-en="Developed executive KPI dashboards and automated, audit-ready reporting generation (PDF and Excel).">Developed executive KPI dashboards and automated, audit-ready reporting generation (PDF and Excel).</li>
                             <li data-ar="توجيه اختبارات أداء عالية الحجم (معالجة أكثر من 8000 مهمة) لضمان استقرار النظام واتساق البيانات وقابلية التوسع." data-en="Directed high-volume performance testing (processing 8,000+ tasks) to ensure system stability, data consistency, and scalability.">Directed high-volume performance testing (processing 8,000+ tasks) to ensure system stability, data consistency, and scalability.</li>
                         </ul>
                     </div>
 
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div>
-                                <div class="job-title" data-ar="منصة Agri Zone الزراعية للتجارة الإلكترونية" data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">Agri Zone – Full-Stack Agricultural E-Commerce Platform</div>
-                            </div>
-                            <div class="date-badge">Apr 2024 – May 2025</div>
+                    <div class="timeline-item">
+                        <div class="job-title" data-ar="منصة Agri Zone للتجارة الإلكترونية الزراعية" data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">Agri Zone – Full-Stack Agricultural E-Commerce Platform</div>
+                        <div class="job-meta">
+                            <span class="company-name" data-ar="مشروع متكامل" data-en="Full-Stack Platform">Full-Stack Platform</span>
+                            <span class="date-badge" data-ar="أبريل 2024 – مايو 2025" data-en="Apr 2024 – May 2025">Apr 2024 – May 2025</span>
                         </div>
-                        <ul class="description">
+                        <ul class="description-list">
                             <li data-ar="ساهمت في تطوير الواجهة الخلفية وقواعد البيانات كجزء من فريق تطوير رشيق (Agile) مكون من ثلاثة أعضاء." data-en="Contributed to backend and database development as part of a three-member Agile development team.">Contributed to backend and database development as part of a three-member Agile development team.</li>
-                            <li data-ar="المشاركة الفعالة في تخطيط دورات التطوير السريعة (sprint)، وتوزيع المهام، ودورات التطوير التكرارية للميزات." data-en="Participated actively in sprint planning, task allocation, and iterative feature development cycles.">Participated actively in sprint planning, task allocation, and iterative feature development cycles.</li>
+                            <li data-ar="المشاركة الفعالة في تخطيط دورات التطوير السريعة (sprint)، وتوزيع المهام، ودورات التطوير التكرارية." data-en="Participated actively in sprint planning, task allocation, and iterative feature development cycles.">Participated actively in sprint planning, task allocation, and iterative feature development cycles.</li>
                             <li data-ar="مسؤول عن كتابة المنطق البرمجي للواجهة الخلفية باستخدام Native PHP وتصميم مخطط قاعدة البيانات العلائقية." data-en="Responsible for writing backend logic utilizing native PHP and designing the relational database schema.">Responsible for writing backend logic utilizing native PHP and designing the relational database schema.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="section">
-                    <h2><i class="fas fa-code"></i> <span data-ar="المهارات التقنية" data-en="Skills">Skills</span></h2>
-                    <div class="skills-grid">
-                        <div class="skill-badge"><i class="fas fa-code"></i> Backend & Frontend</div>
-                        <div class="skill-badge"><i class="fas fa-palette"></i> UI/UX</div>
-                        <div class="skill-badge"><i class="fas fa-database"></i> MySQL & SQL Server</div>
-                        <div class="skill-badge"><i class="fas fa-chart-bar"></i> Power BI</div>
-                        <div class="skill-badge"><i class="fas fa-chart-line"></i> Data Analysis</div>
-                        <div class="skill-badge"><i class="fas fa-network-wired"></i> Architecture & Analysis</div>
-                        <div class="skill-badge"><i class="fas fa-cloud"></i> Virtual Environments</div>
-                        
-                        <div class="skill-badge security"><i class="fas fa-shield-alt"></i> Vulnerability Assessment</div>
-                        <div class="skill-badge security"><i class="fas fa-lock"></i> GRC</div>
-                        <div class="skill-badge security"><i class="fas fa-server"></i> SOC</div>
-                        <div class="skill-badge security"><i class="fas fa-terminal"></i> Kali Linux</div>
-                        <div class="skill-badge security"><i class="fas fa-bug"></i> OpenVAS</div>
-                        <div class="skill-badge security"><i class="fas fa-spider"></i> Burp Suite</div>
-                        <div class="skill-badge security"><i class="fas fa-sitemap"></i> Nmap</div>
-                        <div class="skill-badge security"><i class="fas fa-chart-area"></i> Splunk</div>
-                        
-                        <div class="skill-badge"><i class="fas fa-headset"></i> Technical Support</div>
-                        <div class="skill-badge"><i class="fas fa-tools"></i> System Troubleshooting</div>
-                        <div class="skill-badge"><i class="fas fa-server"></i> Infrastructure Support</div>
-                        <div class="skill-badge"><i class="fas fa-memory"></i> HW/SW Maintenance</div>
-                        <div class="skill-badge"><i class="fas fa-robot"></i> Automation</div>
-                        <div class="skill-badge"><i class="fas fa-tasks"></i> Project Management</div>
-                        <div class="skill-badge"><i class="fab fa-windows"></i> Microsoft Office</div>
+                <div class="glass-card">
+                    <h2 class="section-header">
+                        <i class="fas fa-terminal"></i>
+                        <span data-ar="المهارات التقنية" data-en="Technical Skills">Technical Skills</span>
+                    </h2>
+                    <div class="skills-container">
+                        <div class="skill-tag"><i class="fas fa-code"></i> <span data-ar="تطوير الواجهات" data-en="Backend & Frontend">Backend & Frontend</span></div>
+                        <div class="skill-tag"><i class="fas fa-palette"></i> <span data-ar="واجهة وتجربة المستخدم" data-en="UI/UX">UI/UX</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i> <span data-ar="MySQL & SQL Server" data-en="MySQL & SQL Server">MySQL & SQL Server</span></div>
+                        <div class="skill-tag"><i class="fas fa-chart-pie"></i> <span data-ar="Power BI" data-en="Power BI">Power BI</span></div>
+                        <div class="skill-tag"><i class="fas fa-chart-line"></i> <span data-ar="تحليل البيانات" data-en="Data Analysis">Data Analysis</span></div>
+                        <div class="skill-tag"><i class="fas fa-network-wired"></i> <span data-ar="هيكلة الأنظمة" data-en="Architecture & Analysis">Architecture & Analysis</span></div>
+                        <div class="skill-tag"><i class="fas fa-cloud"></i> <span data-ar="بيئات افتراضية" data-en="Virtual Environments">Virtual Environments</span></div>
+
+                        <div class="skill-tag security"><i class="fas fa-shield-alt"></i> <span data-ar="تقييم الثغرات" data-en="Vulnerability Assessment">Vulnerability Assessment</span></div>
+                        <div class="skill-tag security"><i class="fas fa-lock"></i> <span data-ar="GRC" data-en="GRC">GRC</span></div>
+                        <div class="skill-tag security"><i class="fas fa-server"></i> <span data-ar="SOC" data-en="SOC">SOC</span></div>
+                        <div class="skill-tag security"><i class="fas fa-terminal"></i> <span data-ar="Kali Linux" data-en="Kali Linux">Kali Linux</span></div>
+                        <div class="skill-tag security"><i class="fas fa-bug"></i> <span data-ar="OpenVAS" data-en="OpenVAS">OpenVAS</span></div>
+                        <div class="skill-tag security"><i class="fas fa-spider"></i> <span data-ar="Burp Suite" data-en="Burp Suite">Burp Suite</span></div>
+                        <div class="skill-tag security"><i class="fas fa-sitemap"></i> <span data-ar="Nmap" data-en="Nmap">Nmap</span></div>
+                        <div class="skill-tag security"><i class="fas fa-chart-area"></i> <span data-ar="Splunk" data-en="Splunk">Splunk</span></div>
+
+                        <div class="skill-tag"><i class="fas fa-headset"></i> <span data-ar="الدعم الفني" data-en="Technical Support">Technical Support</span></div>
+                        <div class="skill-tag"><i class="fas fa-tools"></i> <span data-ar="استكشاف الأخطاء" data-en="System Troubleshooting">System Troubleshooting</span></div>
+                        <div class="skill-tag"><i class="fas fa-server"></i> <span data-ar="دعم البنية التحتية" data-en="Infrastructure Support">Infrastructure Support</span></div>
+                        <div class="skill-tag"><i class="fas fa-memory"></i> <span data-ar="صيانة الأجهزة" data-en="HW/SW Maintenance">HW/SW Maintenance</span></div>
+                        <div class="skill-tag"><i class="fas fa-cogs"></i> <span data-ar="الأتمتة" data-en="Automation">Automation</span></div>
+                        <div class="skill-tag"><i class="fas fa-tasks"></i> <span data-ar="إدارة المشاريع" data-en="Project Management">Project Management</span></div>
                     </div>
                 </div>
+
             </div>
 
-            <div class="sidebar">
-                <div class="qr-section">
-                    <h2 style="border-bottom: 2px solid rgba(0, 102, 255, 0.2); padding-bottom: 12px; margin-bottom: 15px;">
-                        <i class="fas fa-folder-open"></i> <span data-ar="المجلد الشامل" data-en="All Files">All Files</span>
+            <div class="side-column">
+                
+                <div class="glass-card qr-box">
+                    <h2 class="section-header" style="justify-content: center; font-size: 1.2em; margin-bottom: 15px;">
+                        <i class="fas fa-qrcode"></i>
+                        <span data-ar="المجلد الشامل" data-en="All Files">All Files</span>
                     </h2>
                     <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" title="View all files">
-                        <img src="1.png" alt="QR Code" class="qr-code">
+                        <img src="1.png" alt="QR Code" class="qr-image">
                     </a>
-                    <p style="color: var(--text-light); font-size: 0.85em; margin-top: 12px;" data-ar="اضغط أو امسح للوصول للملفات" data-en="Click or scan to access files">Click or scan to access files</p>
+                    <p style="font-size: 0.85em; color: var(--text-muted);" data-ar="امسح الرمز أو اضغط للوصول للملفات" data-en="Click or scan to access all files">Click or scan to access all files</p>
                 </div>
 
-                <div class="section">
-                    <h2><i class="fas fa-graduation-cap"></i> <span data-ar="التعليم" data-en="Education">Education</span></h2>
-                    <div class="cert-item">
-                        <strong data-ar="بكالوريوس في نظم المعلومات" data-en="Bachelor's Degree in Information Systems">Bachelor's Degree in Information Systems</strong>
-                        <p data-ar="كلية علوم الحاسب الآلي - جامعة الملك خالد" data-en="College of Computer Science – King Khalid University">College of Computer Science – King Khalid University</p>
+                <div class="glass-card" style="padding: 25px;">
+                    <h2 class="section-header" style="font-size: 1.2em;">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span data-ar="التعليم" data-en="Education">Education</span>
+                    </h2>
+                    <div class="side-item">
+                        <h4 data-ar="بكالوريوس في نظم المعلومات" data-en="Bachelor's Degree in Information Systems">Bachelor's Degree in Information Systems</h4>
+                        <p data-ar="كلية علوم الحاسب الآلي<br>جامعة الملك خالد" data-en="College of Computer Science<br>King Khalid University">College of Computer Science<br>King Khalid University</p>
                     </div>
                 </div>
 
-                <div class="section">
-                    <h2><i class="fas fa-certificate"></i> <span data-ar="الشهادات والدورات" data-en="Certifications & Courses">Certifications & Courses</span></h2>
-                    <div class="cert-item">
-                        <strong data-ar="تخصص الأمن السيبراني" data-en="Cybersecurity Specialization">Cybersecurity Specialization</strong>
+                <div class="glass-card" style="padding: 25px;">
+                    <h2 class="section-header" style="font-size: 1.2em;">
+                        <i class="fas fa-certificate"></i>
+                        <span data-ar="الشهادات والدورات" data-en="Certifications & Courses">Certifications & Courses</span>
+                    </h2>
+                    <div class="side-item">
+                        <h4 data-ar="تخصص الأمن السيبراني" data-en="Cybersecurity Specialization">Cybersecurity Specialization</h4>
                         <p data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid University</p>
                     </div>
-                    <div class="cert-item">
-                        <strong data-ar="شهادة محلل أمن سيبراني الاحترافية من IBM" data-en="IBM Cybersecurity Analyst Professional Certificate">IBM Cybersecurity Analyst Professional Certificate</strong>
-                        <p data-ar="برنامج مكثف 77 ساعة يغطي: GRC وخصوصية البيانات، الاستجابة للحوادث، إدارة العمليات الأمنية (SOC)، إدارة الثغرات، أمن الأنظمة والشبكات، والأمن السحابي." data-en="77-Hour Intensive Program covering: GRC & Data Privacy, Incident Response & Digital Forensics, Security Operations & Management (SOC), Vulnerability Management, System & Network Security, Cloud Security.">77-Hour Intensive Program covering: GRC & Data Privacy, Incident Response & Digital Forensics, Security Operations & Management (SOC), Vulnerability Management, System & Network Security, Cloud Security.</p>
+                    <div class="side-item">
+                        <h4 data-ar="محلل أمن سيبراني من IBM" data-en="IBM Cybersecurity Analyst">IBM Cybersecurity Analyst</h4>
+                        <p class="course-highlight"
+                           data-ar="شهادة مهنية (برنامج مكثف 77 ساعة يغطي):<br><span style='color:#fff; font-size:0.95em; line-height:1.8; display:block; margin-top:5px;'>الحوكمة والمخاطر والامتثال (GRC) وخصوصية البيانات | الاستجابة للحوادث والأدلة الجنائية الرقمية | إدارة العمليات الأمنية (SOC) | إدارة الثغرات | أمن الأنظمة والشبكات | الأمن السحابي</span>"
+                           data-en="Professional Certificate (77-Hour Intensive Program covering):<br><span style='color:#fff; font-size:0.95em; line-height:1.8; display:block; margin-top:5px;'>Governance, Risk, Compliance (GRC) & Data Privacy | Incident Response & Digital Forensics | Security Operations & Management (SOC) | Vulnerability Management | System & Network Security | Cloud Security</span>">
+                           Professional Certificate (77-Hour Intensive Program covering):<br><span style='color:#fff; font-size:0.95em; line-height:1.8; display:block; margin-top:5px;'>Governance, Risk, Compliance (GRC) & Data Privacy | Incident Response & Digital Forensics | Security Operations & Management (SOC) | Vulnerability Management | System & Network Security | Cloud Security</span>
+                        </p>
                     </div>
-                    <div class="cert-item">
-                        <strong data-ar="دورات إضافية" data-en="Additional Courses">Additional Courses</strong>
-                        <p data-ar="أساسيات تطوير الويب، أساسيات البيانات، أساسيات إدارة المشاريع." data-en="Fundamentals of Web Development, Data Fundamentals, Project Management Foundations.">Fundamentals of Web Development, Data Fundamentals, Project Management Foundations.</p>
+                    <div class="side-item">
+                        <h4 data-ar="دورات إضافية" data-en="Additional Courses">Additional Courses</h4>
+                        <p data-ar="أساسيات تطوير الويب، أساسيات البيانات، أساسيات إدارة المشاريع" data-en="Fundamentals of Web Development, Data Fundamentals, Project Management Foundations">Fundamentals of Web Development, Data Fundamentals, Project Management Foundations</p>
                     </div>
                 </div>
 
-                <div class="section">
-                    <h2><i class="fas fa-globe"></i> <span data-ar="اللغات" data-en="Languages">Languages</span></h2>
-                    <div class="cert-item">
-                        <strong data-ar="🇺🇸 الإنجليزية" data-en="🇺🇸 English">🇺🇸 English</strong>
+                <div class="glass-card" style="padding: 25px;">
+                    <h2 class="section-header" style="font-size: 1.2em;">
+                        <i class="fas fa-globe"></i>
+                        <span data-ar="اللغات" data-en="Languages">Languages</span>
+                    </h2>
+                    <div class="side-item">
+                        <h4 data-ar="🇺🇸 الإنجليزية" data-en="🇺🇸 English">🇺🇸 English</h4>
                         <p data-ar="طلاقة مهنية" data-en="Professional">Professional</p>
                     </div>
-                    <div class="cert-item">
-                        <strong data-ar="🇸🇦 العربية" data-en="🇸🇦 Arabic">🇸🇦 Arabic</strong>
+                    <div class="side-item">
+                        <h4 data-ar="🇸🇦 العربية" data-en="🇸🇦 Arabic">🇸🇦 Arabic</h4>
                         <p data-ar="لغة أم" data-en="Native">Native</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 
     <script>
-        // Scroll indicator
+        // مؤشر التمرير العلوي
         window.addEventListener('scroll', () => {
             const scrollBar = document.querySelector('.scroll-indicator');
             const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
             scrollBar.style.width = scrollPercentage + '%';
         });
 
-        // Language Management
+        // إدارة اللغة
         let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
 
         function toggleLanguage() {
@@ -821,4 +814,5 @@
         });
     </script>
 </body>
+
 </html>
