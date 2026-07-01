@@ -17,15 +17,10 @@
         }
 
         :root {
-            /* الألوان: تدرجات الأصفر والذهبي */
             --primary: #ffc107;
-            /* أصفر أساسي */
             --secondary: #ffe066;
-            /* أصفر فاتح */
             --accent: #ff9800;
-            /* برتقالي/ذهبي للتناقض */
             --bg-color: #0b0f19;
-            /* خلفية داكنة تبرز اللون الذهبي */
             --card-bg: rgba(20, 25, 40, 0.6);
             --card-border: rgba(255, 255, 255, 0.08);
             --text-main: #ffffff;
@@ -45,7 +40,6 @@
             z-index: 0;
         }
 
-        /* خلفية حيوية متحركة "تتنفس" */
         body::before,
         body::after {
             content: '';
@@ -74,26 +68,13 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(40px, 60px);
-            }
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(40px, 60px); }
         }
 
-        /* حركة دخول العناصر */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .scroll-indicator {
@@ -161,42 +142,15 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
 
-        /* توقيت ظهور البطاقات بالتتابع */
-        .hero {
-            animation-delay: 0.1s;
-        }
-
-        .main-column .glass-card:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .main-column .glass-card:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-
-        .main-column .glass-card:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        .main-column .glass-card:nth-child(4) {
-            animation-delay: 0.5s;
-        }
-
-        .side-column .glass-card:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-
-        .side-column .glass-card:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .side-column .glass-card:nth-child(3) {
-            animation-delay: 0.5s;
-        }
-
-        .side-column .glass-card:nth-child(4) {
-            animation-delay: 0.6s;
-        }
+        .hero { animation-delay: 0.1s; }
+        .main-column .glass-card:nth-child(1) { animation-delay: 0.2s; }
+        .main-column .glass-card:nth-child(2) { animation-delay: 0.3s; }
+        .main-column .glass-card:nth-child(3) { animation-delay: 0.4s; }
+        .main-column .glass-card:nth-child(4) { animation-delay: 0.5s; }
+        .side-column .glass-card:nth-child(1) { animation-delay: 0.3s; }
+        .side-column .glass-card:nth-child(2) { animation-delay: 0.4s; }
+        .side-column .glass-card:nth-child(3) { animation-delay: 0.5s; }
+        .side-column .glass-card:nth-child(4) { animation-delay: 0.6s; }
 
         .hero {
             text-align: center;
@@ -216,18 +170,14 @@
             border-radius: 24px 24px 0 0;
         }
 
-        /* --- تصميم إطار الصورة النحيف والداكن --- */
         .profile-img-container {
             position: relative;
             width: 200px;
             height: 200px;
             margin: 25px auto 25px;
             border-radius: 50%;
-            /* تدرج لوني داكن جداً يميل للبرونزي/الأسود */
             background: linear-gradient(135deg, #3f3008, #0b0f19);
-            /* إطار نحيف جداً */
             padding: 1.5px;
-            /* ظل أسود عميق بدلاً من المضيء */
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -242,7 +192,6 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            /* فاصل داخلي نحيف */
             border: 2px solid var(--bg-color);
             background-color: var(--bg-color);
         }
@@ -677,76 +626,20 @@
         }
 
         @media (max-width: 600px) {
-            body {
-                padding: 15px 10px;
-            }
-
-            .glass-card {
-                padding: 25px 20px;
-                border-radius: 20px;
-            }
-
-            .hero h1 {
-                font-size: 2.2em;
-            }
-
-            .profile-img-container {
-                width: 110px;
-                height: 110px;
-            }
-
-            .contact-pill {
-                padding: 8px 15px;
-                font-size: 0.8em;
-                width: 100%;
-                justify-content: center;
-            }
-
-            .files-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-            }
-
-            .file-card {
-                padding: 15px 10px;
-            }
-
-            .file-card i {
-                font-size: 1.5em;
-            }
-
-            .section-header {
-                font-size: 1.3em;
-            }
-
-            .section-header i {
-                width: 35px;
-                height: 35px;
-                font-size: 0.85em;
-            }
-
-            .timeline-item {
-                padding-right: 20px;
-            }
-
-            [dir="ltr"] .timeline-item {
-                padding-left: 20px;
-                padding-right: 0;
-            }
-
-            .job-meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-
-            .language-toggle {
-                top: 10px;
-                right: auto;
-                left: 10px;
-                padding: 6px 12px;
-                font-size: 0.8em;
-            }
+            body { padding: 15px 10px; }
+            .glass-card { padding: 25px 20px; border-radius: 20px; }
+            .hero h1 { font-size: 2.2em; }
+            .profile-img-container { width: 110px; height: 110px; }
+            .contact-pill { padding: 8px 15px; font-size: 0.8em; width: 100%; justify-content: center; }
+            .files-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .file-card { padding: 15px 10px; }
+            .file-card i { font-size: 1.5em; }
+            .section-header { font-size: 1.3em; }
+            .section-header i { width: 35px; height: 35px; font-size: 0.85em; }
+            .timeline-item { padding-right: 20px; }
+            [dir="ltr"] .timeline-item { padding-left: 20px; padding-right: 0; }
+            .job-meta { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .language-toggle { top: 10px; right: auto; left: 10px; padding: 6px 12px; font-size: 0.8em; }
         }
     </style>
 </head>
@@ -766,14 +659,13 @@
                     <div class="online-badge"></div>
                 </div>
 
-                <h1 data-ar="محمد نواف" data-en="Mohammed Nawaf">محمد بن نواف</h1>
+                <h1 data-ar="محمد بن نواف" data-en="Mohammed Nawaf">محمد بن نواف</h1>
                 <div class="title" data-ar="بكالوريوس في نظم المعلومات" data-en="Bachelor of Information Systems">
                     بكالوريوس في نظم المعلومات</div>
 
                 <div class="location">
                     <i class="fas fa-map-marker-alt" style="color: var(--primary)"></i>
-                    <span data-ar="المملكة العربية السعودية - سعودي" data-en="Saudi Arabia - Saudi">المملكة العربية
-                        السعودية - سعودي</span>
+                    <span data-ar="المملكة العربية السعودية - سعودي" data-en="Saudi Arabia - Saudi">المملكة العربية السعودية - سعودي</span>
                 </div>
 
                 <div class="contact-grid">
@@ -825,13 +717,9 @@
                         <span data-ar="الملخص المهني" data-en="Professional Summary">الملخص المهني</span>
                     </h2>
                     <p style="color: var(--text-muted); font-size: 0.95em; text-align: justify;"
-                        data-ar="أخصائي نظم معلومات وأمن سيبراني حاصل على درجة البكالوريوس في نظم المعلومات، ولدي خبرة عملية في الأمن السيبراني وتقنية المعلومات وتطوير الأنظمة كذلك أمتلك مهارات في الحوكمة والمخاطر والامتثال (GRC)ومركز العمليات الأمنية (SOC) وتحليل وتصميم الأنظمة كذلك إدارة قواعد البيانات، وتطوير الويب ولدي خبرة في تطوير الحلول التقنية ودعم التحول الرقمي وأسعى إلى توظيف مهاراتي التقنية والتحليلية لتعزيز ورفع كفاءة المنظمات."
-                        data-en="Information Systems and Cybersecurity Specialist with a Bachelor's degree in Information Systems. I have practical experience in cybersecurity, information technology, and systems development. I possess strong skills in Governance, Risk, and Compliance (GRC), Security Operations Center (SOC), systems analysis and design, database management, and web development. I have experience in developing technical solutions and supporting digital transformation initiatives. I aim to leverage my technical and analytical expertise to enhance organizational efficiency and effectiveness.">
-                        أخصائي نظم معلومات وأمن سيبراني حاصل على درجة البكالوريوس في نظم المعلومات، ولدي خبرة عملية في
-                        الأمن السيبراني وتقنية المعلومات وتطوير الأنظمة كذلك أمتلك مهارات في الحوكمة والمخاطر والامتثال
-                        (GRC)ومركز العمليات الأمنية (SOC) وتحليل وتصميم الأنظمة كذلك إدارة قواعد البيانات، وتطوير الويب
-                        ولدي خبرة في تطوير الحلول التقنية ودعم التحول الرقمي وأسعى إلى توظيف مهاراتي التقنية والتحليلية
-                        لتعزيز ورفع كفاءة المنظمات.
+                        data-ar="متخصص تقني متعدد المهارات، أمتلك خبرة واسعة في تقنية المعلومات، والأمن السيبراني والحوكمة والمخاطر والامتثال (GRC)، وتطوير البرمجيات والبنية التحتية للأنظمة، وتحليل البيانات متمرس في العمليات الأمنية، وتطوير الويب الشامل (Full-Stack)، وإدارة قواعد البيانات، والدعم الفني، مع أساس قوي في تقديم حلول تقنية آمنة وفعالة."
+                        data-en="Multi-skilled technology professional specialized in Information Technology, Cybersecurity & GRC, Software Development, Systems Infrastructure, and Data Analytics. Skilled in security operations, full-stack development, database management, and technical support, with a strong foundation in delivering secure and efficient technology solutions.">
+                        متخصص تقني متعدد المهارات، أمتلك خبرة واسعة في تقنية المعلومات، والأمن السيبراني والحوكمة والمخاطر والامتثال (GRC)، وتطوير البرمجيات والبنية التحتية للأنظمة، وتحليل البيانات متمرس في العمليات الأمنية، وتطوير الويب الشامل (Full-Stack)، وإدارة قواعد البيانات، والدعم الفني، مع أساس قوي في تقديم حلول تقنية آمنة وفعالة.
                     </p>
                 </div>
 
@@ -842,51 +730,49 @@
                     </h2>
 
                     <div class="timeline-item">
-                        <div class="job-title" data-ar="أخصائي الأمن السيبراني والحوكمة (GRC) - متطوع" data-en="Cybersecurity and GRC Specialist – Volunteer">
+                        <div class="job-title" data-ar="أخصائي الأمن السيبراني والحوكمة وإدارة المخاطر والامتثال (GRC) - متطوع" data-en="Cybersecurity & GRC Specialist - Volunteer">
                             <i class="fas fa-shield-alt" style="color: var(--accent);"></i>
-                            أخصائي الأمن السيبراني والحوكمة (GRC) - متطوع
+                            أخصائي الأمن السيبراني والحوكمة وإدارة المخاطر والامتثال (GRC) - متطوع
                         </div>
                         <div class="job-meta">
-                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة
-                                منطقة عسير</span>
+                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة منطقة عسير</span>
                             <span class="date-badge" data-ar="يونيو 2025 – مايو 2026" data-en="Jun 2025 – May 2026">
                                 يونيو 2025 – مايو 2026 </span>
                         </div>
                         <ul class="description-list">
-                            <li data-ar="توليت مراجعة وإعداد وتدقيق التقارير والوثائق الحساسة للإدارة العامة للأمن السيبراني، بما يضمن دقة المعلومات واتساقها والالتزام بالمتطلبات التنظيمية."
-                                data-en="Reviewed, prepared, and audited sensitive reports and documents for the General Directorate of Cybersecurity, ensuring data accuracy, consistency, and strict adherence to regulatory requirements.">
-                                توليت مراجعة وإعداد وتدقيق التقارير والوثائق الحساسة للإدارة العامة للأمن السيبراني، بما يضمن دقة المعلومات واتساقها والالتزام بالمتطلبات التنظيمية.</li>
-                            <li data-ar="قمت بتطبيق إطار الامتثال للأمن السيبراني الصادر عن الهيئة الوطنية للأمن السيبراني (NCA)، مما أسهم في تعزيز الالتزام التنظيمي وتحسين ممارسات الحوكمة السيبرانية."
-                                data-en="Implemented the National Cybersecurity Authority (NCA) compliance framework, significantly enhancing organizational adherence and improving cyber governance practices.">
-                                قمت بتطبيق إطار الامتثال للأمن السيبراني الصادر عن الهيئة الوطنية للأمن السيبراني (NCA)، مما أسهم في تعزيز الالتزام التنظيمي وتحسين ممارسات الحوكمة السيبرانية.</li>
-                            <li data-ar="توليت مهام إدارية أسهمت في تحويل إدارة الأمن السيبراني إلى إدارة عامة، دعمًا للتطوير التنظيمي وتحقيق الأهداف الإدارية والحوكمية."
-                                data-en="Executed key administrative and strategic tasks that directly contributed to upgrading the Cybersecurity Department into a General Directorate, supporting organizational development and governance objectives.">
-                                توليت مهام إدارية أسهمت في تحويل إدارة الأمن السيبراني إلى إدارة عامة، دعمًا للتطوير التنظيمي وتحقيق الأهداف الإدارية والحوكمية.</li>
-                            <li data-ar="توليت بشكل فردي تصميم وتنفيذ نظام متكامل لإدارة المهام والحوكمة مزود بإمكانيات التقارير الآلية بصيغتي PDF وExcel، مما ساهم في تحسين متابعة المهام ورفع كفاءة التقارير وتعزيز الرؤية التشغيلية."
-                                data-en="Independently designed and deployed an integrated task management and governance system featuring automated PDF and Excel reporting capabilities, which streamlined task tracking, elevated reporting efficiency, and enhanced operational visibility.">
-                                توليت بشكل فردي تصميم وتنفيذ نظام متكامل لإدارة المهام والحوكمة مزود بإمكانيات التقارير الآلية بصيغتي PDF وExcel، مما ساهم في تحسين متابعة المهام ورفع كفاءة التقارير وتعزيز الرؤية التشغيلية.</li>
+                            <li data-ar="راجعت و دققت أكثر من 100 تقرير ومستند حساس خاص بالأمن السيبراني للإدارة العامة، وضمنت دقة البيانات بنسبة 100%."
+                                data-en="Reviewed and audited 100+ sensitive cybersecurity reports and documents for the General Directorate, ensuring 100% data accuracy.">
+                                راجعت و دققت أكثر من 100 تقرير ومستند حساس خاص بالأمن السيبراني للإدارة العامة، وضمنت دقة البيانات بنسبة 100%.</li>
+                            <li data-ar="نجحت في تحقيق تنفيذ بنسبة 100% لإطار الامتثال الخاص بالهيئة الوطنية للأمن السيبراني (NCA) ، مما عزز الحوكمة السيبرانية في جميع أنحاء الإدارة."
+                                data-en="Achieved 100% implementation of the NCA compliance framework, strengthening cyber governance across the department.">
+                                نجحت في تحقيق تنفيذ بنسبة 100% لإطار الامتثال الخاص بالهيئة الوطنية للأمن السيبراني (NCA) ، مما عزز الحوكمة السيبرانية في جميع أنحاء الإدارة.</li>
+                            <li data-ar="ساهمت في المبادرات الرئيسية التي دعمت ترقية الإدارة إلى إدارة عامة."
+                                data-en="Contributed to key initiatives supporting the department's upgrade into a General Directorate.">
+                                ساهمت في المبادرات الرئيسية التي دعمت ترقية الإدارة إلى إدارة عامة.</li>
+                            <li data-ar="صممت وطورت نظام متكامل لإدارة المهام والحوكمة باستخدام Laravel ونظام تحكم في الوصول مبني على 5 أدوار (RBAC) مع تقارير آلية بصيغتي PDF/Excel، واختبار أداء النظام لأكثر من 8,000 مهمة - مما أدى إلى توحيد تتبع المهام وتقليل الجهد اليدوي لإعداد التقارير."
+                                data-en="Designed and developed an integrated task management and governance system (Laravel, 5-role RBAC) with automated PDF/Excel reporting, performance-tested at 8,000+ tasks unifying task tracking and cutting manual reporting effort.">
+                                صممت وطورت نظام متكامل لإدارة المهام والحوكمة باستخدام Laravel ونظام تحكم في الوصول مبني على 5 أدوار (RBAC) مع تقارير آلية بصيغتي PDF/Excel، واختبار أداء النظام لأكثر من 8,000 مهمة - مما أدى إلى توحيد تتبع المهام وتقليل الجهد اليدوي لإعداد التقارير.</li>
                         </ul>
                     </div>
 
                     <div class="timeline-item">
                         <div class="job-title" data-ar="أخصائي تقنية معلومات – تدريب تعاوني"
-                            data-en="IT Specialist – Cooperative Trainee">
+                            data-en="Information Technology Specialist - COOP">
                             <i class="fas fa-laptop" style="color: var(--secondary);"></i>
                             أخصائي تقنية معلومات – تدريب تعاوني
                         </div>
                         <div class="job-meta">
-                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة
-                                منطقة عسير</span>
+                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة منطقة عسير</span>
                             <span class="date-badge" data-ar="يونيو 2024 – أغسطس 2024"
                                 data-en="Jun 2024 – Aug 2024">يونيو 2024 – أغسطس 2024</span>
                         </div>
                         <ul class="description-list">
-                            <li data-ar="توليت دعم وتشغيل العمليات اليومية للبنية التحتية الرقمية، بما في ذلك مراقبة شبكات المؤسسة ومعالجة المشكلات التقنية، مما ساهم في رفع موثوقية الخدمات التقنية وضمان استمرارية التشغيل."
-                                data-en="Supported the daily operations of the digital infrastructure, monitoring enterprise networks, and troubleshooting technical issues to boost service reliability and ensure seamless business continuity.">
-                                توليت دعم وتشغيل العمليات اليومية للبنية التحتية الرقمية، بما في ذلك مراقبة شبكات المؤسسة ومعالجة المشكلات التقنية، مما ساهم في رفع موثوقية الخدمات التقنية وضمان استمرارية التشغيل.</li>
-                            <li data-ar="قدمت الدعم الفني للموظفين من خلال تشخيص وحل مشكلات الأجهزة والبرمجيات، مما ساعد على تقليل الأعطال وتحسين إنتاجية المستخدمين وكفاءة بيئة العمل."
-                                data-en="Provided comprehensive technical support to employees by diagnosing and resolving hardware and software issues, minimizing system downtime, and improving overall user productivity and workplace efficiency.">
-                                قدمت الدعم الفني للموظفين من خلال تشخيص وحل مشكلات الأجهزة والبرمجيات، مما ساعد على تقليل الأعطال وتحسين إنتاجية المستخدمين وكفاءة بيئة العمل.</li>
+                            <li data-ar="مراقبة شبكات المؤسسة وحل المشكلات الفنية، مما حافظ على استمرارية الخدمة دون انقطاع."
+                                data-en="Monitored enterprise networks and resolved technical issues, maintaining uninterrupted service continuity.">
+                                مراقبة شبكات المؤسسة وحل المشكلات الفنية، مما حافظ على استمرارية الخدمة دون انقطاع.</li>
+                            <li data-ar="تقديم الدعم الفني لأكثر من 20 موظفاً، وحل مشاكل الأجهزة والبرامج وتقليل أوقات تعطل النظام."
+                                data-en="Provided technical support to 20+ employees, resolving hardware/software issues and cutting system downtime.">
+                                تقديم الدعم الفني لأكثر من 20 موظفاً، وحل مشاكل الأجهزة والبرامج وتقليل أوقات تعطل النظام.</li>
                         </ul>
                     </div>
                 </div>
@@ -904,8 +790,7 @@
                             نظام إدارة المهام والحوكمة
                         </div>
                         <div class="job-meta">
-                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة
-                                منطقة عسير</span>
+                            <span class="company-name" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">أمانة منطقة عسير</span>
                             <span class="date-badge" data-ar="أكتوبر 2025 – فبراير 2026"
                                 data-en="Oct 2025 – Feb 2026">أكتوبر 2025 – فبراير 2026</span>
                         </div>
@@ -915,27 +800,26 @@
                             <span data-ar="عرض المشروع" data-en="View Project">عرض المشروع</span>
                         </a>
                         <ul class="description-list">
-                            <li data-ar="صممت وطورت نظام لإدارة المهام والحوكمة بشكل مستقل باستخدام إطار عمل Laravel معززة بتحكم صارم في الوصول القائم على الأدوار (RBAC)"
-                                data-en="Independently designed and developed a task management and governance system using Laravel framework with strict (RBAC)">
-                                صممت وطورت نظام لإدارة المهام والحوكمة بشكل مستقل باستخدام إطار عمل Laravel معززة بتحكم
-                                صارم في الوصول القائم على الأدوار (RBAC)</li>
-                            <li data-ar="طورت لوحات تحكم لمؤشرات الأداء الرئيسية (KPIs)"
-                                data-en="Developed executive dashboards for Key Performance Indicators (KPIs)">
-                                طورت لوحات تحكم لمؤشرات الأداء الرئيسية (KPIs)</li>
-                            <li data-ar="أتمتة إنشاء التقارير الجاهزة PDF وExcel"
-                                data-en="Implemented comprehensive automation for report generation in PDF and Excel formats">
-                                أتمتة إنشاء التقارير الجاهزة PDF وExcel</li>
-                            <li data-ar="اختبارات أداء النظام بمعالجة أكثر من 8000 مهمة لضمان استقرار النظام"
-                                data-en="Conducted performance testing handling over 8,000 tasks to ensure system stability">
-                                اختبارات أداء النظام بمعالجة أكثر من 8000 مهمة لضمان استقرار النظام</li>
+                            <li data-ar="تصميم وتطوير نظام لإدارة المهام والحوكمة باستخدام إطار عمل Laravel ، مع نظام تحكم بالوصول مبني على الأدوار (RBAC) يتكون من 5 أدوار."
+                                data-en="Designed and developed a task management and governance system using Laravel with a 5-role RBAC (role-based access control) system">
+                                تصميم وتطوير نظام لإدارة المهام والحوكمة باستخدام إطار عمل Laravel ، مع نظام تحكم بالوصول مبني على الأدوار (RBAC) يتكون من 5 أدوار.</li>
+                            <li data-ar="بناء لوحات تحكم تنفيذية لتتبع مؤشرات الأداء الرئيسية (KPIs) في الوقت الفعلي."
+                                data-en="Built executive dashboards to track KPIs in real time">
+                                بناء لوحات تحكم تنفيذية لتتبع مؤشرات الأداء الرئيسية (KPIs) في الوقت الفعلي.</li>
+                            <li data-ar="أتمتة إنشاء التقارير بصيغتي PDF و Excel."
+                                data-en="Automated report generation in PDF and Excel formats">
+                                أتمتة إنشاء التقارير بصيغتي PDF و Excel.</li>
+                            <li data-ar="اختبار أداء النظام والتأكد من استقراره وكفاءته العالية مع تعامله مع أكثر من 8,000 مهمة."
+                                data-en="Performance-tested the system with 8,000+ tasks, confirming stability at scale">
+                                اختبار أداء النظام والتأكد من استقراره وكفاءته العالية مع تعامله مع أكثر من 8,000 مهمة.</li>
                         </ul>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="job-title" data-ar="أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة"
-                            data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">
+                        <div class="job-title" data-ar="أجري زون - Agri Zone منصة تجارة إلكترونية زراعية متكاملة"
+                            data-en="Agri Zone - Full-Stack Agricultural E-Commerce Platform">
                             <i class="fas fa-seedling" style="color: var(--success);"></i>
-                            أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة
+                            أجري زون - Agri Zone منصة تجارة إلكترونية زراعية متكاملة
                         </div>
                         <div class="job-meta">
                             <span class="company-name" data-ar="مشروع متكامل (Full-Stack)"
@@ -949,18 +833,15 @@
                             <span data-ar="عرض المشروع" data-en="View Project">عرض المشروع</span>
                         </a>
                         <ul class="description-list">
-                            <li data-ar="توليت مسؤولية التطوير الكامل للواجهة الخلفية (Backend) وتصميم مخطط قواعد البيانات العلائقية بشكل مستقل"
-                                data-en="Independently managed complete Backend development and designed the relational database schema">
-                                توليت مسؤولية التطوير الكامل للواجهة الخلفية (Backend) وتصميم مخطط قواعد البيانات
-                                العلائقية بشكل مستقل</li>
-                            <li data-ar="أدرت تخطيط دورات التطوير (Sprints)، وتوزيع المهام، ودورات التحديث التكرارية للميزات باستخدام منهجية (Agile)"
-                                data-en="Managed Sprint planning, task distribution, and iterative feature updates using Agile methodology">
-                                أدرت تخطيط دورات التطوير (Sprints)، وتوزيع المهام، ودورات التحديث التكرارية للميزات
-                                باستخدام منهجية (Agile)</li>
-                            <li data-ar="قمت بكتابة وبناء المنطق البرمجي للنظام باستخدام لغة PHP وضمنت إنهاء المشروع قبل المدة المحددة"
-                                data-en="Wrote and built the system's programming logic using PHP while ensuring project completion ahead of the specified deadline">
-                                قمت بكتابة وبناء المنطق البرمجي للنظام باستخدام لغة PHP وضمنت إنهاء المشروع قبل المدة
-                                المحددة</li>
+                            <li data-ar="توليت مسؤولية التطوير للواجهة الخلفية (Backend) وتصميم مخطط قواعد البيانات العلائقية"
+                                data-en="Solely developed the backend and designed the relational database schema">
+                                توليت مسؤولية التطوير للواجهة الخلفية (Backend) وتصميم مخطط قواعد البيانات العلائقية</li>
+                            <li data-ar="أدرت تخطيط دورات التطوير (Agile Sprints) ، وتوزيع المهام، ودورات التحديث التكرارية للميزات باستخدام منهجية (Agile)"
+                                data-en="Led Agile sprint planning, task distribution, and iterative feature delivery">
+                                أدرت تخطيط دورات التطوير (Agile Sprints) ، وتوزيع المهام، ودورات التحديث التكرارية للميزات باستخدام منهجية (Agile)</li>
+                            <li data-ar="قمت بكتابة وبناء المنطق البرمجي للنظام باستخدام لغة PHP وضمنت مع فريقي إنهاء المشروع قبل المدة المحددة"
+                                data-en="Built core system logic in PHP, delivering the project 1+ month ahead of schedule">
+                                قمت بكتابة وبناء المنطق البرمجي للنظام باستخدام لغة PHP وضمنت مع فريقي إنهاء المشروع قبل المدة المحددة</li>
                         </ul>
                     </div>
                 </div>
@@ -1050,8 +931,7 @@
                             data-en="Bachelor's Degree in Information Systems">
                             درجة البكالوريوس في نظم المعلومات</h4>
                         <p data-ar="كلية علوم الحاسب الآلي<br>جامعة الملك خالد"
-                            data-en="College of Computer Science<br>King Khalid University">كلية علوم الحاسب
-                            الآلي<br>جامعة الملك خالد</p>
+                            data-en="College of Computer Science<br>King Khalid University">كلية علوم الحاسب الآلي<br>جامعة الملك خالد</p>
                     </div>
                 </div>
 
@@ -1061,8 +941,7 @@
                         <span data-ar="الشهادات والدورات" data-en="Certifications & Courses">الشهادات والدورات</span>
                     </h2>
                     <div class="side-item">
-                        <h4 data-ar="إتمام تخصص في الامن السيبراني" data-en="Cybersecurity Specialization">إتمام تخصص في
-                            الامن السيبراني</h4>
+                        <h4 data-ar="إتمام تخصص في الامن السيبراني" data-en="Cybersecurity Specialization">إتمام تخصص في الامن السيبراني</h4>
                         <p data-ar="جامعة الملك خالد" data-en="King Khalid University">جامعة الملك خالد</p>
                     </div>
                     <div class="side-item">
@@ -1074,9 +953,7 @@
                         <p class="course-highlight"
                             data-ar="• الحوكمة والمخاطر والامتثال وخصوصية البيانات<br>• الاستجابة للحوادث والتحقيق الجنائي الرقمي للأنظمة<br>• إدارة وعمليات الأمان<br>• إدارة الثغرات الأمنية<br>• أمن الأنظمة والشبكات<br>• الأمن السحابي"
                             data-en="• Governance, Risk, Compliance (GRC) & Data Privacy<br>• Incident Response & Digital Forensics<br>• Security Operations & Management (SOC)<br>• Vulnerability Management<br>• System & Network Security<br>• Cloud Security">
-                            • الحوكمة والمخاطر والامتثال وخصوصية البيانات<br>• الاستجابة للحوادث والتحقيق الجنائي الرقمي
-                            للأنظمة<br>• إدارة وعمليات الأمان<br>• إدارة الثغرات الأمنية<br>• أمن الأنظمة والشبكات<br>•
-                            الأمن السحابي
+                            • الحوكمة والمخاطر والامتثال وخصوصية البيانات<br>• الاستجابة للحوادث والتحقيق الجنائي الرقمي للأنظمة<br>• إدارة وعمليات الأمان<br>• إدارة الثغرات الأمنية<br>• أمن الأنظمة والشبكات<br>• الأمن السحابي
                         </p>
                     </div>
                     <div class="side-item">
@@ -1106,14 +983,12 @@
     </div>
 
     <script>
-        // مؤشر التمرير العلوي
         window.addEventListener('scroll', () => {
             const scrollBar = document.querySelector('.scroll-indicator');
             const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
             scrollBar.style.width = scrollPercentage + '%';
         });
 
-        // إدارة اللغة
         let currentLanguage = localStorage.getItem('selectedLanguage') || 'ar';
 
         function toggleLanguage() {
