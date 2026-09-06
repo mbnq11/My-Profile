@@ -22,7 +22,7 @@
             --secondary: #ffe066;
             --accent: #ff9800;
             --bg-color: #0b0f19;
-            --card-bg: rgba(18, 22, 34, 0.7);
+            --card-bg: rgba(18, 22, 34, 0.75);
             --card-border: rgba(255, 255, 255, 0.08);
             --text-main: #ffffff;
             --text-muted: #94a3b8;
@@ -36,9 +36,10 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             min-height: 100vh;
-            padding: 30px 15px;
+            padding: 18px 12px;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 14px;
             position: relative;
             z-index: 0;
         }
@@ -54,16 +55,16 @@
         }
 
         body::before {
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
             background: rgba(197, 165, 114, 0.06);
             top: -10%;
             left: -10%;
         }
 
         body::after {
-            width: 500px;
-            height: 500px;
+            width: 350px;
+            height: 350px;
             background: rgba(255, 152, 0, 0.05);
             bottom: -10%;
             right: -10%;
@@ -72,11 +73,11 @@
 
         @keyframes float {
             0% { transform: translate(0, 0); }
-            100% { transform: translate(40px, 60px); }
+            100% { transform: translate(30px, 40px); }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -84,48 +85,48 @@
             position: fixed;
             top: 0;
             left: 0;
-            height: 4px;
+            height: 3px;
             background: linear-gradient(90deg, var(--gold), var(--accent));
             width: 0%;
             z-index: 999;
-            box-shadow: 0 0 10px var(--gold);
+            box-shadow: 0 0 8px var(--gold);
         }
 
         .language-toggle {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid var(--card-border);
-            border-radius: 30px;
-            padding: 10px 20px;
+            border-radius: 20px;
+            padding: 6px 14px;
             cursor: pointer;
             font-weight: 700;
+            font-size: 0.8em;
             color: var(--text-main);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         [dir="rtl"] .language-toggle {
             left: auto;
-            right: 20px;
+            right: 15px;
         }
 
         .language-toggle:hover {
             background: var(--gold-bg);
             border-color: var(--gold);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(197, 165, 114, 0.2);
         }
 
         .container {
-            max-width: 1150px;
+            max-width: 1020px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 18px;
         }
 
         .glass-card {
@@ -133,23 +134,23 @@
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 35px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            animation: fadeInUp 0.6s ease backwards;
         }
 
         .glass-card:hover {
             border-color: rgba(197, 165, 114, 0.3);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
         }
 
         .hero {
             text-align: center;
             position: relative;
             overflow: hidden;
-            padding: 50px 30px;
+            padding: 28px 20px 22px;
         }
 
         .hero::after {
@@ -158,26 +159,25 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 100px;
+            height: 70px;
             background: linear-gradient(180deg, rgba(197, 165, 114, 0.08) 0%, transparent 100%);
-            border-radius: 24px 24px 0 0;
+            border-radius: 16px 16px 0 0;
         }
 
         .profile-img-container {
             position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 25px auto 25px;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 12px;
             border-radius: 50%;
             background: linear-gradient(135deg, #3f3008, #0b0f19);
             padding: 1.5px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
         }
 
         .profile-img-container:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+            transform: scale(1.04);
         }
 
         .profile-img {
@@ -190,9 +190,9 @@
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 2.1em;
             font-weight: 800;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
             background: linear-gradient(to right, #fff, var(--primary-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -200,110 +200,107 @@
         }
 
         .hero .title {
-            font-size: 1.2em;
+            font-size: 0.98em;
             color: var(--gold);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .hero .location {
-            font-size: 0.95em;
+            font-size: 0.82em;
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 16px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: rgba(255, 255, 255, 0.03);
-            padding: 6px 15px;
-            border-radius: 20px;
+            padding: 4px 12px;
+            border-radius: 16px;
         }
 
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .contact-pill {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            border-radius: 50px;
+            gap: 7px;
+            padding: 7px 14px;
+            border-radius: 30px;
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             color: var(--text-main);
             text-decoration: none;
-            font-size: 0.9em;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.82em;
+            transition: all 0.25s ease;
         }
 
         .contact-pill:hover {
             background: var(--gold-bg);
             border-color: var(--gold);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(197, 165, 114, 0.15);
+            transform: translateY(-2px);
         }
 
         .contact-pill i {
             color: var(--gold);
-            font-size: 1.1em;
-            transition: transform 0.3s ease;
+            font-size: 0.95em;
         }
 
         .layout-grid {
             display: grid;
-            grid-template-columns: 2fr 1.1fr;
-            gap: 30px;
+            grid-template-columns: 2fr 1.05fr;
+            gap: 18px;
         }
 
         .main-column,
         .side-column {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 18px;
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.5em;
+            gap: 10px;
+            font-size: 1.18em;
             font-weight: 800;
-            margin-bottom: 25px;
+            margin-bottom: 16px;
             color: #fff;
         }
 
         .section-header i {
             color: var(--gold);
             background: var(--gold-bg);
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 12px;
+            border-radius: 8px;
             font-size: 0.8em;
-            transition: transform 0.3s ease;
         }
 
         .files-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
         }
 
         .file-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 12px 10px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
             text-decoration: none;
             color: inherit;
             display: flex;
@@ -315,23 +312,33 @@
         .file-card:hover {
             background: var(--gold-bg);
             border-color: var(--gold);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .file-card i {
-            font-size: 2em;
+            font-size: 1.5em;
             color: var(--gold);
-            margin-bottom: 12px;
+            margin-bottom: 6px;
+        }
+
+        .file-card h4 {
+            font-size: 0.86em;
+            margin-bottom: 2px;
+        }
+
+        .file-card p {
+            font-size: 0.72em;
+            color: var(--text-muted);
         }
 
         .timeline-item {
             position: relative;
-            padding-right: 30px;
-            margin-bottom: 30px;
+            padding-right: 22px;
+            margin-bottom: 18px;
         }
 
         [dir="ltr"] .timeline-item {
-            padding-left: 30px;
+            padding-left: 22px;
             padding-right: 0;
         }
 
@@ -340,7 +347,7 @@
             position: absolute;
             right: 0;
             top: 5px;
-            bottom: -30px;
+            bottom: -18px;
             width: 2px;
             background: rgba(255, 255, 255, 0.1);
         }
@@ -350,6 +357,10 @@
             right: auto;
         }
 
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
         .timeline-item:last-child::before {
             display: none;
         }
@@ -357,51 +368,51 @@
         .timeline-item::after {
             content: '';
             position: absolute;
-            right: -4px;
+            right: -3.5px;
             top: 5px;
-            width: 10px;
-            height: 10px;
+            width: 9px;
+            height: 9px;
             border-radius: 50%;
             background: var(--gold);
-            box-shadow: 0 0 10px rgba(197, 165, 114, 0.5);
+            box-shadow: 0 0 8px rgba(197, 165, 114, 0.5);
         }
 
         [dir="ltr"] .timeline-item::after {
-            left: -4px;
+            left: -3.5px;
             right: auto;
         }
 
         .job-title {
-            font-size: 1.15em;
+            font-size: 1.02em;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             color: var(--gold);
-            font-size: 0.85em;
+            font-size: 0.78em;
             text-decoration: none;
-            transition: all 0.3s ease;
-            margin-top: 8px;
-            margin-bottom: 12px;
-            padding: 5px 10px;
-            border-radius: 6px;
+            transition: all 0.25s ease;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            padding: 3px 8px;
+            border-radius: 5px;
             background: var(--gold-bg);
         }
 
         .job-meta {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 0.85em;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 0.78em;
             flex-wrap: wrap;
         }
 
@@ -412,8 +423,8 @@
 
         .date-badge {
             background: rgba(255, 255, 255, 0.05);
-            padding: 4px 12px;
-            border-radius: 20px;
+            padding: 2px 10px;
+            border-radius: 14px;
             color: var(--text-muted);
         }
 
@@ -421,9 +432,9 @@
             background: var(--gold-bg);
             border: 1px solid rgba(197, 165, 114, 0.3);
             color: var(--primary-light);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
+            padding: 2px 10px;
+            border-radius: 14px;
+            font-size: 0.78em;
         }
 
         .description-list {
@@ -432,14 +443,15 @@
 
         .description-list li {
             position: relative;
-            padding-right: 18px;
-            margin-bottom: 8px;
-            font-size: 0.9em;
+            padding-right: 15px;
+            margin-bottom: 5px;
+            font-size: 0.83em;
             color: var(--text-muted);
+            line-height: 1.45;
         }
 
         [dir="ltr"] .description-list li {
-            padding-left: 18px;
+            padding-left: 15px;
             padding-right: 0;
         }
 
@@ -448,7 +460,8 @@
             position: absolute;
             right: 0;
             color: var(--gold);
-            font-size: 0.8em;
+            font-size: 0.7em;
+            top: 2px;
         }
 
         [dir="ltr"] .description-list li::before {
@@ -457,19 +470,19 @@
             right: auto;
         }
 
-        /* --- New Grouped Skills Styles --- */
+        /* Grouped Skills Compact */
         .skills-groups-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 12px;
         }
 
         .skill-group-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 20px;
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 12px 14px;
+            transition: all 0.25s ease;
         }
 
         .skill-group-card:hover {
@@ -481,37 +494,36 @@
         .skill-group-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.98em;
+            gap: 7px;
+            font-size: 0.88em;
             font-weight: 700;
             color: var(--gold);
-            margin-bottom: 14px;
-            padding-bottom: 8px;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .skill-group-header i {
-            font-size: 1.05em;
-            color: var(--gold);
+            font-size: 0.95em;
         }
 
         .skills-tags-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 9px;
+            gap: 6px;
         }
 
         .skill-tag {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 7px 14px;
-            border-radius: 8px;
-            font-size: 0.84em;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.77em;
             color: #fff;
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
+            gap: 6px;
+            transition: all 0.25s ease;
         }
 
         .skill-tag:hover {
@@ -522,75 +534,75 @@
 
         .skill-tag i {
             color: var(--gold);
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         .skill-tag.security i {
             color: var(--accent);
         }
 
-        /* --- Sidebar Styles --- */
+        /* Sidebar Elements Compact */
         .side-card-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .side-card-title {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.1em;
+            gap: 8px;
+            font-size: 0.98em;
             font-weight: 700;
             color: #fff;
         }
 
         .side-card-title .icon-box {
-            width: 34px;
-            height: 34px;
-            border-radius: 8px;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
             background: #050505;
             border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            font-size: 0.85em;
+            font-size: 0.75em;
         }
 
         .side-badge {
-            font-size: 11px;
+            font-size: 9px;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
             font-weight: 600;
             color: var(--gold);
         }
 
         .sidebar-item-box {
-            padding: 16px;
-            border-radius: 12px;
+            padding: 12px 14px;
+            border-radius: 10px;
             background: #050505;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-right: 3px solid var(--gold);
-            margin-bottom: 16px;
-            transition: all 0.3s ease;
+            border-right: 2.5px solid var(--gold);
+            margin-bottom: 10px;
+            transition: all 0.25s ease;
         }
 
         [dir="ltr"] .sidebar-item-box {
             border-right: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 3px solid var(--gold);
+            border-left: 2.5px solid var(--gold);
         }
 
         .sidebar-item-box:hover {
             border-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(-3px);
+            transform: translateX(-2px);
         }
 
         [dir="ltr"] .sidebar-item-box:hover {
-            transform: translateX(3px);
+            transform: translateX(2px);
         }
 
         .sidebar-item-box:last-child {
@@ -598,55 +610,55 @@
         }
 
         .sidebar-item-title {
-            font-size: 0.95em;
+            font-size: 0.88em;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             display: flex;
             align-items: flex-start;
-            gap: 8px;
+            gap: 6px;
         }
 
         .sidebar-item-title i {
             color: var(--gold);
-            margin-top: 3px;
-            font-size: 0.9em;
+            margin-top: 2px;
+            font-size: 0.8em;
         }
 
         .side-subtext {
             color: var(--gold);
-            font-size: 0.82em;
+            font-size: 0.76em;
             font-weight: 500;
-            margin-bottom: 6px;
-            padding-right: 22px;
+            margin-bottom: 4px;
+            padding-right: 18px;
         }
 
         [dir="ltr"] .side-subtext {
             padding-right: 0;
-            padding-left: 22px;
+            padding-left: 18px;
         }
 
         .side-description {
             color: var(--text-muted);
-            font-size: 0.8em;
-            line-height: 1.5;
-            padding-right: 22px;
+            font-size: 0.75em;
+            line-height: 1.45;
+            padding-right: 18px;
         }
 
         [dir="ltr"] .side-description {
             padding-right: 0;
-            padding-left: 22px;
+            padding-left: 18px;
         }
 
         .cert-highlights-box {
-            margin-top: 10px;
-            padding: 10px 14px;
-            border-radius: 8px;
+            margin-top: 8px;
+            padding: 8px 10px;
+            border-radius: 6px;
             background: #0a0a0a;
             border-right: 2px solid var(--gold);
-            font-size: 0.78em;
+            font-size: 0.73em;
             color: #94a3b8;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         [dir="ltr"] .cert-highlights-box {
@@ -657,60 +669,70 @@
         .cert-highlights-box span.bullet {
             color: var(--gold);
             font-weight: bold;
-            margin-left: 4px;
+            margin-left: 3px;
         }
 
         [dir="ltr"] .cert-highlights-box span.bullet {
             margin-left: 0;
-            margin-right: 4px;
+            margin-right: 3px;
         }
 
+        /* Simplified Languages Container */
         .language-item {
-            padding: 14px 16px;
-            border-radius: 12px;
+            padding: 11px 14px;
+            border-radius: 10px;
             background: #050505;
             border: 1px solid rgba(255, 255, 255, 0.08);
+            border-right: 2.5px solid var(--gold);
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
+            gap: 10px;
+            margin-bottom: 8px;
+            transition: all 0.25s ease;
+        }
+
+        [dir="ltr"] .language-item {
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 2.5px solid var(--gold);
+        }
+
+        .language-item:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(-2px);
+        }
+
+        [dir="ltr"] .language-item:hover {
+            transform: translateX(2px);
         }
 
         .language-item:last-child {
             margin-bottom: 0;
         }
 
-        .lang-dots {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .language-item i {
+            color: var(--gold);
+            font-size: 0.85em;
         }
 
-        .lang-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .lang-dot.active {
-            background: var(--gold);
-            box-shadow: 0 0 6px rgba(197, 165, 114, 0.4);
+        .language-name {
+            font-size: 0.88em;
+            font-weight: 700;
+            color: #fff;
         }
 
         .qr-box { text-align: center; }
         .qr-image {
-            width: 150px;
-            height: 150px;
+            width: 110px;
+            height: 110px;
             background: #fff;
-            padding: 8px;
-            border-radius: 16px;
-            margin: 0 auto 12px;
+            padding: 6px;
+            border-radius: 12px;
+            margin: 0 auto 8px;
             display: block;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s ease;
         }
-        .qr-image:hover { transform: scale(1.05); }
+        .qr-image:hover { transform: scale(1.04); }
 
         @media (max-width: 900px) {
             .layout-grid { grid-template-columns: 1fr; }
@@ -795,7 +817,7 @@
                         <i class="fas fa-user-astronaut"></i>
                         <span data-ar="الملخص المهني" data-en="Professional Profile">الملخص المهني</span>
                     </h2>
-                    <p style="color: var(--text-muted); font-size: 0.95em; text-align: justify;"
+                    <p style="color: var(--text-muted); font-size: 0.85em; text-align: justify; line-height: 1.6;"
                         data-ar="متخصص متعدد المهارات في تقنية المعلومات والأمن السيبراني، أمتلك خبرة عملية في الدعم الفني والتقني، الحوكمة والمخاطر والالتزام (GRC)، وعمليات مراكز الأمن السيبراني (SOC)، وإدارة الأنظمة والبنية التحتية، تحليل البيانات، قواعد البيانات، واستكشاف المشكلات التقنية وحلها. أتمتع بقدرة مثبتة على دعم البيئات المؤسسية والمساهمة في تقديم حلول تقنية عملية وفعّالة. سريع التكيف واكتساب المهارات والتقنيات والأدوات الحديثة وتوظيفها بفاعلية لحل التحديات التقنية، وأسعى إلى استثمار خلفيتي التقنية المتنوعة ومهاراتي التحليلية وحل المشكلات لدعم نجاح المنظمات والتطور المستمر داخل بيئة تقنية متقدمة."
                         data-en="Multi-skilled IT and Cybersecurity professional with hands-on experience in technical and IT support, Governance, Risk, and Compliance (GRC), Security Operations (SOC), systems and infrastructure support, data analysis, database management, and technical troubleshooting. Demonstrated ability to support enterprise environments and contribute to practical and effective technical solutions. Highly adaptable with a strong ability to rapidly learn and acquire new skills, technologies, and tools and apply them effectively to address technical challenges. Eager to leverage a diverse technical background, analytical thinking, and problem-solving skills to support organizational success while continuously growing and developing in an advanced technical environment.">
                         متخصص متعدد المهارات في تقنية المعلومات والأمن السيبراني، أمتلك خبرة عملية في الدعم الفني والتقني، الحوكمة والمخاطر والالتزام (GRC)، وعمليات مراكز الأمن السيبراني (SOC)، وإدارة الأنظمة والبنية التحتية، تحليل البيانات، قواعد البيانات، واستكشاف المشكلات التقنية وحلها. أتمتع بقدرة مثبتة على دعم البيئات المؤسسية والمساهمة في تقديم حلول تقنية عملية وفعّالة. سريع التكيف واكتساب المهارات والتقنيات والأدوات الحديثة وتوظيفها بفاعلية لحل التحديات التقنية، وأسعى إلى استثمار خلفيتي التقنية المتنوعة ومهاراتي التحليلية وحل المشكلات لدعم نجاح المنظمات والتطور المستمر داخل بيئة تقنية متقدمة.
@@ -1046,7 +1068,7 @@
             <div class="side-column">
                 <!-- 1. All Files QR Code Box -->
                 <div class="glass-card qr-box" id="qr-code-card">
-                    <div class="side-card-header" style="justify-content: center; border-bottom: none; margin-bottom: 12px; padding-bottom: 0;">
+                    <div class="side-card-header" style="justify-content: center; border-bottom: none; margin-bottom: 8px; padding-bottom: 0;">
                         <h2 class="side-card-title">
                             <span class="icon-box"><i class="fas fa-qrcode"></i></span>
                             <span data-ar="المجلد الشامل والمرفقات" data-en="All Files & Attachments">المجلد الشامل والمرفقات</span>
@@ -1056,7 +1078,7 @@
                         target="_blank" title="View all files">
                         <img src="QR.png" alt="QR Code" class="qr-image">
                     </a>
-                    <p style="font-size: 0.85em; color: var(--text-muted); margin-top: 5px;"
+                    <p style="font-size: 0.76em; color: var(--text-muted); margin-top: 2px;"
                         data-ar="امسح الرمز للوصول السريع للنسخة التفاعلية والمرفقات" 
                         data-en="Scan the QR code to access the interactive version and attachments.">
                         امسح الرمز للوصول السريع للنسخة التفاعلية والمرفقات
@@ -1078,7 +1100,7 @@
                             درجة البكالوريوس في نظم المعلومات
                         </h3>
                         <div class="side-subtext">
-                            <i class="fas fa-building" style="margin-inline-end: 6px;"></i>
+                            <i class="fas fa-building" style="margin-inline-end: 4px;"></i>
                             <span data-ar="جامعة الملك خالد" data-en="King Khalid University">جامعة الملك خالد</span>
                         </div>
                         <p class="side-description" data-ar="كلية علوم الحاسب الآلي" data-en="College of Computer Science">
@@ -1127,13 +1149,13 @@
                             <i class="fas fa-book-open"></i>
                             <span data-ar="دورات إضافية" data-en="Additional Courses">دورات إضافية</span>
                         </h3>
-                        <p class="side-description" style="padding-top: 4px;" data-ar="أساسيات الويب • أساسيات البيانات • أساسيات إدارة المشاريع" data-en="Fundamentals of Web • Data Fundamentals • Project Management Foundations">
+                        <p class="side-description" style="padding-top: 3px;" data-ar="أساسيات الويب • أساسيات البيانات • أساسيات إدارة المشاريع" data-en="Fundamentals of Web • Data Fundamentals • Project Management Foundations">
                             أساسيات الويب • أساسيات البيانات • أساسيات إدارة المشاريع
                         </p>
                     </div>
                 </div>
 
-                <!-- 4. Languages Card -->
+                <!-- 4. Languages Card (No levels, Clean display) -->
                 <div class="glass-card" id="languages-card">
                     <div class="side-card-header">
                         <h2 class="side-card-title">
@@ -1143,31 +1165,13 @@
                     </div>
 
                     <div class="language-item">
-                        <div>
-                            <h3 style="font-size: 0.95em; font-weight: 700; color: #fff;" data-ar="العربية" data-en="Arabic">العربية</h3>
-                            <p style="font-size: 0.78em; color: var(--text-muted); margin-top: 2px;" data-ar="اللغة الأم" data-en="Native">اللغة الأم</p>
-                        </div>
-                        <div class="lang-dots">
-                            <div class="lang-dot active"></div>
-                            <div class="lang-dot active"></div>
-                            <div class="lang-dot active"></div>
-                            <div class="lang-dot active"></div>
-                            <div class="lang-dot active"></div>
-                        </div>
+                        <i class="fas fa-check-circle"></i>
+                        <span class="language-name" data-ar="العربية" data-en="Arabic">العربية</span>
                     </div>
 
                     <div class="language-item">
-                        <div>
-                            <h3 style="font-size: 0.95em; font-weight: 700; color: #fff;" data-ar="الإنجليزية" data-en="English">الإنجليزية</h3>
-                            <p style="font-size: 0.78em; color: var(--text-muted); margin-top: 2px;" data-ar="مستوى مهني متقدم" data-en="Professional Working">مستوى مهني متقدم</p>
-                        </div>
-                        <div class="lang-dots">
-                            <div class="lang-dot active"></div>
-                            <div class="lang-dot active"></div>
-                            <div class="lang-dot active"></div>
-                            <div class="lang-dot active"></div>
-                            <div class="lang-dot"></div>
-                        </div>
+                        <i class="fas fa-check-circle"></i>
+                        <span class="language-name" data-ar="الإنجليزية" data-en="English">الإنجليزية</span>
                     </div>
                 </div>
             </div>
