@@ -29,6 +29,8 @@
             --success: #10b981;
             --gold: #C5A572;
             --gold-bg: rgba(197, 165, 114, 0.12);
+            --whatsapp: #25D366;
+            --whatsapp-bg: rgba(37, 211, 102, 0.12);
         }
 
         body {
@@ -238,6 +240,8 @@
             color: var(--text-main);
             text-decoration: none;
             font-size: 0.82em;
+            cursor: pointer;
+            font-family: inherit;
             transition: all 0.25s ease;
         }
 
@@ -734,6 +738,118 @@
         }
         .qr-image:hover { transform: scale(1.04); }
 
+        /* --- Contact Options Modal --- */
+        .contact-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 7, 13, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+            padding: 15px;
+        }
+
+        .contact-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .contact-modal-box {
+            width: 100%;
+            max-width: 320px;
+            padding: 22px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .contact-modal-overlay.active .contact-modal-box {
+            transform: scale(1);
+        }
+
+        .modal-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .modal-title {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .modal-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.3em;
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            color: #fff;
+        }
+
+        .modal-actions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .modal-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9em;
+            transition: all 0.25s ease;
+        }
+
+        .modal-action-btn.call-action {
+            background: rgba(197, 165, 114, 0.1);
+            border: 1px solid rgba(197, 165, 114, 0.3);
+            color: var(--gold);
+        }
+
+        .modal-action-btn.call-action:hover {
+            background: var(--gold);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(197, 165, 114, 0.3);
+        }
+
+        .modal-action-btn.wa-action {
+            background: var(--whatsapp-bg);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            color: var(--whatsapp);
+        }
+
+        .modal-action-btn.wa-action:hover {
+            background: var(--whatsapp);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+        }
+
         @media (max-width: 900px) {
             .layout-grid { grid-template-columns: 1fr; }
         }
@@ -769,9 +885,10 @@
                     <a href="mailto:mbnq1@outlook.com" class="contact-pill">
                         <i class="fas fa-envelope"></i> mbnq1@outlook.com
                     </a>
-                    <a href="tel:+966566833453" class="contact-pill">
+                    <!-- Clickable Contact Trigger -->
+                    <button type="button" class="contact-pill" onclick="openContactModal()">
                         <i class="fas fa-phone"></i> <span dir="ltr">+966 566 833 453</span>
-                    </a>
+                    </button>
                     <a href="https://linkedin.com/in/mbnq" target="_blank" class="contact-pill">
                         <i class="fab fa-linkedin"></i> linkedin.com/in/mbnq
                     </a>
@@ -1178,6 +1295,26 @@
         </div>
     </div>
 
+    <!-- Contact Method Modal Popup -->
+    <div id="contactModal" class="contact-modal-overlay" onclick="closeContactModal(event)">
+        <div class="contact-modal-box glass-card" onclick="event.stopPropagation()">
+            <div class="modal-header-row">
+                <h3 class="modal-title" data-ar="وسيلة التواصل" data-en="Contact Options">وسيلة التواصل</h3>
+                <button class="modal-close-btn" onclick="closeContactModal()">&times;</button>
+            </div>
+            <div class="modal-actions-list">
+                <a href="tel:+966566833453" class="modal-action-btn call-action" onclick="closeContactModal()">
+                    <i class="fas fa-phone-alt"></i>
+                    <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
+                </a>
+                <a href="https://wa.me/966566833453" target="_blank" class="modal-action-btn wa-action" onclick="closeContactModal()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-ar="محادثة واتساب" data-en="WhatsApp">محادثة واتساب</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
         window.addEventListener('scroll', () => {
             const scrollBar = document.querySelector('.scroll-indicator');
@@ -1205,6 +1342,19 @@
             document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
             document.documentElement.lang = currentLanguage;
         }
+
+        // Contact Modal Controllers
+        function openContactModal() {
+            document.getElementById('contactModal').classList.add('active');
+        }
+
+        function closeContactModal(e) {
+            document.getElementById('contactModal').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeContactModal();
+        });
 
         window.addEventListener('load', () => {
             applyLanguage();
