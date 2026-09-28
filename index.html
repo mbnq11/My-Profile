@@ -5,185 +5,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed Nawaf | Resume</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Tajawal:wght@300;400;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         :root {
-            --primary: #C5A572;
-            --primary-light: #dfc79b;
-            --secondary: #ffe066;
-            --accent: #ff9800;
-            --bg-color: #0b0f19;
-            --card-bg: rgba(18, 22, 34, 0.75);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
-            --success: #10b981;
-            --gold: #C5A572;
-            --gold-bg: rgba(197, 165, 114, 0.12);
-            --whatsapp: #25D366;
-            --whatsapp-bg: rgba(37, 211, 102, 0.12);
+            --apple-bg: #000000;
+            --card-bg: rgba(26, 26, 30, 0.72);
+            --card-border: rgba(255, 255, 255, 0.12);
+            --card-hover-border: rgba(255, 255, 255, 0.28);
+            --apple-blue: #2997ff;
+            --apple-blue-hover: #0071e3;
+            --apple-blue-subtle: rgba(41, 151, 255, 0.12);
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --text-muted: #6e6e73;
+            --apple-badge-bg: rgba(255, 255, 255, 0.08);
+            --apple-badge-text: #e5e5e7;
+            --success: #30d158;
+            --whatsapp: #30d158;
+            --whatsapp-bg: rgba(48, 209, 88, 0.12);
+            --blur: blur(28px);
         }
 
         body {
-            font-family: 'Outfit', 'Tajawal', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Tajawal", "Helvetica Neue", sans-serif;
+            background-color: var(--apple-bg);
+            color: var(--text-primary);
             min-height: 100vh;
-            padding: 18px 12px;
+            padding: 32px 16px;
             overflow-x: hidden;
-            line-height: 1.5;
-            font-size: 14px;
+            line-height: 1.47059;
+            font-size: 15px;
+            letter-spacing: -0.016em;
             position: relative;
-            z-index: 0;
         }
 
-        body::before,
+        /* Subtle Apple Mesh Ambient Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: 20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(41, 151, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(80px);
+        }
+
         body::after {
             content: '';
             position: fixed;
+            bottom: -15%;
+            right: 15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(162, 107, 243, 0.05) 0%, transparent 70%);
             border-radius: 50%;
-            filter: blur(100px);
+            pointer-events: none;
             z-index: -1;
-            animation: float 12s infinite ease-in-out alternate;
+            filter: blur(80px);
         }
 
-        body::before {
-            width: 300px;
-            height: 300px;
-            background: rgba(197, 165, 114, 0.06);
-            top: -10%;
-            left: -10%;
-        }
-
-        body::after {
-            width: 350px;
-            height: 350px;
-            background: rgba(255, 152, 0, 0.05);
-            bottom: -10%;
-            right: -10%;
-            animation-delay: -6s;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(30px, 40px); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* Smooth Top Scroll Bar */
         .scroll-indicator {
             position: fixed;
             top: 0;
             left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--accent));
+            height: 2.5px;
+            background: var(--apple-blue);
             width: 0%;
             z-index: 999;
-            box-shadow: 0 0 8px var(--gold);
+            transition: width 0.1s ease;
         }
 
+        /* Apple Floating Pill Language Button */
         .language-toggle {
             position: fixed;
-            top: 15px;
-            right: 15px;
+            top: 20px;
+            right: 20px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(197, 165, 114, 0.4);
-            border-radius: 20px;
-            padding: 6px 16px;
+            background: rgba(30, 30, 32, 0.85);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 980px;
+            padding: 8px 18px;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 0.82em;
-            color: var(--gold);
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 7px;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            gap: 8px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
         }
 
         [dir="rtl"] .language-toggle {
             right: auto;
-            left: 15px;
+            left: 20px;
         }
 
         .language-toggle:hover {
-            background: var(--gold);
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(197, 165, 114, 0.35);
+            background: rgba(50, 50, 54, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
         }
 
         .container {
-            max-width: 1020px;
+            max-width: 1040px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 24px;
         }
 
+        /* Apple Glass Card Specification */
         .glass-card {
             background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
             border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 20px 24px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-            animation: fadeInUp 0.6s ease backwards;
+            border-radius: 24px;
+            padding: 28px 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.35s ease;
         }
 
         .glass-card:hover {
-            border-color: rgba(197, 165, 114, 0.3);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
         }
 
+        /* Hero Apple Style */
         .hero {
             text-align: center;
+            padding: 44px 24px 34px;
             position: relative;
-            overflow: hidden;
-            padding: 28px 20px 22px;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            background: linear-gradient(180deg, rgba(197, 165, 114, 0.08) 0%, transparent 100%);
-            border-radius: 16px 16px 0 0;
+            background: linear-gradient(180deg, rgba(35, 35, 42, 0.6) 0%, rgba(20, 20, 24, 0.8) 100%);
         }
 
         .profile-img-container {
             position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 12px;
+            width: 112px;
+            height: 112px;
+            margin: 0 auto 16px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #3f3008, #0b0f19);
-            padding: 1.5px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
+            padding: 2px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .profile-img-container:hover {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .profile-img {
@@ -191,41 +178,39 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--bg-color);
-            background-color: var(--bg-color);
+            background-color: #121214;
         }
 
         .hero h1 {
-            font-size: 2.1em;
-            font-weight: 800;
-            margin-bottom: 2px;
-            background: linear-gradient(to right, #fff, var(--primary-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
+            font-size: 2.3em;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 6px;
+            color: #ffffff;
         }
 
         .hero .title {
-            font-size: 0.98em;
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 1.05em;
+            color: var(--apple-blue);
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
         }
 
         .hero .location {
-            font-size: 0.82em;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+            font-size: 0.88em;
+            color: var(--text-secondary);
+            margin-bottom: 22px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 4px 12px;
-            border-radius: 16px;
+            gap: 7px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 5px 14px;
+            border-radius: 980px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
+        /* Apple Compact Action Pills */
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
@@ -236,117 +221,122 @@
         .contact-pill {
             display: flex;
             align-items: center;
-            gap: 7px;
-            padding: 7px 14px;
-            border-radius: 30px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            color: var(--text-main);
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 980px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            color: var(--text-primary);
             text-decoration: none;
-            font-size: 0.82em;
+            font-size: 0.85em;
+            font-weight: 500;
             cursor: pointer;
             font-family: inherit;
-            transition: all 0.25s ease;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .contact-pill:hover {
-            background: var(--gold-bg);
-            border-color: var(--gold);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1.5px);
         }
 
         .contact-pill i {
-            color: var(--gold);
+            color: var(--apple-blue);
             font-size: 0.95em;
         }
 
         .layout-grid {
             display: grid;
             grid-template-columns: 2fr 1.05fr;
-            gap: 18px;
+            gap: 24px;
         }
 
         .main-column,
         .side-column {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 24px;
         }
 
         .section-header {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.18em;
-            font-weight: 800;
-            margin-bottom: 16px;
-            color: #fff;
+            font-size: 1.22em;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
 
         .section-header i {
-            color: var(--gold);
-            background: var(--gold-bg);
+            color: var(--apple-blue);
+            background: var(--apple-blue-subtle);
             width: 32px;
             height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
-            font-size: 0.8em;
+            border-radius: 9px;
+            font-size: 0.85em;
         }
 
+        /* Files Bento Grid */
         .files-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
         }
 
         .file-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 12px 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 18px 12px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
         .file-card:hover {
-            background: var(--gold-bg);
-            border-color: var(--gold);
-            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         .file-card i {
-            font-size: 1.5em;
-            color: var(--gold);
-            margin-bottom: 6px;
+            font-size: 1.6em;
+            color: var(--apple-blue);
+            margin-bottom: 8px;
         }
 
         .file-card h4 {
-            font-size: 0.86em;
-            margin-bottom: 2px;
+            font-size: 0.88em;
+            font-weight: 600;
+            margin-bottom: 3px;
+            letter-spacing: -0.01em;
         }
 
         .file-card p {
-            font-size: 0.72em;
-            color: var(--text-muted);
+            font-size: 0.74em;
+            color: var(--text-secondary);
         }
 
+        /* Experience & Projects (Apple Minimalist Timeline) */
         .timeline-item {
             position: relative;
-            padding-left: 22px;
-            margin-bottom: 18px;
+            padding-left: 24px;
+            margin-bottom: 24px;
         }
 
         [dir="rtl"] .timeline-item {
-            padding-right: 22px;
+            padding-right: 24px;
             padding-left: 0;
         }
 
@@ -354,9 +344,9 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 5px;
-            bottom: -18px;
-            width: 2px;
+            top: 6px;
+            bottom: -24px;
+            width: 1.5px;
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -377,12 +367,12 @@
             content: '';
             position: absolute;
             left: -3.5px;
-            top: 5px;
-            width: 9px;
-            height: 9px;
+            top: 6px;
+            width: 8.5px;
+            height: 8.5px;
             border-radius: 50%;
-            background: var(--gold);
-            box-shadow: 0 0 8px rgba(197, 165, 114, 0.5);
+            background: var(--apple-blue);
+            box-shadow: 0 0 10px rgba(41, 151, 255, 0.5);
         }
 
         [dir="rtl"] .timeline-item::after {
@@ -391,58 +381,65 @@
         }
 
         .job-title {
-            font-size: 1.02em;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 4px;
+            font-size: 1.05em;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: #ffffff;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
-            gap: 7px;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--gold);
-            font-size: 0.78em;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            margin-top: 6px;
-            margin-bottom: 8px;
-            padding: 3px 8px;
-            border-radius: 5px;
-            background: var(--gold-bg);
+            gap: 8px;
         }
 
         .job-meta {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 8px;
-            font-size: 0.78em;
+            margin-bottom: 10px;
+            font-size: 0.8em;
             flex-wrap: wrap;
         }
 
         .company-name {
-            color: var(--primary-light);
-            font-weight: 600;
+            color: #ffffff;
+            font-weight: 500;
         }
 
         .date-badge {
             background: rgba(255, 255, 255, 0.05);
-            padding: 2px 10px;
-            border-radius: 14px;
-            color: var(--text-muted);
+            padding: 3px 10px;
+            border-radius: 980px;
+            color: var(--text-secondary);
         }
 
         .tag-badge {
-            background: var(--gold-bg);
-            border: 1px solid rgba(197, 165, 114, 0.3);
-            color: var(--primary-light);
+            background: var(--apple-blue-subtle);
+            border: 1px solid rgba(41, 151, 255, 0.25);
+            color: var(--apple-blue);
             padding: 2px 10px;
-            border-radius: 14px;
+            border-radius: 980px;
             font-size: 0.78em;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--apple-blue);
+            font-size: 0.8em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-bottom: 10px;
+            padding: 4px 12px;
+            border-radius: 980px;
+            background: var(--apple-blue-subtle);
+        }
+
+        .project-link:hover {
+            background: rgba(41, 151, 255, 0.2);
+            transform: translateY(-1px);
         }
 
         .description-list {
@@ -451,108 +448,99 @@
 
         .description-list li {
             position: relative;
-            padding-left: 15px;
-            margin-bottom: 5px;
-            font-size: 0.83em;
-            color: var(--text-muted);
-            line-height: 1.45;
+            padding-left: 16px;
+            margin-bottom: 7px;
+            font-size: 0.86em;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
         [dir="rtl"] .description-list li {
-            padding-right: 15px;
+            padding-right: 16px;
             padding-left: 0;
         }
 
         .description-list li::before {
-            content: '▹';
+            content: '•';
             position: absolute;
             left: 0;
-            color: var(--gold);
-            font-size: 0.7em;
-            top: 2px;
+            color: var(--apple-blue);
+            font-size: 1em;
+            top: -1px;
         }
 
         [dir="rtl"] .description-list li::before {
-            content: '◀';
             right: 0;
             left: auto;
         }
 
+        /* Skills Groups */
         .skills-groups-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .skill-group-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 14px 16px;
             transition: all 0.25s ease;
         }
 
         .skill-group-card:hover {
-            border-color: rgba(197, 165, 114, 0.25);
-            background: rgba(255, 255, 255, 0.03);
-            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .skill-group-header {
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
             font-size: 0.88em;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 8px;
-            padding-bottom: 4px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .skill-group-header i {
-            font-size: 0.95em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
         }
 
         .skills-tags-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 8px;
         }
 
         .skill-tag {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.77em;
-            color: #fff;
+            padding: 5px 12px;
+            border-radius: 980px;
+            font-size: 0.8em;
+            font-weight: 400;
+            color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 6px;
-            transition: all 0.25s ease;
+            gap: 7px;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .skill-tag:hover {
-            background: var(--gold-bg);
-            border-color: var(--gold);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
         }
 
         .skill-tag i {
-            color: var(--gold);
+            color: var(--apple-blue);
             font-size: 0.85em;
         }
 
-        .skill-tag.security i {
-            color: var(--accent);
-        }
-
+        /* Sidebar Cards */
         .side-card-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             padding-bottom: 8px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
@@ -561,54 +549,45 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.98em;
-            font-weight: 700;
-            color: #fff;
+            font-size: 1em;
+            font-weight: 600;
+            color: #ffffff;
         }
 
         .side-card-title .icon-box {
             width: 28px;
             height: 28px;
-            border-radius: 6px;
-            background: #050505;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold);
-            font-size: 0.75em;
+            color: var(--apple-blue);
+            font-size: 0.78em;
         }
 
         .side-badge {
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 600;
-            color: var(--gold);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            border-radius: 980px;
         }
 
         .sidebar-item-box {
-            padding: 12px 14px;
-            border-radius: 10px;
-            background: #050505;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 2.5px solid var(--gold);
-            margin-bottom: 10px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 12px;
             transition: all 0.25s ease;
         }
 
-        [dir="rtl"] .sidebar-item-box {
-            border-left: 1px solid rgba(255, 255, 255, 0.08);
-            border-right: 2.5px solid var(--gold);
-        }
-
         .sidebar-item-box:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(2px);
-        }
-
-        [dir="rtl"] .sidebar-item-box:hover {
-            transform: translateX(-2px);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .sidebar-item-box:last-child {
@@ -616,98 +595,83 @@
         }
 
         .sidebar-item-title {
-            font-size: 0.88em;
-            font-weight: 700;
-            color: #fff;
+            font-size: 0.92em;
+            font-weight: 600;
+            color: #ffffff;
             margin-bottom: 4px;
             display: flex;
             align-items: flex-start;
-            gap: 6px;
+            gap: 7px;
         }
 
         .sidebar-item-title i {
-            color: var(--gold);
-            margin-top: 2px;
-            font-size: 0.8em;
+            color: var(--apple-blue);
+            margin-top: 3px;
+            font-size: 0.85em;
         }
 
         .side-subtext {
-            color: var(--gold);
-            font-size: 0.76em;
+            color: var(--apple-blue);
+            font-size: 0.8em;
             font-weight: 500;
-            margin-bottom: 4px;
-            padding-left: 18px;
+            margin-bottom: 5px;
+            padding-left: 20px;
         }
 
         [dir="rtl"] .side-subtext {
             padding-left: 0;
-            padding-right: 18px;
+            padding-right: 20px;
         }
 
         .side-description {
-            color: var(--text-muted);
-            font-size: 0.75em;
+            color: var(--text-secondary);
+            font-size: 0.79em;
             line-height: 1.45;
-            padding-left: 18px;
+            padding-left: 20px;
         }
 
         [dir="rtl"] .side-description {
             padding-left: 0;
-            padding-right: 18px;
+            padding-right: 20px;
         }
 
         .cert-highlights-box {
-            margin-top: 8px;
-            padding: 8px 10px;
-            border-radius: 6px;
-            background: #0a0a0a;
-            border-left: 2px solid var(--gold);
-            font-size: 0.73em;
-            color: #94a3b8;
-            line-height: 1.5;
-        }
-
-        [dir="rtl"] .cert-highlights-box {
-            border-left: none;
-            border-right: 2px solid var(--gold);
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.77em;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         .cert-highlights-box span.bullet {
-            color: var(--gold);
+            color: var(--apple-blue);
             font-weight: bold;
-            margin-right: 3px;
+            margin-right: 4px;
         }
 
         [dir="rtl"] .cert-highlights-box span.bullet {
             margin-right: 0;
-            margin-left: 3px;
+            margin-left: 4px;
         }
 
         .language-item {
-            padding: 11px 14px;
-            border-radius: 10px;
-            background: #050505;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 2.5px solid var(--gold);
+            padding: 12px 16px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
-            transition: all 0.25s ease;
-        }
-
-        [dir="rtl"] .language-item {
-            border-left: 1px solid rgba(255, 255, 255, 0.08);
-            border-right: 2.5px solid var(--gold);
+            gap: 12px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
         }
 
         .language-item:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(2px);
-        }
-
-        [dir="rtl"] .language-item:hover {
-            transform: translateX(-2px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
         }
 
         .language-item:last-child {
@@ -715,36 +679,37 @@
         }
 
         .language-item i {
-            color: var(--gold);
-            font-size: 0.85em;
+            color: var(--apple-blue);
+            font-size: 0.9em;
         }
 
         .language-name {
-            font-size: 0.88em;
-            font-weight: 700;
-            color: #fff;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #ffffff;
         }
 
         .qr-box { text-align: center; }
         .qr-image {
             width: 110px;
             height: 110px;
-            background: #fff;
-            padding: 6px;
-            border-radius: 12px;
-            margin: 0 auto 8px;
+            background: #ffffff;
+            padding: 8px;
+            border-radius: 18px;
+            margin: 0 auto 10px;
             display: block;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            transition: transform 0.25s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .qr-image:hover { transform: scale(1.04); }
 
+        /* Apple Action Sheet Modal */
         .contact-modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(5, 7, 13, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -752,7 +717,7 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.25s ease, visibility 0.25s ease;
-            padding: 15px;
+            padding: 16px;
         }
 
         .contact-modal-overlay.active {
@@ -763,12 +728,14 @@
         .contact-modal-box {
             width: 100%;
             max-width: 320px;
-            padding: 22px 20px;
-            border-radius: 20px;
+            background: rgba(30, 30, 34, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 24px 22px;
             text-align: center;
-            transform: scale(0.9);
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
+            transform: scale(0.92);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
         }
 
         .contact-modal-overlay.active .contact-modal-box {
@@ -779,36 +746,39 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 18px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 20px;
         }
 
         .modal-title {
-            font-size: 1.05em;
-            font-weight: 700;
-            color: #fff;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #ffffff;
         }
 
         .modal-close-btn {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.08);
             border: none;
-            color: var(--text-muted);
-            font-size: 1.3em;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            color: var(--text-secondary);
+            font-size: 1.1em;
             cursor: pointer;
-            line-height: 1;
-            padding: 4px;
-            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
         }
 
         .modal-close-btn:hover {
-            color: #fff;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
         }
 
         .modal-actions-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .modal-action-btn {
@@ -816,38 +786,35 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 12px 18px;
-            border-radius: 12px;
+            padding: 13px 20px;
+            border-radius: 14px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9em;
-            transition: all 0.25s ease;
+            font-weight: 500;
+            font-size: 0.92em;
+            transition: all 0.2s ease;
         }
 
         .modal-action-btn.call-action {
-            background: rgba(197, 165, 114, 0.1);
-            border: 1px solid rgba(197, 165, 114, 0.3);
-            color: var(--gold);
+            background: var(--apple-blue);
+            color: #ffffff;
         }
 
         .modal-action-btn.call-action:hover {
-            background: var(--gold);
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(197, 165, 114, 0.3);
+            background: var(--apple-blue-hover);
+            transform: translateY(-1.5px);
         }
 
         .modal-action-btn.wa-action {
-            background: var(--whatsapp-bg);
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            color: var(--whatsapp);
+            background: rgba(48, 209, 88, 0.15);
+            border: 1px solid rgba(48, 209, 88, 0.3);
+            color: var(--success);
         }
 
         .modal-action-btn.wa-action:hover {
-            background: var(--whatsapp);
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+            background: var(--success);
+            color: #000000;
+            font-weight: 600;
+            transform: translateY(-1.5px);
         }
 
         @media (max-width: 900px) {
@@ -879,7 +846,7 @@
                 </div>
 
                 <div class="location">
-                    <i class="fas fa-map-marker-alt" style="color: var(--gold)"></i>
+                    <i class="fas fa-map-marker-alt" style="color: var(--apple-blue)"></i>
                     <span data-ar="المملكة العربية السعودية - الرياض" data-en="Saudi Arabia - Riyadh">Saudi Arabia - Riyadh</span>
                 </div>
 
@@ -905,7 +872,7 @@
             <div class="main-column">
                 <div class="glass-card">
                     <h2 class="section-header">
-                        <i class="fas fa-cloud-download-alt"></i>
+                        <i class="fas fa-arrow-down-to-bracket"></i>
                         <span data-ar="الملفات والمستندات" data-en="Files & Documents">Files & Documents</span>
                     </h2>
                     <div class="files-grid">
@@ -932,10 +899,10 @@
 
                 <div class="glass-card">
                     <h2 class="section-header">
-                        <i class="fas fa-user-astronaut"></i>
+                        <i class="fas fa-user"></i>
                         <span data-ar="الملخص المهني" data-en="Professional Profile">Professional Profile</span>
                     </h2>
-                    <p style="color: var(--text-muted); font-size: 0.85em; text-align: justify; line-height: 1.6;"
+                    <p style="color: var(--text-secondary); font-size: 0.9em; text-align: justify; line-height: 1.6;"
                         data-ar="متخصص في تقنية المعلومات والأمن السيبراني، بخبرة تطوعية لمدة 11 شهرًا في الأمن السيبراني والحوكمة والمخاطر والامتثال (GRC)، وتدريب تعاوني لمدة شهرين في تقنية المعلومات. لدي خبرة عملية في دعم أكثر من 20 موظفاً، ومراجعة وتدقيق أكثر من 100 مستند ووثيقة في الأمن السيبراني، وتطوير أنظمة تم اختبارها بأكثر من 8,000 مهمة. أمتلك مهارات في دعم تقنية المعلومات، والحوكمة والمخاطر والامتثال، وعمليات الأمن السيبراني (SOC)، والأمن السيبراني، والأنظمة والشبكات، واستكشاف الأخطاء التقنية وإصلاحها، مع قدرة قوية على التعلم والتكيف السريع مع التقنيات وبيئات العمل الجديدة."
                         data-en="IT &amp; Cybersecurity professional with 11 months of Cybersecurity &amp; GRC volunteer experience and 2 months of IT Co-op experience. Hands-on experience supporting 20+ employees, auditing 100+ cybersecurity documents, and developing systems tested with 8,000+ tasks. Skilled in IT Support, GRC, SOC, Cybersecurity, Systems, Networking, and Technical Troubleshooting, with a strong ability to learn quickly and adapt to new technologies and work environments.">
                         IT &amp; Cybersecurity professional with 11 months of Cybersecurity &amp; GRC volunteer experience and 2 months of IT Co-op experience. Hands-on experience supporting 20+ employees, auditing 100+ cybersecurity documents, and developing systems tested with 8,000+ tasks. Skilled in IT Support, GRC, SOC, Cybersecurity, Systems, Networking, and Technical Troubleshooting, with a strong ability to learn quickly and adapt to new technologies and work environments.
@@ -950,7 +917,6 @@
 
                     <div class="timeline-item">
                         <div class="job-title" data-ar="أخصائي الأمن السيبراني والحوكمة وإدارة المخاطر والامتثال (GRC) – متطوع" data-en="Cybersecurity & GRC Specialist – Volunteer">
-                            <i class="fas fa-shield-alt" style="color: var(--accent);"></i>
                             Cybersecurity & GRC Specialist – Volunteer
                         </div>
                         <div class="job-meta">
@@ -977,7 +943,6 @@
                     <div class="timeline-item">
                         <div class="job-title" data-ar="تقنية معلومات – تدريب تعاوني"
                             data-en="Information Technology - COOP">
-                            <i class="fas fa-laptop" style="color: var(--gold);"></i>
                             Information Technology - COOP
                         </div>
                         <div class="job-meta">
@@ -998,14 +963,13 @@
 
                 <div class="glass-card">
                     <h2 class="section-header">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-layer-group"></i>
                         <span data-ar="المشاريع" data-en="Projects">Projects</span>
                     </h2>
 
                     <div class="timeline-item">
                         <div class="job-title" data-ar="نظام إدارة المهام والحوكمة"
                             data-en="Task Management & Governance System">
-                            <i class="fas fa-tasks" style="color: var(--gold);"></i>
                             Task Management & Governance System
                         </div>
                         <div class="job-meta">
@@ -1015,7 +979,7 @@
                         </div>
                         <a href="https://drive.google.com/drive/folders/18WCLLiGQQ_fYNvAYo7yE2rkrKVEHioOe?usp=drive_link"
                             target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
                             <span data-ar="عرض المشروع" data-en="View Project">View Project</span>
                         </a>
                         <ul class="description-list">
@@ -1037,7 +1001,6 @@
                     <div class="timeline-item">
                         <div class="job-title" data-ar="أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة"
                             data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">
-                            <i class="fas fa-seedling" style="color: var(--success);"></i>
                             Agri Zone – Full-Stack Agricultural E-Commerce Platform
                         </div>
                         <div class="job-meta">
@@ -1048,7 +1011,7 @@
                         </div>
                         <a href="https://drive.google.com/drive/folders/14KsbEnfKMFHTkZa6H7P2HfrxGGnfnKP2?usp=drive_link"
                             target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
                             <span data-ar="عرض المشروع" data-en="View Project">View Project</span>
                         </a>
                         <ul class="description-list">
@@ -1068,7 +1031,7 @@
                 <!-- Grouped Skills Section -->
                 <div class="glass-card">
                     <h2 class="section-header">
-                        <i class="fas fa-terminal"></i>
+                        <i class="fas fa-code"></i>
                         <span data-ar="المهارات التقنية والمهنية" data-en="Skills">Skills</span>
                     </h2>
                     
@@ -1076,14 +1039,14 @@
                         <!-- Group 1: Information Technology (IT) -->
                         <div class="skill-group-card">
                             <div class="skill-group-header">
-                                <i class="fas fa-desktop"></i>
+                                <i class="fas fa-desktop" style="color: var(--apple-blue);"></i>
                                 <span data-ar="تقنية المعلومات (IT)" data-en="Information Technology (IT)">Information Technology (IT)</span>
                             </div>
                             <div class="skills-tags-container">
                                 <div class="skill-tag"><i class="fas fa-headset"></i> <span data-ar="دعم المستخدم النهائي (End-User Support)" data-en="End-User Support">End-User Support</span></div>
                                 <div class="skill-tag"><i class="fab fa-windows"></i> <span>Windows Server</span></div>
                                 <div class="skill-tag"><i class="fas fa-life-ring"></i> <span>Help Desk</span></div>
-                                <div class="skill-tag"><i class="fas fa-tools"></i> <span data-ar="دعم الأجهزة والبرمجيات" data-en="Hardware & Software Support">Hardware & Software Support</span></div>
+                                <div class="skill-tag"><i class="fas fa-screwdriver-wrench"></i> <span data-ar="دعم الأجهزة والبرمجيات" data-en="Hardware & Software Support">Hardware & Software Support</span></div>
                                 <div class="skill-tag"><i class="fas fa-sitemap"></i> <span>Active Directory</span></div>
                             </div>
                         </div>
@@ -1091,47 +1054,47 @@
                         <!-- Group 2: Cybersecurity -->
                         <div class="skill-group-card">
                             <div class="skill-group-header">
-                                <i class="fas fa-shield-alt" style="color: var(--accent);"></i>
+                                <i class="fas fa-shield-halved" style="color: var(--apple-blue);"></i>
                                 <span data-ar="الأمن السيبراني" data-en="Cybersecurity">Cybersecurity</span>
                             </div>
                             <div class="skills-tags-container">
-                                <div class="skill-tag security"><i class="fas fa-balance-scale"></i> <span data-ar="الحوكمة والمخاطر والالتزام (GRC)" data-en="Governance, Risk & Compliance (GRC)">Governance, Risk & Compliance (GRC)</span></div>
-                                <div class="skill-tag security"><i class="fas fa-shield-alt"></i> <span data-ar="مركز العمليات الأمنية (SOC)" data-en="Security Operations Center (SOC)">Security Operations Center (SOC)</span></div>
-                                <div class="skill-tag security"><i class="fas fa-chart-line"></i> <span>SIEM</span></div>
-                                <div class="skill-tag security"><i class="fas fa-bug"></i> <span data-ar="تقييم الثغرات (Vulnerability Assessment)" data-en="Vulnerability Assessment">Vulnerability Assessment</span></div>
-                                <div class="skill-tag security"><i class="fas fa-tasks"></i> <span data-ar="إدارة الثغرات الأمنية" data-en="Vulnerability Management">Vulnerability Management</span></div>
-                                <div class="skill-tag security"><i class="fas fa-user-secret"></i> <span data-ar="اختبار الاختراق (Penetration Testing)" data-en="Penetration Testing">Penetration Testing</span></div>
-                                <div class="skill-tag security"><i class="fas fa-lock"></i> <span data-ar="أمن الأنظمة والشبكات" data-en="System & Network Security">System & Network Security</span></div>
+                                <div class="skill-tag"><i class="fas fa-scale-balanced"></i> <span data-ar="الحوكمة والمخاطر والالتزام (GRC)" data-en="Governance, Risk & Compliance (GRC)">Governance, Risk & Compliance (GRC)</span></div>
+                                <div class="skill-tag"><i class="fas fa-shield-alt"></i> <span data-ar="مركز العمليات الأمنية (SOC)" data-en="Security Operations Center (SOC)">Security Operations Center (SOC)</span></div>
+                                <div class="skill-tag"><i class="fas fa-chart-line"></i> <span>SIEM</span></div>
+                                <div class="skill-tag"><i class="fas fa-bug"></i> <span data-ar="تقييم الثغرات (Vulnerability Assessment)" data-en="Vulnerability Assessment">Vulnerability Assessment</span></div>
+                                <div class="skill-tag"><i class="fas fa-list-check"></i> <span data-ar="إدارة الثغرات الأمنية" data-en="Vulnerability Management">Vulnerability Management</span></div>
+                                <div class="skill-tag"><i class="fas fa-user-secret"></i> <span data-ar="اختبار الاختراق (Penetration Testing)" data-en="Penetration Testing">Penetration Testing</span></div>
+                                <div class="skill-tag"><i class="fas fa-lock"></i> <span data-ar="أمن الأنظمة والشبكات" data-en="System & Network Security">System & Network Security</span></div>
                             </div>
                         </div>
 
                         <!-- Group 3: Security Tools & Frameworks -->
                         <div class="skill-group-card">
                             <div class="skill-group-header">
-                                <i class="fas fa-tools"></i>
+                                <i class="fas fa-toolbox" style="color: var(--apple-blue);"></i>
                                 <span data-ar="أدوات وأطر الأمن السيبراني" data-en="Security Tools & Frameworks">Security Tools & Frameworks</span>
                             </div>
                             <div class="skills-tags-container">
-                                <div class="skill-tag security"><i class="fas fa-terminal"></i> <span>Kali Linux</span></div>
-                                <div class="skill-tag security"><i class="fas fa-search"></i> <span>OpenVAS</span></div>
-                                <div class="skill-tag security"><i class="fas fa-spider"></i> <span>Burp Suite</span></div>
-                                <div class="skill-tag security"><i class="fas fa-network-wired"></i> <span>Nmap</span></div>
-                                <div class="skill-tag security"><i class="fas fa-chart-area"></i> <span>Splunk</span></div>
-                                <div class="skill-tag security"><i class="fas fa-book"></i> <span>NIST</span></div>
-                                <div class="skill-tag security"><i class="fas fa-certificate"></i> <span>ISO 27001</span></div>
-                                <div class="skill-tag security"><i class="fas fa-shield-virus"></i> <span>NCA</span></div>
+                                <div class="skill-tag"><i class="fas fa-terminal"></i> <span>Kali Linux</span></div>
+                                <div class="skill-tag"><i class="fas fa-magnifying-glass"></i> <span>OpenVAS</span></div>
+                                <div class="skill-tag"><i class="fas fa-spider"></i> <span>Burp Suite</span></div>
+                                <div class="skill-tag"><i class="fas fa-network-wired"></i> <span>Nmap</span></div>
+                                <div class="skill-tag"><i class="fas fa-chart-area"></i> <span>Splunk</span></div>
+                                <div class="skill-tag"><i class="fas fa-book"></i> <span>NIST</span></div>
+                                <div class="skill-tag"><i class="fas fa-certificate"></i> <span>ISO 27001</span></div>
+                                <div class="skill-tag"><i class="fas fa-shield-virus"></i> <span>NCA</span></div>
                             </div>
                         </div>
 
                         <!-- Group 4: Systems & Infrastructure -->
                         <div class="skill-group-card">
                             <div class="skill-group-header">
-                                <i class="fas fa-server"></i>
+                                <i class="fas fa-server" style="color: var(--apple-blue);"></i>
                                 <span data-ar="الأنظمة والبنية التحتية" data-en="Systems & Infrastructure">Systems & Infrastructure</span>
                             </div>
                             <div class="skills-tags-container">
-                                <div class="skill-tag"><i class="fas fa-project-diagram"></i> <span data-ar="تحليل النظم (Systems Analysis)" data-en="Systems Analysis">Systems Analysis</span></div>
-                                <div class="skill-tag"><i class="fas fa-hdd"></i> <span data-ar="البنية التحتية (IT Infrastructure)" data-en="IT Infrastructure">IT Infrastructure</span></div>
+                                <div class="skill-tag"><i class="fas fa-diagram-project"></i> <span data-ar="تحليل النظم (Systems Analysis)" data-en="Systems Analysis">Systems Analysis</span></div>
+                                <div class="skill-tag"><i class="fas fa-hard-drive"></i> <span data-ar="البنية التحتية (IT Infrastructure)" data-en="IT Infrastructure">IT Infrastructure</span></div>
                                 <div class="skill-tag"><i class="fas fa-cloud"></i> <span data-ar="البيئات الافتراضية (Virtual Environments)" data-en="Virtual Environments">Virtual Environments</span></div>
                                 <div class="skill-tag"><i class="fas fa-cubes"></i> <span data-ar="الهيكلية التقنية (Technical Architecture)" data-en="Technical Architecture">Technical Architecture</span></div>
                             </div>
@@ -1140,7 +1103,7 @@
                         <!-- Group 5: Networking -->
                         <div class="skill-group-card">
                             <div class="skill-group-header">
-                                <i class="fas fa-network-wired"></i>
+                                <i class="fas fa-network-wired" style="color: var(--apple-blue);"></i>
                                 <span data-ar="الشبكات" data-en="Networking">Networking</span>
                             </div>
                             <div class="skills-tags-container">
@@ -1155,21 +1118,21 @@
                         <!-- Group 6: Data & Databases -->
                         <div class="skill-group-card">
                             <div class="skill-group-header">
-                                <i class="fas fa-database"></i>
+                                <i class="fas fa-database" style="color: var(--apple-blue);"></i>
                                 <span data-ar="البيانات وقواعد البيانات" data-en="Data & Databases">Data & Databases</span>
                             </div>
                             <div class="skills-tags-container">
                                 <div class="skill-tag"><i class="fas fa-database"></i> <span>MySQL</span></div>
                                 <div class="skill-tag"><i class="fas fa-server"></i> <span>SQL Server</span></div>
                                 <div class="skill-tag"><i class="fas fa-chart-pie"></i> <span>Power BI</span></div>
-                                <div class="skill-tag"><i class="fas fa-chart-bar"></i> <span data-ar="تحليل البيانات (Data Analysis)" data-en="Data Analysis">Data Analysis</span></div>
+                                <div class="skill-tag"><i class="fas fa-chart-simple"></i> <span data-ar="تحليل البيانات (Data Analysis)" data-en="Data Analysis">Data Analysis</span></div>
                             </div>
                         </div>
 
                         <!-- Group 7: Tools & Management -->
                         <div class="skill-group-card">
                             <div class="skill-group-header">
-                                <i class="fas fa-cogs"></i>
+                                <i class="fas fa-sliders" style="color: var(--apple-blue);"></i>
                                 <span data-ar="الأدوات والإدارة" data-en="Tools & Management">Tools & Management</span>
                             </div>
                             <div class="skills-tags-container">
@@ -1196,7 +1159,7 @@
                         target="_blank" title="View all files">
                         <img src="QR.png" alt="QR Code" class="qr-image">
                     </a>
-                    <p style="font-size: 0.76em; color: var(--text-muted); margin-top: 2px;"
+                    <p style="font-size: 0.78em; color: var(--text-secondary); margin-top: 2px;"
                         data-ar="امسح الرمز للوصول السريع للنسخة التفاعلية والمرفقات" 
                         data-en="Scan the QR code to access the interactive version and attachments.">
                         Scan the QR code to access the interactive version and attachments.
@@ -1239,7 +1202,7 @@
 
                     <div class="sidebar-item-box">
                         <h3 class="sidebar-item-title">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-halved"></i>
                             <span data-ar="تخصص الأمن السيبراني" data-en="Cybersecurity Specialization">Cybersecurity Specialization</span>
                         </h3>
                         <p class="side-subtext" data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid University</p>
@@ -1247,7 +1210,7 @@
 
                     <div class="sidebar-item-box">
                         <h3 class="sidebar-item-title">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-halved"></i>
                             <span data-ar="الشهادة الاحترافية في الأمن السيبراني من IBM" data-en="IBM Cybersecurity Professional Certificate">IBM Cybersecurity Professional Certificate</span>
                         </h3>
                         <p class="side-subtext" data-ar="IBM" data-en="IBM">IBM</p>
@@ -1267,7 +1230,7 @@
                             <i class="fas fa-book-open"></i>
                             <span data-ar="دورات إضافية" data-en="Additional Courses">Additional Courses</span>
                         </h3>
-                        <p class="side-description" style="padding-top: 3px;" data-ar="أساسيات الويب • أساسيات البيانات • أساسيات إدارة المشاريع" data-en="Fundamentals of Web • Data Fundamentals • Project Management Foundations">
+                        <p class="side-description" style="padding-top: 4px;" data-ar="أساسيات الويب • أساسيات البيانات • أساسيات إدارة المشاريع" data-en="Fundamentals of Web • Data Fundamentals • Project Management Foundations">
                             Fundamentals of Web • Data Fundamentals • Project Management Foundations
                         </p>
                     </div>
@@ -1283,12 +1246,12 @@
                     </div>
 
                     <div class="language-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-circle-check"></i>
                         <span class="language-name" data-ar="العربية" data-en="Arabic">Arabic</span>
                     </div>
 
                     <div class="language-item">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-circle-check"></i>
                         <span class="language-name" data-ar="الإنجليزية" data-en="English">English</span>
                     </div>
                 </div>
@@ -1296,16 +1259,16 @@
         </div>
     </div>
 
-    <!-- Contact Method Modal Popup -->
+    <!-- Contact Method Modal Popup (iOS Sheet Style) -->
     <div id="contactModal" class="contact-modal-overlay" onclick="closeContactModal(event)">
-        <div class="contact-modal-box glass-card" onclick="event.stopPropagation()">
+        <div class="contact-modal-box" onclick="event.stopPropagation()">
             <div class="modal-header-row">
                 <h3 class="modal-title" data-ar="وسيلة التواصل" data-en="Contact Options">Contact Options</h3>
                 <button class="modal-close-btn" onclick="closeContactModal()">&times;</button>
             </div>
             <div class="modal-actions-list">
                 <a href="tel:+966566833453" class="modal-action-btn call-action" onclick="closeContactModal()">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-phone"></i>
                     <span data-ar="اتصال مباشر" data-en="Direct Call">Direct Call</span>
                 </a>
                 <a href="https://wa.me/966566833453" target="_blank" class="modal-action-btn wa-action" onclick="closeContactModal()">
@@ -1323,7 +1286,6 @@
             scrollBar.style.width = scrollPercentage + '%';
         });
 
-        // Default language is English
         let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
 
         function toggleLanguage() {
@@ -1337,17 +1299,17 @@
             document.querySelectorAll('[data-ar][data-en]').forEach(el => {
                 el.innerHTML = currentLanguage === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
             });
-            // Button clearly shows the destination language
             document.getElementById('langBtn').textContent = currentLanguage === 'en' ? 'العربية' : 'English';
         }
 
         function updateDirection() {
             document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
             document.documentElement.lang = currentLanguage;
-            document.body.style.fontFamily = currentLanguage === 'ar' ? "'Tajawal', 'Outfit', sans-serif" : "'Outfit', 'Tajawal', sans-serif";
+            document.body.style.fontFamily = currentLanguage === 'ar' 
+                ? "'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif" 
+                : "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif";
         }
 
-        // Contact Modal Controllers
         function openContactModal() {
             document.getElementById('contactModal').classList.add('active');
         }
