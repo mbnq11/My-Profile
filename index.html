@@ -71,7 +71,7 @@
         }
 
         .nav-content {
-            max-width: 1080px;
+            max-width: 1200px;
             margin: 0 auto;
             width: 100%;
             padding: 0 24px;
@@ -116,9 +116,9 @@
 
         /* Container Layout */
         .container {
-            max-width: 1080px;
+            max-width: 1200px;
             margin: 32px auto 0;
-            padding: 0 20px;
+            padding: 0 24px;
             display: flex;
             flex-direction: column;
             gap: 24px;
@@ -231,11 +231,12 @@
             font-size: 14px;
         }
 
-        /* 2-Columns Grid */
+        /* 2-Columns Grid for Desktop */
         .layout-grid {
             display: grid;
-            grid-template-columns: 2fr 1.05fr;
+            grid-template-columns: 1.75fr 1.25fr;
             gap: 24px;
+            align-items: start;
         }
 
         .main-column,
@@ -338,7 +339,7 @@
         .apple-timeline {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 20px;
         }
 
         .timeline-card {
@@ -452,10 +453,10 @@
             left: auto;
         }
 
-        /* Grouped Skills */
+        /* Grouped Skills - 2 columns grid for Desktop */
         .skills-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px;
         }
 
@@ -464,6 +465,8 @@
             background: #fbfbfd;
             border-radius: 18px;
             padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
         }
 
         .skill-group-title {
@@ -621,7 +624,7 @@
             font-size: 15px;
         }
 
-        /* Modal Dialog (iOS Alert Controller Style) */
+        /* Modal Dialog */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -723,7 +726,8 @@
             background: rgba(52, 199, 89, 0.2);
         }
 
-        @media (max-width: 900px) {
+        /* Mobile & Tablet Responsiveness */
+        @media (max-width: 960px) {
             .hero-card {
                 flex-direction: column-reverse;
                 text-align: center;
@@ -739,6 +743,10 @@
             }
 
             .layout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -969,7 +977,7 @@
                     </div>
                 </div>
 
-                <!-- Skills -->
+                <!-- Skills (Bento 2-columns internal layout) -->
                 <div class="bento-card">
                     <div class="section-header">
                         <div class="section-icon"><i class="fas fa-cpu"></i></div>
@@ -1064,7 +1072,7 @@
                             </div>
                         </div>
 
-                        <div class="skill-group">
+                        <div class="skill-group" style="grid-column: 1 / -1;">
                             <div class="skill-group-title">
                                 <i class="fas fa-sliders"></i>
                                 <span data-ar="الأدوات والإدارة" data-en="Tools & Management">Tools & Management</span>
