@@ -101,6 +101,10 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
 @media(max-width:600px){.credential-grid{gap:16px}.credential-grid>.bento-card{padding:24px 20px}#certifications-card .cert-specs{grid-template-columns:minmax(0,1fr);gap:5px}#languages-card{gap:0 22px}}
 
 .btn-email{background:var(--apple-blue-light);color:var(--apple-blue)}.modal-action-btn{min-height:48px}
+/* Compact profile image, with one source and restrained crop. */
+.hero-card .hero-avatar-wrap{width:112px;height:112px;min-width:112px;min-height:112px;border-width:3px}
+.hero-card .hero-avatar{width:100%;height:100%;transform:scale(1.15);transform-origin:50% 40%;object-fit:cover}
+@media(max-width:600px){.hero-card .hero-avatar-wrap{width:96px;height:96px;min-width:96px;min-height:96px;border-width:3px}}
 </style>
 </head>
 
@@ -150,7 +154,6 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
 
             <div class="hero-avatar-wrap">
     <span class="avatar-fallback" aria-hidden="true" data-ar="م ن" data-en="MN">MN</span>
-    <img src="profile-photo.jpg" alt="Mohammed Nawaf" class="hero-avatar" width="3464" height="3464" decoding="async" fetchpriority="high" onerror="this.style.display='none'">
     <img src="Mohammed%20Nawaf.png" alt="Mohammed Nawaf" class="hero-avatar" width="3464" height="3464" decoding="async" fetchpriority="high" onerror="this.style.display='none'">
 </div>
         </div>
