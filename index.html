@@ -4,759 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Nawaf | Resume</title>
+    <title>Mohammed Nawaf | IT & Cybersecurity Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        :root {
-            --apple-bg: #f5f5f7;
-            --apple-card: #ffffff;
-            --apple-card-subtle: #fbfbfd;
-            --apple-border: rgba(0, 0, 0, 0.08);
-            --apple-border-hover: rgba(0, 0, 0, 0.16);
-            --apple-blue: #0071e3;
-            --apple-blue-hover: #0077ed;
-            --apple-blue-light: rgba(0, 113, 227, 0.08);
-            --text-primary: #1d1d1f;
-            --text-secondary: #6e6e73;
-            --text-tertiary: #86868b;
-            --apple-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
-            --apple-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
-            --success: #34c759;
-            --success-light: rgba(52, 199, 89, 0.12);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Tajawal", "Helvetica Neue", sans-serif;
-            background-color: var(--apple-bg);
-            color: var(--text-primary);
-            min-height: 100vh;
-            line-height: 1.5;
-            font-size: 15px;
-            letter-spacing: -0.016em;
-            padding-bottom: 60px;
-        }
-
-        /* Apple Blur Navigation Bar */
-        .apple-nav {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid var(--apple-border);
-            height: 52px;
-            display: flex;
-            align-items: center;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 2px;
-            background: var(--apple-blue);
-            width: 0%;
-            transition: width 0.1s ease;
-        }
-
-        .nav-content {
-            max-width: 1080px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-brand {
-            font-weight: 600;
-            font-size: 15px;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-brand i {
-            font-size: 16px;
-            color: var(--apple-blue);
-        }
-
-        .language-toggle {
-            background: rgba(0, 0, 0, 0.05);
-            border: 1px solid transparent;
-            border-radius: 980px;
-            padding: 6px 14px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 13px;
-            color: var(--text-primary);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .language-toggle:hover {
-            background: rgba(0, 0, 0, 0.08);
-            color: var(--apple-blue);
-        }
-
-        /* Container Layout */
-        .container {
-            max-width: 1080px;
-            margin: 32px auto 0;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        /* Bento Grid Framework */
-        .bento-card {
-            background: var(--apple-card);
-            border-radius: 24px;
-            border: 1px solid var(--apple-border);
-            box-shadow: var(--apple-shadow);
-            padding: 32px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .bento-card:hover {
-            box-shadow: var(--apple-shadow-hover);
-            border-color: var(--apple-border-hover);
-        }
-
-        /* Hero Card */
-        .hero-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 36px;
-            padding: 44px 48px;
-            background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
-        }
-
-        .hero-info {
-            flex: 1;
-        }
-
-        .hero-avatar-wrap {
-            position: relative;
-            width: 136px;
-            height: 136px;
-            border-radius: 50%;
-            padding: 4px;
-            background: #ffffff;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            flex-shrink: 0;
-        }
-
-        .hero-avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            background-color: #f0f0f2;
-        }
-
-        .hero-name {
-            font-size: 2.4em;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-            line-height: 1.15;
-        }
-
-        .hero-role {
-            font-size: 1.15em;
-            font-weight: 500;
-            color: var(--apple-blue);
-            margin-bottom: 12px;
-        }
-
-        .hero-location {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.88em;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        .hero-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .apple-pill-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 980px;
-            background: rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 13.5px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .apple-pill-btn:hover {
-            background: var(--apple-blue-light);
-            color: var(--apple-blue);
-            border-color: rgba(0, 113, 227, 0.2);
-            transform: translateY(-1px);
-        }
-
-        .apple-pill-btn i {
-            color: var(--apple-blue);
-            font-size: 14px;
-        }
-
-        /* 2-Columns Grid */
-        .layout-grid {
-            display: grid;
-            grid-template-columns: 2fr 1.05fr;
-            gap: 24px;
-        }
-
-        .main-column,
-        .side-column {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        /* Section Titles */
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .section-icon {
-            width: 34px;
-            height: 34px;
-            border-radius: 10px;
-            background: var(--apple-blue-light);
-            color: var(--apple-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-        }
-
-        .section-title {
-            font-size: 1.3em;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-        }
-
-        /* Document Vault Bento */
-        .files-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-
-        .file-item {
-            background: #fbfbfd;
-            border: 1px solid var(--apple-border);
-            border-radius: 18px;
-            padding: 20px 16px;
-            text-align: center;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .file-item:hover {
-            background: #ffffff;
-            border-color: var(--apple-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 113, 227, 0.08);
-        }
-
-        .file-item-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--apple-blue-light);
-            color: var(--apple-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-
-        .file-item h4 {
-            font-size: 14.5px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .file-item p {
-            font-size: 12px;
-            color: var(--apple-blue);
-            font-weight: 500;
-        }
-
-        /* Profile Text */
-        .summary-text {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.65;
-            text-align: justify;
-        }
-
-        /* Experience Timeline Items */
-        .apple-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .timeline-card {
-            background: #fbfbfd;
-            border: 1px solid var(--apple-border);
-            border-radius: 20px;
-            padding: 22px 24px;
-            transition: all 0.2s ease;
-        }
-
-        .timeline-card:hover {
-            background: #ffffff;
-            border-color: rgba(0, 0, 0, 0.15);
-        }
-
-        .timeline-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        .job-title {
-            font-size: 1.08em;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .date-chip {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-tertiary);
-            background: rgba(0, 0, 0, 0.04);
-            padding: 3px 10px;
-            border-radius: 980px;
-        }
-
-        .company-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 14px;
-            flex-wrap: wrap;
-        }
-
-        .company-label {
-            font-weight: 600;
-            font-size: 13.5px;
-            color: var(--apple-blue);
-        }
-
-        .apple-tag {
-            font-size: 11.5px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            background: #eef0f3;
-            padding: 2px 9px;
-            border-radius: 6px;
-        }
-
-        .project-link-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--apple-blue);
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-bottom: 14px;
-        }
-
-        .project-link-btn:hover {
-            text-decoration: underline;
-        }
-
-        .apple-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .apple-list li {
-            position: relative;
-            padding-left: 18px;
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.55;
-        }
-
-        [dir="rtl"] .apple-list li {
-            padding-right: 18px;
-            padding-left: 0;
-        }
-
-        .apple-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--apple-blue);
-        }
-
-        [dir="rtl"] .apple-list li::before {
-            right: 0;
-            left: auto;
-        }
-
-        /* Grouped Skills */
-        .skills-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .skill-group {
-            border: 1px solid var(--apple-border);
-            background: #fbfbfd;
-            border-radius: 18px;
-            padding: 16px 18px;
-        }
-
-        .skill-group-title {
-            font-size: 13.5px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .skill-group-title i {
-            color: var(--apple-blue);
-            font-size: 13px;
-        }
-
-        .tags-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .apple-chip {
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 5px 12px;
-            border-radius: 980px;
-            font-size: 12.5px;
-            font-weight: 500;
-            color: var(--text-primary);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .apple-chip:hover {
-            border-color: var(--apple-blue);
-            color: var(--apple-blue);
-            background: var(--apple-blue-light);
-        }
-
-        .apple-chip i {
-            font-size: 11px;
-            color: var(--text-tertiary);
-        }
-
-        .apple-chip:hover i {
-            color: var(--apple-blue);
-        }
-
-        /* Sidebar Cards */
-        .side-item-box {
-            background: #fbfbfd;
-            border: 1px solid var(--apple-border);
-            border-radius: 18px;
-            padding: 16px 18px;
-            margin-bottom: 12px;
-        }
-
-        .side-item-box:last-child {
-            margin-bottom: 0;
-        }
-
-        .side-title {
-            font-size: 14.5px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .side-sub {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--apple-blue);
-            margin-bottom: 4px;
-        }
-
-        .side-desc {
-            font-size: 13px;
-            color: var(--text-secondary);
-            line-height: 1.45;
-        }
-
-        .cert-specs {
-            margin-top: 10px;
-            padding: 10px 12px;
-            background: #ffffff;
-            border-radius: 12px;
-            border: 1px solid var(--apple-border);
-            font-size: 12px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .cert-specs .dot {
-            color: var(--apple-blue);
-            margin-right: 4px;
-            font-weight: bold;
-        }
-
-        [dir="rtl"] .cert-specs .dot {
-            margin-right: 0;
-            margin-left: 4px;
-        }
-
-        /* QR Card */
-        .qr-card {
-            text-align: center;
-            background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
-        }
-
-        .qr-code-img {
-            width: 124px;
-            height: 124px;
-            background: #ffffff;
-            border: 1px solid var(--apple-border);
-            padding: 8px;
-            border-radius: 20px;
-            margin: 0 auto 12px;
-            display: block;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-            transition: transform 0.25s ease;
-        }
-
-        .qr-code-img:hover {
-            transform: scale(1.03);
-        }
-
-        /* Language Rows */
-        .lang-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            border-radius: 14px;
-            background: #fbfbfd;
-            border: 1px solid var(--apple-border);
-            margin-bottom: 10px;
-        }
-
-        .lang-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .lang-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .lang-check {
-            color: var(--apple-blue);
-            font-size: 15px;
-        }
-
-        /* Modal Dialog (iOS Alert Controller Style) */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s ease, visibility 0.2s ease;
-            padding: 16px;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-card {
-            width: 100%;
-            max-width: 320px;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
-            padding: 24px;
-            text-align: center;
-            transform: scale(0.94);
-            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .modal-overlay.active .modal-card {
-            transform: scale(1);
-        }
-
-        .modal-title-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 18px;
-        }
-
-        .modal-title-row h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .modal-close-icon {
-            background: #f0f0f2;
-            border: none;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: var(--text-secondary);
-            font-size: 13px;
-        }
-
-        .modal-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .modal-action-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 13px 18px;
-            border-radius: 14px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .btn-call {
-            background: var(--apple-blue);
-            color: #ffffff;
-        }
-
-        .btn-call:hover {
-            background: var(--apple-blue-hover);
-        }
-
-        .btn-wa {
-            background: var(--success-light);
-            color: #128c7e;
-        }
-
-        .btn-wa:hover {
-            background: rgba(52, 199, 89, 0.2);
-        }
-
-        @media (max-width: 900px) {
-            .hero-card {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 32px 24px;
-            }
-
-            .hero-location {
-                justify-content: center;
-            }
-
-            .hero-pills {
-                justify-content: center;
-            }
-
-            .layout-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .files-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+*{margin:0;padding:0;box-sizing:border-box} :root{--apple-bg:#f5f5f7;--apple-card:#fff;--apple-border:#e6e6e9;--apple-blue:#0071e3;--apple-blue-light:#edf5ff;--text-primary:#1d1d1f;--text-secondary:#6e6e73;--text-tertiary:#86868b;--success-light:#effaf2}
+html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Tajawal","Segoe UI",sans-serif;background:var(--apple-bg);color:var(--text-primary);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:48px}a{color:var(--apple-blue)}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid #59a4ff;outline-offset:5px}img{max-width:100%}[id]{scroll-margin-top:80px}
+.apple-nav{position:sticky;top:0;z-index:1000;height:62px;background:rgba(250,250,252,.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(0,0,0,.06)}.nav-content{height:100%;max-width:1160px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}.nav-brand{font-size:13px;font-weight:600;letter-spacing:.01em}.nav-brand>i{display:none}.language-toggle{display:flex;align-items:center;gap:7px;border:1px solid var(--apple-border);background:white;color:var(--text-primary);border-radius:50px;padding:8px 15px;min-height:38px;font-size:12px;cursor:pointer}.scroll-indicator{height:2px;position:absolute;bottom:0;inset-inline-start:0;background:var(--apple-blue);width:0}
+.container{max-width:1160px;padding:0 28px;margin:0 auto;display:flex;flex-direction:column;gap:64px}.bento-card{min-width:0;background:transparent;border:0;box-shadow:none;border-radius:0;padding:0}.hero-card{position:relative;display:flex;flex-direction:column-reverse;align-items:center;text-align:center;gap:24px;padding:64px 0 10px}.hero-info{width:100%;min-width:0}.hero-name{font-size:clamp(42px,6vw,70px);font-weight:700;line-height:1.15;letter-spacing:-.045em;margin-bottom:16px}.hero-role{font-size:clamp(16px,2vw,21px);font-weight:500;color:var(--text-secondary);line-height:1.6}.hero-location{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;color:var(--text-tertiary);margin:14px 0 26px}.hero-avatar-wrap{width:100px;height:100px;flex-shrink:0;overflow:hidden;border-radius:50%;background:white;padding:4px;border:1px solid var(--apple-border)}.hero-avatar{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}.hero-avatar-wrap:has(img[data-missing]){display:none}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:22px}.apple-pill-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 21px;min-height:46px;border:1px solid var(--apple-border);border-radius:50px;background:white;color:var(--text-primary);font-size:13px;font-weight:500;text-decoration:none;cursor:pointer;line-height:1.5;transition:background .2s,transform .2s}.apple-pill-btn:hover{background:#ebebef;transform:translateY(-1px)}.primary-action{background:var(--apple-blue);border-color:var(--apple-blue);color:white}.primary-action:hover{background:#0077ed}.hero-actions .apple-pill-btn i{display:none}.hero-pills{display:flex;justify-content:center;align-items:center;gap:6px 18px;flex-wrap:wrap}.hero-pills .apple-pill-btn{min-height:36px;padding:5px 0;border:0;border-radius:0;background:none;color:var(--text-secondary);font-size:12px;font-weight:400;overflow-wrap:anywhere}.hero-pills .apple-pill-btn:hover{color:var(--apple-blue);transform:none}.hero-pills i{font-size:12px;color:var(--text-tertiary)}
+.layout-grid,.main-column{display:flex;flex-direction:column;gap:64px;min-width:0}.section-header{display:flex;align-items:center;gap:12px;margin-bottom:26px}.section-icon{display:none}.section-title{font-size:clamp(24px,3vw,34px);line-height:1.35;font-weight:650;letter-spacing:-.035em}.summary-text{color:var(--text-secondary);font-size:16px;line-height:1.95;text-align:start;max-width:82ch}.profile-intro{max-width:770px;margin:0 auto;text-align:center}.profile-intro .section-header{justify-content:center;margin-bottom:16px}.profile-intro .section-title{font-size:17px;color:var(--text-primary);letter-spacing:0}.profile-intro .summary-text{text-align:center;font-size:17px;line-height:1.9}.apple-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.timeline-card{min-width:0;background:white;border-radius:26px;padding:30px;border:1px solid rgba(0,0,0,.035)}.timeline-top{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:12px}.job-title{font-size:20px;font-weight:650;line-height:1.5;letter-spacing:-.02em;overflow-wrap:anywhere}.date-chip{display:inline-block;font-size:11px;line-height:1.6;color:var(--text-tertiary);font-weight:500}.company-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:18px}.company-label{font-size:12px;color:var(--text-secondary);line-height:1.7}.apple-tag{font-size:11px;background:#f0f0f3;color:var(--text-secondary);border-radius:6px;padding:3px 8px}.project-link-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:13px;font-weight:500;text-decoration:none;line-height:1.6;overflow-wrap:anywhere}.project-link-btn:hover{text-decoration:underline}.project-link-btn i{font-size:10px}.case-study{display:flex;flex-direction:column;overflow:hidden;padding:0 30px 26px}.case-study>.timeline-top{padding-top:28px}.case-metrics{display:flex;gap:24px;padding:26px 0;margin:0 0 8px;border-top:1px solid var(--apple-border);border-bottom:1px solid var(--apple-border)}.case-metrics>div{flex:1;min-width:0}.case-metrics strong{display:block;font-size:clamp(28px,4vw,44px);letter-spacing:-.04em;font-weight:650;line-height:1.2}.case-metrics span{display:block;font-size:11px;color:var(--text-secondary);margin-top:7px}.case-field{margin:15px 0}.case-field h3{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--text-tertiary);font-weight:600;margin-bottom:6px}.case-field p{font-size:14px;line-height:1.9;color:var(--text-secondary)}.case-study>.project-link-btn{margin-top:auto;padding-top:16px}#task-governance-project{background:#17232f;color:#f5f5f7;border:0}#task-governance-project .date-chip,#task-governance-project .company-label,#task-governance-project .case-metrics span,#task-governance-project .case-field h3{color:#aab7c6}#task-governance-project .case-field p{color:#d1d9e2}#task-governance-project .case-metrics{border-color:#37434f}#task-governance-project .project-link-btn{color:#72b7ff}#grc-excel-project{background:#edf4ee;border:0}#grc-excel-project .case-metrics{border-color:#ceddd1}#grc-excel-project .case-metrics strong{color:#2e6547}.other-projects{margin-top:22px}.other-projects .timeline-card{display:grid;grid-template-columns:1fr 1.2fr;gap:0 32px}.other-projects .timeline-top{grid-column:1;grid-row:1/3}.other-projects .company-row{grid-column:1;grid-row:3}.other-projects .summary-text{grid-column:2;grid-row:1/3;font-size:14px}.other-projects .project-link-btn{grid-column:2;grid-row:3;justify-self:start}#experience .job-title{font-size:17px}#experience .summary-text{font-size:14px}
+.focus-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:32px 0;border-top:1px solid var(--apple-border);border-bottom:1px solid var(--apple-border)}.focus-card{min-width:0;text-decoration:none;display:flex;flex-direction:column;color:inherit;background:transparent;padding:0}.focus-top{display:flex;align-items:center;justify-content:space-between;color:var(--apple-blue);font-size:19px;margin-bottom:16px}.focus-top span{font-size:11px;letter-spacing:.12em;font-weight:600}.focus-card h2{font-size:17px;line-height:1.6;margin-bottom:10px}.focus-card p{font-size:13px;line-height:1.9;color:var(--text-secondary);margin-bottom:18px}.focus-proof{font-size:11px;color:var(--text-tertiary);margin-top:auto;line-height:1.7}.focus-arrow{display:none}.adaptable-card{padding:38px 0 0;border-top:1px solid var(--apple-border)}.adaptable-card .summary-text{max-width:92ch;font-size:15px}.adaptable-card .section-title{font-size:26px}.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 38px}.skill-group{min-width:0;padding-bottom:20px;border-bottom:1px solid var(--apple-border)}.skill-group-title{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin-bottom:12px}.skill-group-title>i{display:none}.tags-wrapper{display:flex;flex-wrap:wrap;gap:8px}.apple-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border:1px solid #dedee3;border-radius:7px;font-size:12px;color:var(--text-secondary);line-height:1.6;max-width:100%;overflow-wrap:anywhere}.apple-chip>i{display:none}
+.files-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.file-item{min-width:0;background:white;padding:22px;display:flex;align-items:center;gap:14px;border-radius:18px;text-decoration:none;color:inherit}.file-item-icon{font-size:21px;color:var(--apple-blue)}.file-item h4{font-size:14px;font-weight:550}.file-item p{font-size:11px;color:var(--text-tertiary);margin-inline-start:auto}.side-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}.side-column>.bento-card{padding:28px;background:white;border-radius:24px}.side-column .section-title{font-size:21px}.side-column .section-header{margin-bottom:20px}#certifications-card{grid-row:span 2}.side-item-box{margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid var(--apple-border)}.side-item-box:last-child{border:0;padding-bottom:0;margin-bottom:0}.side-title{font-size:15px;font-weight:600;line-height:1.7;margin-bottom:6px}.side-sub{font-size:12px;color:var(--apple-blue);margin-bottom:6px}.side-desc{font-size:13px;color:var(--text-secondary);line-height:1.85}.cert-specs{font-size:12px;color:var(--text-secondary);line-height:1.9;margin-top:12px}.dot{color:var(--apple-blue)}.qr-card{text-align:center}.qr-code-img{width:112px;height:112px;display:block;margin:0 auto 16px}.qr-card .section-header{justify-content:center}.lang-row{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:10px 0}.lang-name{font-size:14px}.lang-check{font-size:13px;color:#3e8b60}footer.bento-card{padding:40px 0 0;border-top:1px solid var(--apple-border)}footer .section-title{font-size:clamp(23px,3vw,34px);margin-bottom:24px}body>.container:last-of-type{margin-top:64px!important}
+.apple-list{list-style:none;display:flex;flex-direction:column;gap:10px}.apple-list li{font-size:14px;line-height:1.8;color:var(--text-secondary)}.modal-overlay{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.3);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .2s}.modal-overlay.active{opacity:1;visibility:visible}.modal-card{width:100%;max-width:340px;background:white;border-radius:24px;padding:24px;box-shadow:0 20px 80px #0002}.modal-title-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}.modal-title-row h3{font-size:18px}.modal-close-icon{border:0;background:#f1f1f4;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:22px}.modal-actions{display:flex;flex-direction:column;gap:10px}.modal-action-btn{min-height:48px;padding:12px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:14px;text-decoration:none}.btn-call{background:var(--apple-blue);color:white}.btn-wa{background:#eef8f0;color:#128c54}
+@media(max-width:820px){.container,.layout-grid,.main-column{gap:44px}.container{padding:0 22px}.hero-card{padding-top:44px}.apple-timeline{grid-template-columns:minmax(0,1fr)}.case-study{padding:0 26px 26px}.case-metrics strong{font-size:36px}.side-column{gap:20px}.focus-grid{gap:20px}.other-projects .timeline-card{display:block}.other-projects .summary-text{margin:10px 0}.skills-grid{gap:22px}}
+@media(max-width:600px){body{padding-bottom:28px}.container{padding:0 18px;gap:38px}.layout-grid,.main-column{gap:38px}.nav-content{padding:0 18px}.apple-nav{height:56px}.hero-card{padding:36px 0 0;gap:20px}.hero-name{font-size:42px;margin-bottom:12px}.hero-role{font-size:15px}.hero-location{font-size:11px;margin:12px 0 22px}.hero-avatar-wrap{width:86px;height:86px}.hero-actions{gap:10px;margin-bottom:18px}.hero-actions .apple-pill-btn{min-height:46px;padding:11px 19px;font-size:12px}.hero-pills{gap:3px 15px}.hero-pills .apple-pill-btn{font-size:11px;min-height:36px}.section-header{margin-bottom:20px}.section-title{font-size:25px}.profile-intro .summary-text{font-size:15px;line-height:1.9}.timeline-card{padding:24px 20px;border-radius:22px}.case-study{padding:0 22px 22px}.case-study>.timeline-top{padding-top:24px}.job-title{font-size:20px}.company-label{font-size:11.5px}.case-field p{font-size:13.5px}.case-field{margin:13px 0}.case-metrics{padding:22px 0;gap:20px}.case-metrics strong{font-size:34px}.other-projects .timeline-card{padding:24px 22px}.focus-grid{grid-template-columns:minmax(0,1fr);gap:24px;padding:24px 0}.focus-card{padding-bottom:24px;border-bottom:1px solid var(--apple-border)}.focus-card:last-child{border:0;padding-bottom:0}.focus-top{margin-bottom:10px}.focus-card p{margin-bottom:10px}.focus-proof{font-size:11px}.focus-card h2{font-size:17px}.skills-grid,.side-column{grid-template-columns:minmax(0,1fr)}#certifications-card{grid-row:auto}.side-column>.bento-card{padding:24px 22px}.files-grid{grid-template-columns:minmax(0,1fr);gap:10px}.file-item{padding:18px}.adaptable-card{padding-top:28px}.adaptable-card .section-title{font-size:24px}.adaptable-card .summary-text{font-size:14px}.project-link-btn{font-size:12px}.summary-text{font-size:14px}.skill-group{padding-bottom:16px}.hero-pills .apple-pill-btn:hover{transform:none}.apple-pill-btn:hover{transform:none}}
+@media(max-width:350px){.container{padding:0 14px}.hero-name{font-size:36px}.hero-actions{width:100%}.hero-actions .apple-pill-btn{flex:1;min-width:120px}.case-study{padding-inline:18px}.hero-pills{gap:4px 12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.other-projects #agri-zone-project{display:flex;grid-template-columns:none;background:#f0edf6;border:0}.other-projects #agri-zone-project>.timeline-top{grid-column:auto;grid-row:auto}.other-projects #agri-zone-project>.company-row{grid-column:auto;grid-row:auto}.other-projects #agri-zone-project>.project-link-btn{grid-column:auto;grid-row:auto;align-self:flex-start}.other-projects #agri-zone-project .case-metrics{border-color:#dbd3e8}.other-projects #agri-zone-project .case-metrics strong{color:#70568c}
+.hero-avatar-wrap{position:relative;width:124px;height:124px;display:block;isolation:isolate;background:linear-gradient(145deg,#edf3fa,#dde7f1);padding:5px;box-shadow:0 8px 28px rgba(30,60,90,.08)}
+.hero-avatar-wrap:has(img[data-missing]){display:block}
+.avatar-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:600;letter-spacing:-.03em;color:#61768d;z-index:0}
+.hero-avatar{position:relative;z-index:1;background:#fff}
+@media(max-width:600px){.hero-avatar-wrap{width:104px;height:104px}.avatar-fallback{font-size:30px}}
+
+        .page-content{margin-top:0!important}
+        .page-content>.adaptable-card{border-top:0;padding-top:0;max-width:820px;align-self:center;text-align:center}
+        .page-content>.adaptable-card .section-header{justify-content:center}
+        .page-content>.adaptable-card .section-title{font-size:clamp(25px,3.5vw,38px)}
+        .page-content>.adaptable-card .summary-text{text-align:center;font-size:16px;line-height:1.95}
+        .credential-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+        .credential-grid>.bento-card{padding:28px;background:white;border-radius:24px;min-width:0}
+        .credential-grid #certifications-card{grid-row:span 2}
+        .credential-grid .section-title{font-size:22px}
+        .page-content>#qr-code-card{padding:24px;border:1px solid var(--apple-border);border-radius:22px}
+        @media(max-width:600px){
+            body{padding-bottom:max(28px,env(safe-area-inset-bottom))}
+            .container.page-content{padding-inline:20px;gap:36px}
+            .hero-card{padding-top:28px;gap:18px}
+            .hero-name{font-size:clamp(36px,10vw,46px);line-height:1.2}
+            .hero-role{font-size:14px;line-height:1.8;max-width:30ch;margin-inline:auto}
+            .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:10px}
+            .hero-actions .apple-pill-btn{width:100%;min-width:0;min-height:48px;padding:12px 10px;font-size:13px}
+            .hero-pills{gap:4px 14px}
+            .hero-pills .apple-pill-btn{min-height:42px;font-size:12px}
+            .language-toggle{min-height:44px;padding-inline:16px}
+            .page-content>.adaptable-card .section-title{font-size:27px;line-height:1.5;max-width:22ch;margin-inline:auto}
+            .page-content>.adaptable-card .summary-text{font-size:14px;line-height:2}
+            .profile-intro .summary-text{font-size:14px;line-height:1.95}
+            .credential-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+            .credential-grid #certifications-card{grid-row:auto}
+            .credential-grid>.bento-card{padding:24px 20px}
+            .job-title{font-size:19px;line-height:1.65}
+            .case-study{padding-inline:22px;border-radius:24px}
+            .case-field p{font-size:14px;line-height:1.95}
+            .case-field h3{font-size:12px;letter-spacing:0}
+            .company-label,.date-chip{font-size:12px}
+            .project-link-btn{min-height:46px;font-size:13px}
+            .case-study>.project-link-btn{width:100%;border-top:1px solid #0001;margin-top:12px;padding-top:16px;justify-content:space-between}
+            #task-governance-project>.project-link-btn{border-color:#ffffff24}
+            .file-item{min-height:76px;flex-wrap:wrap;gap:10px}
+            .file-item p{font-size:12px}
+            .apple-chip{padding:7px 11px;font-size:12px}
+            .modal-card{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+        }
+
+
+.worksheet-count-note{font-size:12px;line-height:1.9;color:var(--text-secondary);margin:12px 0 8px}
+
+.tangible-work{gap:12px}.tangible-work li{position:relative;padding-inline-start:15px;font-size:14px;line-height:1.9}.tangible-work li::before{content:"";position:absolute;inset-inline-start:0;top:.8em;width:4px;height:4px;border-radius:50%;background:var(--apple-blue)}#experience .project-link-btn{margin-top:16px}
+
+.role-result{margin-top:20px;padding:14px 16px;background:var(--apple-blue-light);border-radius:12px}.role-result strong{display:block;font-size:12px;color:var(--apple-blue);margin-bottom:5px}.role-result p{font-size:13px;line-height:1.9;color:var(--text-primary)}
+.hero-signature{display:block;width:clamp(190px,27vw,300px);height:auto;margin:6px auto 20px;mix-blend-mode:multiply;object-fit:contain}
+@media(max-width:600px){.hero-signature{width:220px;max-width:80%;margin:4px auto 18px}}
+</style>
 </head>
 
 <body>
-    <!-- Apple Floating System Bar -->
-    <header class="apple-nav">
+<header class="apple-nav">
         <div class="scroll-indicator"></div>
         <div class="nav-content">
             <div class="nav-brand">
                 <i class="fas fa-id-card-clip"></i>
-                <span data-ar="السيرة المهنية" data-en="Professional Profile">Professional Profile</span>
+                <span data-ar="ملف أعمالي" data-en="Portfolio">Portfolio</span>
             </div>
             <button class="language-toggle" onclick="toggleLanguage()">
                 <i class="fas fa-globe"></i>
@@ -764,21 +95,18 @@
             </button>
         </div>
     </header>
-
-    <div class="container">
-        <!-- Hero Apple Bento -->
-        <div class="bento-card hero-card">
+<main class="container page-content">
+<div class="bento-card hero-card">
             <div class="hero-info">
                 <h1 class="hero-name" data-ar="محمد نواف" data-en="Mohammed Nawaf">Mohammed Nawaf</h1>
-                <div class="hero-role" data-ar="بكالوريوس في نظم المعلومات" data-en="Bachelor's Degree in Information Systems">
-                    Bachelor's Degree in Information Systems
-                </div>
+<img class="hero-signature" src="signature.png" alt="Mohammed Nawaf signature" width="666" height="278">
+                <div class="hero-role" data-ar="تقنية المعلومات والأمن السيبراني | GRC | SOC" data-en="IT &amp; Cybersecurity | GRC | SOC">IT &amp; Cybersecurity | GRC | SOC</div>
                 <div class="hero-location">
                     <i class="fas fa-location-dot" style="color: var(--apple-blue);"></i>
                     <span data-ar="المملكة العربية السعودية - الرياض" data-en="Saudi Arabia - Riyadh">Saudi Arabia - Riyadh</span>
                 </div>
 
-                <div class="hero-pills">
+                <div class="hero-actions"><a class="apple-pill-btn primary-action" href="#selected-projects"><span data-ar="شاهد أعمالي" data-en="Explore My Work">Explore My Work</span></a><a class="apple-pill-btn" href="https://drive.google.com/drive/folders/1UPtBHmH5r9QP1vgTyrR3FqllVOXvVRdk?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="السيرة الذاتية" data-en="View Resume">View Resume</span></a></div><div class="hero-pills">
                     <a href="mailto:mbnq1@outlook.com" class="apple-pill-btn">
                         <i class="fas fa-envelope"></i> mbnq1@outlook.com
                     </a>
@@ -798,87 +126,44 @@
             </div>
 
             <div class="hero-avatar-wrap">
-                <img src="Mohammed%20Nawaf.png" alt="Mohammed Nawaf" class="hero-avatar">
-            </div>
+    <span class="avatar-fallback" aria-hidden="true" data-ar="م ن" data-en="MN">MN</span>
+    <img src="Mohammed%20Nawaf.png" alt="Mohammed Nawaf" class="hero-avatar" onerror="this.style.display='none'">
+</div>
         </div>
-
-        <div class="layout-grid">
-            <!-- Left / Main Stream -->
-            <div class="main-column">
-                <!-- Documents & Files -->
-                <div class="bento-card">
-                    <div class="section-header">
-                        <div class="section-icon"><i class="fas fa-arrow-down-to-bracket"></i></div>
-                        <h2 class="section-title" data-ar="الملفات والمستندات" data-en="Files & Documents">Files & Documents</h2>
-                    </div>
-                    <div class="files-grid">
-                        <a href="https://drive.google.com/drive/folders/1UPtBHmH5r9QP1vgTyrR3FqllVOXvVRdk?usp=drive_link"
-                            target="_blank" class="file-item">
-                            <div class="file-item-icon"><i class="fas fa-file-pdf"></i></div>
-                            <h4 data-ar="السيرة الذاتية" data-en="Resume/CV">Resume/CV</h4>
-                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
-                        </a>
-                        <a href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link"
-                            target="_blank" class="file-item">
-                            <div class="file-item-icon"><i class="fas fa-award"></i></div>
-                            <h4 data-ar="الشهادات" data-en="Certificates">Certificates</h4>
-                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
-                        </a>
-                        <a href="https://drive.google.com/drive/folders/1A7ngWTAsWx_I2FbM71088numn6M-mHzC?usp=drive_link"
-                            target="_blank" class="file-item">
-                            <div class="file-item-icon"><i class="fas fa-folder-open"></i></div>
-                            <h4 data-ar="المشاريع" data-en="Projects">Projects</h4>
-                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Professional Summary -->
-                <div class="bento-card">
+<section class="bento-card adaptable-card" id="learning-and-soc">
+    <div class="section-header">
+        <div class="section-icon"><i class="fas fa-shield-halved"></i></div>
+        <h2 class="section-title" data-ar="شغف بالاكتشاف… وقدرة على الإنجاز" data-en="Driven to Explore. Ready to Deliver.">Driven to Explore. Ready to Deliver.</h2>
+    </div>
+    <p class="summary-text" data-ar="التقنية عندي هواية وشغف بالاكتشاف؛ أستمتع باستكشاف التقنيات والأدوات الجديدة، وفهم طريقة عملها، وتجربتها وتحويل الأفكار إلى مشاريع وحلول عملية. تتنوع اهتماماتي بين تقنية المعلومات والأنظمة والشبكات، وتطوير تطبيقات الويب وقواعد البيانات والأتمتة، والأمن السيبراني بما يشمل الحوكمة والمخاطر والامتثال (GRC) والعمليات الأمنية (SOC). يدفعني الفضول إلى مواصلة التعلّم، والربط بين مجالات مختلفة، وتوسيع مهاراتي بحسب الفكرة أو المشكلة التي أعمل عليها." data-en="Technology is a hobby and a passion for discovery. I enjoy exploring new technologies and tools, understanding how they work, experimenting, and turning ideas into projects and practical solutions. My interests span IT, systems and networking, web development, databases, automation, and cybersecurity, including governance, risk and compliance (GRC) and security operations (SOC). Curiosity drives me to keep learning, connect different disciplines, and expand my skills around the idea or problem I am working on.">Technology is a hobby and a passion for discovery. I enjoy exploring new technologies and tools, understanding how they work, experimenting, and turning ideas into projects and practical solutions. My interests span IT, systems and networking, web development, databases, automation, and cybersecurity, including governance, risk and compliance (GRC) and security operations (SOC). Curiosity drives me to keep learning, connect different disciplines, and expand my skills around the idea or problem I am working on.</p>
+    <a href="#selected-projects" class="project-link-btn" style="margin:16px 0 0"><span data-ar="شاهد التطبيق في مشاريعي" data-en="See This in My Projects">See This in My Projects</span> <i class="fas fa-arrow-down"></i></a>
+</section>
+<div class="bento-card profile-intro">
                     <div class="section-header">
                         <div class="section-icon"><i class="fas fa-user"></i></div>
                         <h2 class="section-title" data-ar="الملخص المهني" data-en="Professional Profile">Professional Profile</h2>
                     </div>
-                    <p class="summary-text"
-                        data-ar="متخصص في الأمن السيبراني وتقنية المعلومات بخلفية أكاديمية في نظم المعلومات، ومعرفة بالدعم الفني، واستكشاف أعطال الأنظمة وإصلاحها، وأمن الشبكات، وحوكمة الأمن السيبراني وإدارة المخاطر والامتثال (GRC). لدي إلمام بأنشطة مراكز العمليات الأمنية (SOC)، بما يشمل المراقبة الأمنية، وإدارة معلومات وأحداث الأمن (SIEM)، واكتشاف التهديدات، وتقييم الثغرات، والاستجابة للحوادث، إلى جانب أطر وضوابط الأمن السيبراني.&lt;br&gt;&lt;br&gt;أمتلك مهارات تحليلية ومهارات في حل المشكلات، مع القدرة على تعلم التقنيات الجديدة بسرعة والتكيف مع بيئات العمل المختلفة. أتطلع إلى المساهمة في دعم تقنية المعلومات والبنية التحتية، والعمليات الأمنية، وأعمال الحوكمة والمخاطر والامتثال، مع مواصلة تطوير مهاراتي التقنية."
-                        data-en="Cybersecurity and IT professional with a background in Information Systems and knowledge of IT support, system troubleshooting, network security, cybersecurity governance, risk management, and compliance (GRC). Familiar with security operations center (SOC) activities, including security monitoring, security information and event management (SIEM), threat detection, vulnerability assessment, and incident response, as well as cybersecurity frameworks and controls.&lt;br&gt;&lt;br&gt;Possess analytical and problem-solving skills, with the ability to learn new technologies quickly and adapt to different work environments. Interested in contributing to IT infrastructure and support, cybersecurity operations, and GRC activities while continuously developing technical skills.">
-                        Cybersecurity and IT professional with a background in Information Systems and knowledge of IT support, system troubleshooting, network security, cybersecurity governance, risk management, and compliance (GRC). Familiar with security operations center (SOC) activities, including security monitoring, security information and event management (SIEM), threat detection, vulnerability assessment, and incident response, as well as cybersecurity frameworks and controls.<br><br>Possess analytical and problem-solving skills, with the ability to learn new technologies quickly and adapt to different work environments. Interested in contributing to IT infrastructure and support, cybersecurity operations, and GRC activities while continuously developing technical skills.
-                    </p>
+                    <p class="summary-text" data-ar="متخصص في تقنية المعلومات والأمن السيبراني بخلفية في نظم المعلومات. أجمع بين دعم الأنظمة، والحوكمة والمخاطر والامتثال (GRC)، ومعرفة العمليات الأمنية (SOC). أتعلم التقنيات الجديدة بحسب متطلبات العمل، وأستخدمها لتحويل المشكلات إلى حلول قابلة للتطبيق." data-en="IT and cybersecurity professional with a background in Information Systems. I combine systems support, governance, risk and compliance (GRC), and knowledge of security operations (SOC). I learn new technologies to meet work requirements and use them to turn problems into practical solutions.">IT and cybersecurity professional with a background in Information Systems. I combine systems support, governance, risk and compliance (GRC), and knowledge of security operations (SOC). I learn new technologies to meet work requirements and use them to turn problems into practical solutions.</p>
                 </div>
-
-                <!-- Professional Experience -->
-                <div class="bento-card">
+<section class="bento-card" id="selected-projects"><div class="section-header"><div class="section-icon"><i class="fas fa-layer-group"></i></div><h2 class="section-title" data-ar="مشاريعي وما أنجزته" data-en="My Projects &amp; Deliverables">My Projects &amp; Deliverables</h2></div><div class="apple-timeline"><article class="timeline-card case-study" id="task-governance-project"><div class="timeline-top"><h3 class="job-title" data-ar="نظام ويب لإدارة المهام والحوكمة" data-en="Task Management &amp; Governance Web System">Task Management &amp; Governance Web System</h3><span class="date-chip" data-ar="أكتوبر 2025 – فبراير 2026" data-en="Oct 2025 – Feb 2026">Oct 2025 – Feb 2026</span></div><div class="company-row"><span class="company-label" data-ar="أمانة منطقة عسير | مشروع خلال فترة التطوع" data-en="Asir Municipality | Project during volunteer experience">Asir Municipality | Project during volunteer experience</span></div><div class="case-metrics"><div><strong>Laravel</strong><span data-ar="نظام ويب" data-en="Web system">Web system</span></div><div><strong>RBAC</strong><span data-ar="إدارة الصلاحيات" data-en="Access management">Access management</span></div></div><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I delivered">What I delivered</h3><p data-ar="صممت وطورت نظام ويب باستخدام Laravel لإدارة المهام والحوكمة، مع تحكم في الوصول مبني على الأدوار." data-en="Designed and developed a Laravel web system for task management and governance, with role-based access control.">Designed and developed a Laravel web system for task management and governance, with role-based access control.</p></div><div class="case-field"><h3 data-ar="المخرجات" data-en="Deliverables">Deliverables</h3><p data-ar="صلاحيات موزعة على خمسة أدوار، ولوحات تحكم لمؤشرات الأداء، وتقارير آلية بصيغتي PDF وExcel." data-en="Access permissions across five roles, KPI dashboards, and automated reports in PDF and Excel formats.">Access permissions across five roles, KPI dashboards, and automated reports in PDF and Excel formats.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="توحيد متابعة المهام والصلاحيات والتقارير في نظام واحد وتقليل الجهد اليدوي لإعداد التقارير." data-en="Brings task tracking, permissions, and reporting into one system and reduces manual report preparation.">Brings task tracking, permissions, and reporting into one system and reduces manual report preparation.</p></div><a href="https://drive.google.com/drive/folders/18WCLLiGQQ_fYNvAYo7yE2rkrKVEHioOe?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وثائق مشروع الأمانة" data-en="View Municipality Project Documents">View Municipality Project Documents</span> <i class="fas fa-arrow-up-right-from-square"></i></a></article><article class="timeline-card case-study" id="grc-excel-project"><div class="timeline-top"><h3 class="job-title" data-ar="أداة Excel لحوكمة الأمن السيبراني والمخاطر والامتثال" data-en="Cybersecurity GRC Excel Toolkit">Cybersecurity GRC Excel Toolkit</h3><span class="date-chip" data-ar="17 يوليو – 17 أكتوبر 2026" data-en="17 Jul – 17 Oct 2026">17 Jul – 17 Oct 2026</span></div><div class="company-row"><span class="company-label" data-ar="مشروع شخصي مستقل | ثلاثة أشهر" data-en="Independent Personal Project | Three months">Independent Personal Project | Three months</span></div><div class="case-metrics"><div><strong>25</strong><span data-ar="ورقة أساسية" data-en="Core worksheets">Core worksheets</span></div><div><strong>12</strong><span data-ar="رسمًا بيانيًا" data-en="Charts">Charts</span></div></div><p class="worksheet-count-note" data-ar="يتضمن الملف 31 ورقة إجمالًا، منها 25 ورقة أساسية: 20 للسجلات وإدارة أعمال GRC، و5 للمؤشرات والتحليلات، إلى جانب 6 صفحات مساندة للغلاف والتنقّل والتوثيق والجودة." data-en="The file contains 31 worksheets in total: 25 core worksheets comprising 20 GRC registers and management sheets and 5 dashboard and analytics sheets, plus 6 supporting sheets for the cover, navigation, documentation, and quality assurance.">The file contains 31 worksheets in total: 25 core worksheets comprising 20 GRC registers and management sheets and 5 dashboard and analytics sheets, plus 6 supporting sheets for the cover, navigation, documentation, and quality assurance.</p><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I delivered">What I delivered</h3><p data-ar="طورت ملف Excel قابلًا للتخصيص لتنظيم أعمال الحوكمة والمخاطر والامتثال للأمن السيبراني." data-en="Developed a customizable Excel file to organize cybersecurity governance, risk, and compliance activities.">Developed a customizable Excel file to organize cybersecurity governance, risk, and compliance activities.</p></div><div class="case-field"><h3 data-ar="المخرجات" data-en="Deliverables">Deliverables</h3><p data-ar="سجلات للضوابط والتقييمات والأدلة، وحساب المخاطر الكامنة والمتبقية وخطط المعالجة، ومتابعة التدقيق والإجراءات والاستثناءات. يشمل سجلات الأطراف الخارجية والخصوصية والحوادث واستمرارية الأعمال، مع لوحات مؤشرات وقوائم منسدلة وتنسيق شرطي وروابط تنقل." data-en="Registers for controls, assessments, and evidence; inherent and residual risk scoring and treatment plans; and tracking for audit findings, actions, and exceptions. Includes third-party, privacy, incident, and business continuity records, with dashboards, dropdown lists, conditional formatting, and navigation links.">Registers for controls, assessments, and evidence; inherent and residual risk scoring and treatment plans; and tracking for audit findings, actions, and exceptions. Includes third-party, privacy, incident, and business continuity records, with dashboards, dropdown lists, conditional formatting, and navigation links.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="جمع سجلات GRC في ملف واحد لتسهيل مراجعة البيانات المُدخلة ومتابعة المخاطر والإجراءات. يتضمن مراجع لأطر NCA وSAMA وPDPL وISO/IEC 27001 وNIST CSF وCIS Controls." data-en="Brings GRC records into one file to simplify review of entered data and follow-up on risks and actions. References NCA, SAMA, PDPL, ISO/IEC 27001, NIST CSF, and CIS Controls.">Brings GRC records into one file to simplify review of entered data and follow-up on risks and actions. References NCA, SAMA, PDPL, ISO/IEC 27001, NIST CSF, and CIS Controls.</p></div><a href="https://lnkd.in/dJSwSh-A" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وتنزيل مشروع Excel" data-en="View &amp; Download Excel Project">View &amp; Download Excel Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a></article></div><div class="other-projects"><article class="timeline-card case-study" id="agri-zone-project"><div class="timeline-top"><h3 class="job-title" data-ar="أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة" data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">Agri Zone – Full-Stack Agricultural E-Commerce Platform</h3><span class="date-chip" data-ar="أبريل 2024 – مايو 2025" data-en="Apr 2024 – May 2025">Apr 2024 – May 2025</span></div><div class="company-row"><span class="company-label" data-ar="مشروع التخرج | جامعة الملك خالد" data-en="Graduation Project | King Khalid University">Graduation Project | King Khalid University</span></div><div class="case-metrics"><div><strong>PHP</strong><span data-ar="تطوير الواجهة الخلفية" data-en="Backend development">Backend development</span></div><div><strong>SQL</strong><span data-ar="قاعدة بيانات علائقية" data-en="Relational database">Relational database</span></div></div><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I delivered">What I delivered</h3><p data-ar="طورت الواجهة الخلفية وصممت قاعدة البيانات العلائقية لمنصة تجارة إلكترونية زراعية." data-en="Developed the backend and designed the relational database for an agricultural e-commerce platform.">Developed the backend and designed the relational database for an agricultural e-commerce platform.</p></div><div class="case-field"><h3 data-ar="المخرجات" data-en="Deliverables">Deliverables</h3><p data-ar="منطق التطبيق باستخدام PHP ومخطط قاعدة البيانات، مع قيادة تخطيط دورات التطوير وتوزيع المهام والتسليم التدريجي للميزات." data-en="PHP application logic and a database schema, alongside leading sprint planning, task coordination, and iterative feature delivery.">PHP application logic and a database schema, alongside leading sprint planning, task coordination, and iterative feature delivery.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="ربط العملاء بالبائعين مباشرة عبر منصة تجارة إلكترونية زراعية، دون الحاجة إلى وسطاء." data-en="Connects customers directly with sellers through an agricultural e-commerce platform, without intermediaries.">Connects customers directly with sellers through an agricultural e-commerce platform, without intermediaries.</p></div><a href="https://drive.google.com/drive/folders/14KsbEnfKMFHTkZa6H7P2HfrxGGnfnKP2?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وثائق المشروع" data-en="View Project Documents">View Project Documents</span> <i class="fas fa-arrow-up-right-from-square"></i></a></article></div></section>
+<div class="bento-card" id="experience">
                     <div class="section-header">
                         <div class="section-icon"><i class="fas fa-briefcase"></i></div>
-                        <h2 class="section-title" data-ar="الخبرات المهنية" data-en="Professional Experience">Professional Experience</h2>
+                        <h2 class="section-title" data-ar="إنجازاتي في العمل" data-en="Work Achievements">Work Achievements</h2>
                     </div>
 
                     <div class="apple-timeline">
                         <div class="timeline-card">
                             <div class="timeline-top">
-                                <span class="job-title" data-ar="أخصائي الأمن السيبراني والحوكمة وإدارة المخاطر والامتثال (GRC) – متطوع" data-en="Cybersecurity & GRC Specialist – Volunteer">
-                                    Cybersecurity & GRC Specialist – Volunteer
+                                <span class="job-title" data-ar="أخصائي الأمن السيبراني والحوكمة وإدارة المخاطر والامتثال (GRC) – متطوع لمدة 11 شهرًا" data-en="Cybersecurity & GRC Specialist – Volunteer (11 months)">
+                                    Cybersecurity & GRC Specialist – Volunteer (11 months)
                                 </span>
                                 <span class="date-chip" data-ar="يونيو 2025 – مايو 2026" data-en="Jun 2025 – May 2026">Jun 2025 – May 2026</span>
                             </div>
                             <div class="company-row">
                                 <span class="company-label" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</span>
-                                <span class="apple-tag" data-ar="بدون تسجيل سابق في التأمينات" data-en="No Previous GOSI Registration">No Previous GOSI Registration</span>
                             </div>
-                            <ul class="apple-list">
-                                <li data-ar="راجعت ودققت أكثر من 100 تقرير ومستند حساسة خاص بالأمن السيبراني، ضامنًا دقة البيانات بنسبة 100%."
-                                    data-en="Reviewed and audited 100+ sensitive cybersecurity reports and documents for the General Directorate, ensuring 100% data accuracy.">
-                                    Reviewed and audited 100+ sensitive cybersecurity reports and documents for the General Directorate, ensuring 100% data accuracy.</li>
-                                <li data-ar="حققت تنفيذًا بنسبة 100% لإطار (NCA)، مما عزز حوكمة الأمن السيبراني في كافة أقسام الإدارة."
-                                    data-en="Achieved 100% implementation of the NCA compliance framework, strengthening cyber governance across the department.">
-                                    Achieved 100% implementation of the NCA compliance framework, strengthening cyber governance across the department.</li>
-                                <li data-ar="ساهمت في المبادرات الرئيسية التي دعمت تحويل الإدارة إلى إدارة عامة مستقلة."
-                                    data-en="Contributed to key initiatives supporting the department's upgrade into a General Directorate.">
-                                    Contributed to key initiatives supporting the department's upgrade into a General Directorate.</li>
-                                <li data-ar="صممت وطورت نظام متكامل لإدارة المهام والحوكمة (باستخدام Laravel ونظام تحكم في الوصول مبني على 5 أدوار RBAC) مع تقارير آلية بصيغتي PDF/Excel، واختبار أداء النظام لأكثر من 8,000 مهمة — مما أدى إلى توحيد تتبع المهام وتقليل الجهد اليدوي لإعداد التقارير."
-                                    data-en="Designed and developed an integrated task management and governance system (Laravel, 5-role RBAC) with automated PDF/Excel reporting, performance-tested at 8,000+ tasks — unifying task tracking and cutting manual reporting effort.">
-                                    Designed and developed an integrated task management and governance system (Laravel, 5-role RBAC) with automated PDF/Excel reporting, performance-tested at 8,000+ tasks — unifying task tracking and cutting manual reporting effort.</li>
-                            </ul>
+                            <ul class="apple-list tangible-work"><li data-ar="راجعت ودققت أكثر من 100 تقرير ومستند أمني لدعم دقة المعلومات وجودة التوثيق المرتبط بمتطلبات الضوابط الأساسية للأمن السيبراني (NCA ECC)." data-en="Reviewed and audited 100+ security reports and documents to support information accuracy and documentation quality related to the NCA Essential Cybersecurity Controls (ECC).">Reviewed and audited 100+ security reports and documents to support information accuracy and documentation quality related to the NCA Essential Cybersecurity Controls (ECC).</li><li data-ar="جمعت متابعة المهام وإدارة الصلاحيات في نظام ويب واحد يدعم 5 أدوار، مع لوحات لمؤشرات الأداء." data-en="Brought task tracking and access management into one web system supporting 5 roles, with KPI dashboards.">Brought task tracking and access management into one web system supporting 5 roles, with KPI dashboards.</li><li data-ar="أتمتُّ إعداد التقارير بصيغتي PDF وExcel، لتقليل العمل اليدوي في تجهيز التقارير." data-en="Automated reporting in PDF and Excel formats to reduce manual report preparation.">Automated reporting in PDF and Excel formats to reduce manual report preparation.</li><li data-ar="ساهمت في تطبيق متطلبات NCA والمبادرات التي دعمت تحوّل الإدارة إلى إدارة عامة مستقلة." data-en="Contributed to NCA requirements and initiatives supporting the transition to an independent General Directorate.">Contributed to NCA requirements and initiatives supporting the transition to an independent General Directorate.</li></ul><div class="role-result"><strong data-ar="النتيجة" data-en="Result">Result</strong><p data-ar="نظام موحّد لمتابعة المهام والصلاحيات والتقارير، وتوثيق أمني تمت مراجعته لدعم أعمال الامتثال لـNCA ECC." data-en="A unified system for tracking tasks, permissions, and reports, alongside reviewed security documentation supporting NCA ECC compliance activities.">A unified system for tracking tasks, permissions, and reports, alongside reviewed security documentation supporting NCA ECC compliance activities.</p></div><a class="project-link-btn" href="#task-governance-project"><span data-ar="شاهد النظام الذي طورته" data-en="See the system I developed">See the system I developed</span> <i class="fas fa-arrow-down"></i></a>
                         </div>
 
                         <div class="timeline-card">
@@ -891,114 +176,15 @@
                             <div class="company-row">
                                 <span class="company-label" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</span>
                             </div>
-                            <ul class="apple-list">
-                                <li data-ar="مراقبة شبكات المؤسسة وحل المشكلات الفنية، مما حافظ على استمرارية الخدمة دون انقطاع."
-                                    data-en="Monitored enterprise networks and resolved technical issues, maintaining uninterrupted service continuity.">
-                                    Monitored enterprise networks and resolved technical issues, maintaining uninterrupted service continuity.</li>
-                                <li data-ar="تقديم الدعم الفني لأكثر من 20 موظفاً، وحل مشاكل الأجهزة والبرامج وتقليل أوقات تعطل النظام."
-                                    data-en="Provided technical support to 20+ employees, resolving hardware/software issues and cutting system downtime.">
-                                    Provided technical support to 20+ employees, resolving hardware/software issues and cutting system downtime.</li>
-                            </ul>
+                            <ul class="apple-list tangible-work"><li data-ar="دعمت أكثر من 20 موظفًا بحل مشكلات الأجهزة والبرامج، ومساعدتهم على استئناف أعمالهم عند حدوث أعطال تقنية." data-en="Supported 20+ employees by resolving hardware and software issues and helping them resume work after technical disruptions.">Supported 20+ employees by resolving hardware and software issues and helping them resume work after technical disruptions.</li><li data-ar="راقبت شبكات المؤسسة وعالجت المشكلات الفنية لدعم استمرارية الخدمة وتقليل أثر الأعطال على العمل اليومي." data-en="Monitored enterprise networks and addressed technical issues to support service continuity and limit disruption to daily work.">Monitored enterprise networks and addressed technical issues to support service continuity and limit disruption to daily work.</li></ul><div class="role-result"><strong data-ar="النتيجة" data-en="Result">Result</strong><p data-ar="حل الأعطال التقنية لدى المستخدمين والشبكات، ومساعدة الموظفين على استئناف العمل واستمرار استخدام الخدمات التقنية." data-en="Resolved user and network technical issues, helping employees resume work and continue using IT services.">Resolved user and network technical issues, helping employees resume work and continue using IT services.</p></div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Projects -->
-                <div class="bento-card">
-                    <div class="section-header">
-                        <div class="section-icon"><i class="fas fa-layer-group"></i></div>
-                        <h2 class="section-title" data-ar="المشاريع" data-en="Projects">Projects</h2>
-                    </div>
-
-                    <div class="apple-timeline">
-                        <div class="timeline-card" id="grc-excel-project">
-                            <div class="timeline-top">
-                                <span class="job-title" data-ar="أداة Excel لحوكمة الأمن السيبراني وإدارة المخاطر والامتثال" data-en="Cybersecurity Governance, Risk &amp; Compliance Toolkit — Excel">Cybersecurity Governance, Risk &amp; Compliance Toolkit — Excel</span>
-                                <span class="date-chip" data-ar="17 يوليو – 17 أكتوبر 2026" data-en="17 Jul – 17 Oct 2026">17 Jul – 17 Oct 2026</span>
-                            </div>
-                            <div class="company-row">
-                                <span class="company-label" data-ar="مشروع شخصي" data-en="Personal Project">Personal Project</span>
-                                <span class="apple-tag">Microsoft Excel</span>
-                            </div>
-                            <a href="https://lnkd.in/dJSwSh-A" target="_blank" rel="noopener noreferrer" class="project-link-btn">
-                                <span data-ar="عرض وتنزيل ملف Excel" data-en="View &amp; Download Excel File">View &amp; Download Excel File</span>
-                                <i class="fas fa-arrow-up-right-from-square"></i>
-                            </a>
-                            <ul class="apple-list">
-                                <li data-ar="تطوير أداة قابلة للتخصيص باستخدام Excel لتنظيم سجلات الحوكمة والمخاطر والامتثال للأمن السيبراني في ملف واحد يضم 31 ورقة عمل." data-en="Developed a customizable Excel toolkit to organize cybersecurity governance, risk, and compliance records in one file containing 31 worksheets.">Developed a customizable Excel toolkit to organize cybersecurity governance, risk, and compliance records in one file containing 31 worksheets.</li>
-                                <li data-ar="توفير سجلات للالتزامات التنظيمية والضوابط والسياسات وتقييمات الامتثال والأدلة الداعمة، مع مراجع لأطر NCA وSAMA وPDPL وISO/IEC 27001 وNIST CSF وCIS Controls." data-en="Includes registers for regulatory obligations, controls, policies, compliance assessments, and supporting evidence, with references to NCA, SAMA, PDPL, ISO/IEC 27001, NIST CSF, and CIS Controls.">Includes registers for regulatory obligations, controls, policies, compliance assessments, and supporting evidence, with references to NCA, SAMA, PDPL, ISO/IEC 27001, NIST CSF, and CIS Controls.</li>
-                                <li data-ar="حساب درجات المخاطر الكامنة والمتبقية بناءً على الاحتمالية والأثر، وتوثيق خطط المعالجة وسجلات المخاطر التاريخية." data-en="Calculates inherent and residual risk scores based on likelihood and impact, with registers for treatment plans and historical risk records.">Calculates inherent and residual risk scores based on likelihood and impact, with registers for treatment plans and historical risk records.</li>
-                                <li data-ar="متابعة ملاحظات التدقيق والإجراءات التصحيحية والمواعيد المتأخرة وانتهاء استثناءات الامتثال، إلى جانب سجلات الأطراف الخارجية والخصوصية والحوادث واستمرارية الأعمال." data-en="Tracks audit findings, corrective actions, overdue items, and compliance exception expiry, alongside records for third parties, privacy, incidents, and business continuity.">Tracks audit findings, corrective actions, overdue items, and compliance exception expiry, alongside records for third parties, privacy, incidents, and business continuity.</li>
-                                <li data-ar="تضمين لوحة تنفيذية ومؤشرات أداء و12 رسمًا بيانيًا لتلخيص البيانات المُدخلة، مع قوائم منسدلة وتنسيق شرطي وروابط تنقل لتسهيل المراجعة والمتابعة." data-en="Features an executive dashboard, KPI reporting, and 12 charts summarizing entered data, with dropdown lists, conditional formatting, and navigation links to support review and follow-up.">Features an executive dashboard, KPI reporting, and 12 charts summarizing entered data, with dropdown lists, conditional formatting, and navigation links to support review and follow-up.</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-card">
-                            <div class="timeline-top">
-                                <span class="job-title" data-ar="نظام إدارة المهام والحوكمة" data-en="Task Management & Governance System">
-                                    Task Management & Governance System
-                                </span>
-                                <span class="date-chip" data-ar="أكتوبر 2025 – فبراير 2026" data-en="Oct 2025 – Feb 2026">Oct 2025 – Feb 2026</span>
-                            </div>
-                            <div class="company-row">
-                                <span class="company-label" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</span>
-                            </div>
-                            <a href="https://drive.google.com/drive/folders/18WCLLiGQQ_fYNvAYo7yE2rkrKVEHioOe?usp=drive_link"
-                                target="_blank" class="project-link-btn">
-                                <span data-ar="عرض وثائق المشروع" data-en="View Project Documents">View Project Documents</span>
-                                <i class="fas fa-arrow-up-right-from-square"></i>
-                            </a>
-                            <ul class="apple-list">
-                                <li data-ar="تصميم وتطوير نظام لإدارة المهام والحوكمة باستخدام Laravel مع نظام تحكم في الوصول مبني على 5 أدوار (RBAC)."
-                                    data-en="Designed and developed a task management and governance system using Laravel with a 5-role RBAC (role-based access control) system">
-                                    Designed and developed a task management and governance system using Laravel with a 5-role RBAC (role-based access control) system</li>
-                                <li data-ar="بناء لوحات تحكم تنفيذية لتتبع مؤشرات الأداء الرئيسية (KPIs) في الوقت الفعلي."
-                                    data-en="Built executive dashboards to track KPIs in real time">
-                                    Built executive dashboards to track KPIs in real time</li>
-                                <li data-ar="أتمتة إنشاء التقارير بصيغتي PDF و Excel."
-                                    data-en="Automated report generation in PDF and Excel formats">
-                                    Automated report generation in PDF and Excel formats</li>
-                                <li data-ar="اختبار أداء النظام لأكثر من 8,000 مهمة، وتأكيد استقراره وكفاءته العالية."
-                                    data-en="Performance-tested the system with 8,000+ tasks, confirming stability at scale">
-                                    Performance-tested the system with 8,000+ tasks, confirming stability at scale</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-card">
-                            <div class="timeline-top">
-                                <span class="job-title" data-ar="أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة" data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">
-                                    Agri Zone – Full-Stack Agricultural E-Commerce Platform
-                                </span>
-                                <span class="date-chip" data-ar="أبريل 2024 – مايو 2025" data-en="Apr 2024 – May 2025">Apr 2024 – May 2025</span>
-                            </div>
-                            <div class="company-row">
-                                <span class="company-label" data-ar="مشروع متكامل (Full-Stack)" data-en="Full-Stack Platform">Full-Stack Platform</span>
-                            </div>
-                            <a href="https://drive.google.com/drive/folders/14KsbEnfKMFHTkZa6H7P2HfrxGGnfnKP2?usp=drive_link"
-                                target="_blank" class="project-link-btn">
-                                <span data-ar="عرض وثائق المشروع" data-en="View Project Documents">View Project Documents</span>
-                                <i class="fas fa-arrow-up-right-from-square"></i>
-                            </a>
-                            <ul class="apple-list">
-                                <li data-ar="تطوير الواجهة الخلفية (Backend) بالكامل وتصميم مخطط قواعد البيانات العلائقية بشكل مستقل."
-                                    data-en="Solely developed the backend and designed the relational database schema">
-                                    Solely developed the backend and designed the relational database schema</li>
-                                <li data-ar="قيادة تخطيط دورات التطوير (Agile Sprints)، وتوزيع المهام، والتسليم التكراري للميزات."
-                                    data-en="Led Agile sprint planning, task distribution, and iterative feature delivery">
-                                    Led Agile sprint planning, task distribution, and iterative feature delivery</li>
-                                <li data-ar="بناء منطق النظام الأساسي باستخدام PHP وتسليم المشروع قبل الموعد المحدد بأكثر من شهر."
-                                    data-en="Built core system logic in PHP, delivering the project 1+ month ahead of schedule">
-                                    Built core system logic in PHP, delivering the project 1+ month ahead of schedule</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skills -->
-                <div class="bento-card">
+<section class="focus-grid" aria-label="Professional focus"><a class="focus-card" href="#experience"><div class="focus-top"><i class="fas fa-desktop"></i><span>IT</span></div><h2 data-ar="تقنية المعلومات" data-en="Information Technology">Information Technology</h2><p data-ar="دعم المستخدمين والأنظمة، واستكشاف الأعطال، ودعم الشبكات والبنية التحتية." data-en="User and system support, troubleshooting, networking, and IT infrastructure.">User and system support, troubleshooting, networking, and IT infrastructure.</p><span class="focus-proof" data-ar="خبرة تدريب تعاوني في تقنية المعلومات" data-en="IT co-op experience">IT co-op experience</span><i class="fas fa-arrow-down focus-arrow"></i></a><a class="focus-card" href="#grc-excel-project"><div class="focus-top"><i class="fas fa-scale-balanced"></i><span>GRC</span></div><h2 data-ar="الحوكمة والمخاطر والامتثال" data-en="Governance, Risk &amp; Compliance">Governance, Risk &amp; Compliance</h2><p data-ar="تنظيم الضوابط والأدلة، وتقييم المخاطر، ومتابعة الامتثال والإجراءات التصحيحية." data-en="Organizing controls and evidence, assessing risks, and tracking compliance and corrective actions.">Organizing controls and evidence, assessing risks, and tracking compliance and corrective actions.</p><span class="focus-proof" data-ar="خبرة تطوعية لمدة 11 شهرًا + تطوير أداة لإدارة الحوكمة والمخاطر والامتثال" data-en="11 months of volunteer experience + development of a GRC management toolkit">11 months of volunteer experience + development of a GRC management toolkit</span><i class="fas fa-arrow-down focus-arrow"></i></a><a class="focus-card" href="#certifications-card"><div class="focus-top"><i class="fas fa-shield-halved"></i><span>SOC</span></div><h2 data-ar="العمليات الأمنية" data-en="Security Operations">Security Operations</h2><p data-ar="معرفة بالمراقبة الأمنية وSIEM واكتشاف التهديدات وتقييم الثغرات والاستجابة للحوادث." data-en="Knowledge of monitoring, SIEM, threat detection, vulnerability assessment, and incident response.">Knowledge of monitoring, SIEM, threat detection, vulnerability assessment, and incident response.</p><span class="focus-proof" data-ar="معرفة مدعومة بشهادات وأدوات أمنية" data-en="Knowledge supported by certifications and security tools">Knowledge supported by certifications and security tools</span><i class="fas fa-arrow-down focus-arrow"></i></a></section>
+<div class="bento-card" id="skills">
                     <div class="section-header">
                         <div class="section-icon"><i class="fas fa-cpu"></i></div>
-                        <h2 class="section-title" data-ar="المهارات التقنية والمهنية" data-en="Skills">Skills</h2>
+                        <h2 class="section-title" data-ar="مهاراتي وما يدعمها" data-en="Skills & Supporting Work">Skills &amp; Supporting Work</h2>
                     </div>
 
                     <div class="skills-grid">
@@ -1102,28 +288,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Right / Side Stream -->
-            <div class="side-column">
-                <!-- QR Code Box -->
-                <div class="bento-card qr-card" id="qr-code-card">
-                    <div class="section-header" style="justify-content: center; margin-bottom: 14px;">
-                        <h2 class="section-title" style="font-size: 1.05em;" data-ar="المجلد الشامل والمرفقات" data-en="All Files & Attachments">All Files & Attachments</h2>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link"
-                        target="_blank" title="View all files">
-                        <img src="QR.png" alt="QR Code" class="qr-code-img">
-                    </a>
-                    <p style="font-size: 12.5px; color: var(--text-secondary);"
-                        data-ar="امسح الرمز للوصول السريع للنسخة التفاعلية والمرفقات" 
-                        data-en="Scan the QR code to access the interactive version and attachments.">
-                        Scan the QR code to access the interactive version and attachments.
-                    </p>
-                </div>
-
-                <!-- Education -->
-                <div class="bento-card" id="education-card">
+<div class="credential-grid"><div class="bento-card" id="education-card">
                     <div class="section-header" style="margin-bottom: 16px;">
                         <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
                         <h2 class="section-title" data-ar="التعليم الأكاديمي" data-en="Education">Education</h2>
@@ -1136,13 +301,10 @@
                         <div class="side-sub" data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid University</div>
                         <p class="side-desc" data-ar="كلية علوم الحاسب الآلي" data-en="College of Computer Science">College of Computer Science</p>
                     </div>
-                </div>
-
-                <!-- Certifications -->
-                <div class="bento-card" id="certifications-card">
+                </div><div class="bento-card" id="certifications-card">
                     <div class="section-header" style="margin-bottom: 16px;">
                         <div class="section-icon"><i class="fas fa-award"></i></div>
-                        <h2 class="section-title" data-ar="الشهادات والدورات" data-en="Certifications & Courses">Certifications & Courses</h2>
+                        <h2 class="section-title" data-ar="شهاداتي ومعارفي" data-en="Credentials & Knowledge">Credentials &amp; Knowledge</h2>
                     </div>
 
                     <div class="side-item-box">
@@ -1170,10 +332,7 @@
                             Fundamentals of Web • Data Fundamentals • Project Management Foundations
                         </p>
                     </div>
-                </div>
-
-                <!-- Languages -->
-                <div class="bento-card" id="languages-card">
+<a class="project-link-btn" href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="عرض الشهادات والدورات" data-en="View Certificates &amp; Courses">View Certificates &amp; Courses</span> <i class="fas fa-arrow-up-right-from-square"></i></a>                </div><div class="bento-card" id="languages-card">
                     <div class="section-header" style="margin-bottom: 16px;">
                         <div class="section-icon"><i class="fas fa-globe"></i></div>
                         <h2 class="section-title" data-ar="اللغات" data-en="Languages">Languages</h2>
@@ -1188,13 +347,49 @@
                         <span class="lang-name" data-ar="الإنجليزية" data-en="English">English</span>
                         <i class="fas fa-check-circle lang-check"></i>
                     </div>
+                </div></div>
+<div class="bento-card" id="documents">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-arrow-down-to-bracket"></i></div>
+                        <h2 class="section-title" data-ar="اطّلع على ما يدعم خبرتي" data-en="Explore My Supporting Documents">Explore My Supporting Documents</h2>
+                    </div>
+                    <div class="files-grid">
+                        <a href="https://drive.google.com/drive/folders/1UPtBHmH5r9QP1vgTyrR3FqllVOXvVRdk?usp=drive_link"
+                            target="_blank" class="file-item">
+                            <div class="file-item-icon"><i class="fas fa-file-pdf"></i></div>
+                            <h4 data-ar="السيرة الذاتية" data-en="Resume/CV">Resume/CV</h4>
+                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link"
+                            target="_blank" class="file-item">
+                            <div class="file-item-icon"><i class="fas fa-award"></i></div>
+                            <h4 data-ar="الشهادات" data-en="Certificates">Certificates</h4>
+                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1A7ngWTAsWx_I2FbM71088numn6M-mHzC?usp=drive_link"
+                            target="_blank" class="file-item">
+                            <div class="file-item-icon"><i class="fas fa-folder-open"></i></div>
+                            <h4 data-ar="المشاريع" data-en="Projects">Projects</h4>
+                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Dialog Sheet -->
-    <div id="contactModal" class="modal-overlay" onclick="closeContactModal(event)">
+<div class="bento-card qr-card" id="qr-code-card">
+                    <div class="section-header" style="justify-content: center; margin-bottom: 14px;">
+                        <h2 class="section-title" style="font-size: 1.05em;" data-ar="المجلد الشامل والمرفقات" data-en="All Files & Attachments">All Files & Attachments</h2>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link"
+                        target="_blank" title="View all files">
+                        <img src="QR.png" alt="QR Code" class="qr-code-img" onerror="this.style.display='none'">
+                    </a>
+                    <p style="font-size: 12.5px; color: var(--text-secondary);"
+                        data-ar="راجع ملفات المشاريع والشهادات والمرفقات من المجلد الشامل" 
+                        data-en="Explore project files, certificates, and supporting attachments in one folder.">Explore project files, certificates, and supporting attachments in one folder.
+                    </p>
+<a class="project-link-btn" style="margin:14px 0 0" href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="افتح ملفات أعمالي" data-en="Open My Work Files">Open My Work Files</span> <i class="fas fa-arrow-up-right-from-square"></i></a>                </div>
+<footer class="bento-card" style="text-align:center"><h2 class="section-title" data-ar="لنناقش كيف أقدر أساهم مع فريقك" data-en="Let’s discuss how I can contribute to your team">Let’s discuss how I can contribute to your team</h2><a class="apple-pill-btn primary-action" href="mailto:mbnq1@outlook.com"><i class="fas fa-envelope"></i><span data-ar="تواصل معي" data-en="Contact Me">Contact Me</span></a></footer>
+</main>
+<div id="contactModal" class="modal-overlay" onclick="closeContactModal(event)">
         <div class="modal-card" onclick="event.stopPropagation()">
             <div class="modal-title-row">
                 <h3 data-ar="خيارات التواصل" data-en="Contact Options">Contact Options</h3>
@@ -1212,8 +407,7 @@
             </div>
         </div>
     </div>
-
-    <script>
+<script>
         window.addEventListener('scroll', () => {
             const scrollBar = document.querySelector('.scroll-indicator');
             const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
