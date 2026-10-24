@@ -78,14 +78,12 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
 .role-result{margin-top:20px;padding:14px 16px;background:var(--apple-blue-light);border-radius:12px}.role-result strong{display:block;font-size:12px;color:var(--apple-blue);margin-bottom:5px}.role-result p{font-size:13px;line-height:1.9;color:var(--text-primary)}
 .hero-signature{display:block;width:clamp(190px,27vw,300px);height:auto;margin:6px auto 20px;mix-blend-mode:multiply;object-fit:contain}
 @media(max-width:600px){.hero-signature{width:220px;max-width:80%;margin:4px auto 18px}}
-/* Portrait framing tuned for the supplied black-and-white photograph. */
 .hero-card .hero-avatar-wrap{width:156px;height:156px;min-width:156px;min-height:156px;padding:0;border:5px solid #fff;background:#090909;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.05),0 12px 30px rgba(0,0,0,.09);isolation:isolate;flex-shrink:0}
 .hero-card .hero-avatar{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.45);transform-origin:50% 40%;border-radius:0;background:#090909}
 .hero-card .avatar-fallback{color:#c3c3c8;background:#090909;font-size:32px}
 .hero-card{gap:22px}
 .hero-signature{width:clamp(200px,26vw,280px);margin:8px auto 20px}
 @media(max-width:600px){.hero-card .hero-avatar-wrap{width:128px;height:128px;min-width:128px;min-height:128px;border-width:4px;box-shadow:0 0 0 1px rgba(0,0,0,.05),0 8px 22px rgba(0,0,0,.08)}.hero-card{gap:20px}.hero-signature{width:210px;max-width:80%;margin:6px auto 18px}}
-/* Balanced credential sections and the new transparent portrait. */
 .credential-grid{display:flex;flex-direction:column;gap:20px;align-items:stretch}
 .credential-grid>.bento-card{width:100%;padding:28px 30px}
 .credential-grid #certifications-card{grid-row:auto}
@@ -96,26 +94,18 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
 #languages-card .section-header{grid-column:1/-1;margin-bottom:8px!important}
 #languages-card .lang-row{padding:10px 0;margin:0}
 
-
-
 @media(max-width:600px){.credential-grid{gap:16px}.credential-grid>.bento-card{padding:24px 20px}#certifications-card .cert-specs{grid-template-columns:minmax(0,1fr);gap:5px}#languages-card{gap:0 22px}}
 
 .btn-email{background:var(--apple-blue-light);color:var(--apple-blue)}.modal-action-btn{min-height:48px}
-/* Compact profile image, with one source and restrained crop. */
-.hero-card .hero-avatar-wrap{width:112px;height:112px;min-width:112px;min-height:112px;border-width:3px}
-.hero-card .hero-avatar{width:100%;height:100%;transform:scale(1.15);transform-origin:50% 40%;object-fit:cover}
-/* Compact profile image, with one source and restrained crop. */
 .hero-card .hero-avatar-wrap{width:112px;height:112px;min-width:112px;min-height:112px;border-width:3px}
 .hero-card .hero-avatar{width:100%;height:100%;transform:scale(1.15);transform-origin:50% 40%;object-fit:cover}
 @media(max-width:600px){.hero-card .hero-avatar-wrap{width:96px;height:96px;min-width:96px;min-height:96px;border-width:3px}}
-/* Balance the portrait against the name across screen sizes. */
 .hero-card .hero-avatar-wrap{width:152px;height:152px;min-width:152px;min-height:152px;border-width:4px}
 .hero-card .hero-name{font-size:clamp(34px,4.2vw,48px);line-height:1.2;letter-spacing:-.03em;margin-bottom:12px}
 @media(max-width:600px){.hero-card .hero-avatar-wrap{width:104px;height:104px;min-width:104px;min-height:104px;border-width:3px}.hero-card .hero-name{font-size:32px;line-height:1.3;margin-bottom:10px}}
 @media(max-width:360px){.hero-card .hero-name{font-size:29px}}
 @media(max-width:600px){.hero-card .hero-name{font-size:27px;line-height:1.3;letter-spacing:-.02em}}@media(max-width:360px){.hero-card .hero-name{font-size:25px}}
 
-/* The mobile flow stays unchanged; desktop uses a consistent editorial grid. */
 .project-summary,.project-details{display:contents}
 @media(min-width:1024px){
  .container.page-content{max-width:1160px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:28px;row-gap:52px;padding-inline:36px}
@@ -199,7 +189,6 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
  .project-details .case-field p{font-size:12.5px}
 }
 
-/* Matched header controls, using a shared outlined icon style. */
 .apple-nav .nav-content{align-items:center;gap:12px}
 .apple-nav .nav-brand,.apple-nav .language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;height:42px;padding:0 15px;border:1px solid var(--apple-border);border-radius:999px;background:#fff;color:var(--text-primary);font-family:inherit;font-size:13px;font-weight:500;line-height:1;text-decoration:none;letter-spacing:0;white-space:nowrap;box-sizing:border-box}
 .apple-nav .nav-symbol{display:block;flex:0 0 18px;width:18px;height:18px;color:var(--text-secondary)}
@@ -211,7 +200,6 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
 
 @media(min-width:1024px){.project-details{grid-template-columns:1.35fr 1fr;column-gap:28px}}
 
-/* Unified sizing system: typography, controls, spacing and project framing. */
 :root{--size-body:14px;--size-small:12px;--size-label:11px;--size-section:27px;--size-card:18px;--size-number:30px;--space-section:48px;--space-card:26px;--radius-card:22px}
 body{font-size:var(--size-body);line-height:1.8}
 .container.page-content{row-gap:var(--space-section);column-gap:28px}
@@ -298,7 +286,6 @@ body{font-size:var(--size-body);line-height:1.8}
 @media(max-width:360px){.hero-card .hero-name{font-size:25px}.case-study .job-title{font-size:16px}.container.page-content{padding-inline:14px}}
 .hero-signature{mix-blend-mode:normal}
 
-/* Intro occupies the full desktop row after removing the repeated profile. */
 @media(min-width:1024px){.page-content>.adaptable-card{grid-column:1/-1;max-width:none;display:grid;grid-template-columns:300px minmax(0,1fr);gap:0 34px;align-items:start}.page-content>.adaptable-card .section-header{grid-column:1;grid-row:1/3;margin-bottom:0}.page-content>.adaptable-card .summary-text{grid-column:2;grid-row:1}.page-content>.adaptable-card>.project-link-btn{grid-column:2;grid-row:2;justify-self:start;margin-top:12px!important}}
 .hero-avatar-wrap:has(.hero-avatar:not([style*="display: none"])) .avatar-fallback{visibility:hidden}
 .hero-avatar-wrap:has(.hero-avatar[style*="display: none"]) .avatar-fallback{visibility:visible}
@@ -306,23 +293,15 @@ body{font-size:var(--size-body);line-height:1.8}
 </head>
 
 <body>
-<header class="apple-nav">
 <header class="apple-nav" id="top">
-        <div class="scroll-indicator"></div>
-        <div class="nav-content">
-            <div class="nav-brand">
-                <i class="fas fa-id-card-clip"></i>
-                <span data-ar="ملف أعمالي" data-en="Portfolio">Portfolio</span>
-            </div>
-            <button class="language-toggle" onclick="toggleLanguage()">
-                <i class="fas fa-globe"></i>
-            <a class="nav-brand" href="#top"><svg class="nav-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.25"/><path d="M5.5 20v-1.25a6.5 6.5 0 0 1 13 0V20"/></svg><span data-ar="ملف أعمالي" data-en="Portfolio">Portfolio</span></a>
-            <button type="button" class="language-toggle" onclick="toggleLanguage()"><svg class="nav-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="3.7" ry="9"/><path d="M3 12h18"/></svg>
-                <span id="langBtn">العربية</span>
-            </button>
-        </div>
-    </header>
-    </header>
+    <div class="scroll-indicator"></div>
+    <div class="nav-content">
+        <a class="nav-brand" href="#top"><svg class="nav-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.25"/><path d="M5.5 20v-1.25a6.5 6.5 0 0 1 13 0V20"/></svg><span data-ar="ملف أعمالي" data-en="Portfolio">Portfolio</span></a>
+        <button type="button" class="language-toggle" onclick="toggleLanguage()"><svg class="nav-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="3.7" ry="9"/><path d="M3 12h18"/></svg>
+            <span id="langBtn">العربية</span>
+        </button>
+    </div>
+</header>
 <main class="container page-content">
 <div class="bento-card hero-card">
             <div class="hero-info">
@@ -341,14 +320,12 @@ body{font-size:var(--size-body);line-height:1.8}
                     <button type="button" class="apple-pill-btn" onclick="openContactModal()">
                         <i class="fas fa-phone"></i> <span dir="ltr">+966 566 833 453</span>
                     </button>
-                    <a href="https://linkedin.com/in/mbnq" target="_blank" class="apple-pill-btn">
                     <a href="https://linkedin.com/in/mbnq" target="_blank" class="apple-pill-btn" rel="noopener noreferrer">
                         <i class="fab fa-linkedin"></i> linkedin.com/in/mbnq
                     </a>
                     <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" rel="noopener noreferrer" class="apple-pill-btn">
                         <i class="fab fa-google-drive"></i> <span data-ar="الملفات والمرفقات" data-en="Files &amp; Attachments">Files &amp; Attachments</span>
                     </a>
-                    <a href="https://github.com/mbnq11" target="_blank" class="apple-pill-btn">
                     <a href="https://github.com/mbnq11" target="_blank" class="apple-pill-btn" rel="noopener noreferrer">
                         <i class="fab fa-github"></i> github.com/mbnq11
                     </a>
@@ -366,8 +343,6 @@ body{font-size:var(--size-body);line-height:1.8}
         <h2 class="section-title" data-ar="شغف بالاكتشاف… وقدرة على الإنجاز" data-en="Driven to Explore. Ready to Deliver.">Driven to Explore. Ready to Deliver.</h2>
     </div>
     <p class="summary-text" data-ar="التقنية عندي هواية وشغف بالاكتشاف؛ أستمتع باستكشاف التقنيات والأدوات الجديدة، وفهم طريقة عملها، وتجربتها وتحويل الأفكار إلى مشاريع وحلول عملية. تتنوع اهتماماتي بين تقنية المعلومات والأنظمة والشبكات، وتطوير تطبيقات الويب وقواعد البيانات والأتمتة، والأمن السيبراني بما يشمل الحوكمة والمخاطر والامتثال (GRC) والعمليات الأمنية (SOC). يدفعني الفضول إلى مواصلة التعلّم، والربط بين مجالات مختلفة، وتوسيع مهاراتي بحسب الفكرة أو المشكلة التي أعمل عليها." data-en="Technology is a hobby and a passion for discovery. I enjoy exploring new technologies and tools, understanding how they work, experimenting, and turning ideas into projects and practical solutions. My interests span IT, systems and networking, web development, databases, automation, and cybersecurity, including governance, risk and compliance (GRC) and security operations (SOC). Curiosity drives me to keep learning, connect different disciplines, and expand my skills around the idea or problem I am working on.">Technology is a hobby and a passion for discovery. I enjoy exploring new technologies and tools, understanding how they work, experimenting, and turning ideas into projects and practical solutions. My interests span IT, systems and networking, web development, databases, automation, and cybersecurity, including governance, risk and compliance (GRC) and security operations (SOC). Curiosity drives me to keep learning, connect different disciplines, and expand my skills around the idea or problem I am working on.</p>
-    <p class="summary-text" data-ar="التقنية هواية وشغف بالاكتشاف؛ أستمتع باستكشاف التقنيات والأدوات الجديدة، وفهم طريقة عملها، وتجربتها وتحويل الأفكار إلى مشاريع وحلول عملية. تتنوع اهتماماتي بين تقنية المعلومات والأنظمة والشبكات، وتطوير تطبيقات الويب وقواعد البيانات والأتمتة، والأمن السيبراني بما يشمل الحوكمة والمخاطر والامتثال (GRC) والعمليات الأمنية (SOC). يدفعني الفضول إلى مواصلة التعلّم، والربط بين مجالات مختلفة، وتوسيع مهاراتي بحسب الفكرة أو المشكلة التي أعمل عليها." data-en="Technology is a hobby and a passion for discovery. I enjoy exploring new technologies and tools, understanding how they work, experimenting, and turning ideas into projects and practical solutions. My interests span IT, systems and networking, web development, databases, automation, and cybersecurity, including governance, risk and compliance (GRC) and security operations (SOC). Curiosity drives me to keep learning, connect different disciplines, and expand my skills around the idea or problem I am working on.">Technology is a hobby and a passion for discovery. I enjoy exploring new technologies and tools, understanding how they work, experimenting, and turning ideas into projects and practical solutions. My interests span IT, systems and networking, web development, databases, automation, and cybersecurity, including governance, risk and compliance (GRC) and security operations (SOC). Curiosity drives me to keep learning, connect different disciplines, and expand my skills around the idea or problem I am working on.</p>
-    <p class="summary-text" data-ar="التقنية هواية وشغف بالاكتشاف؛ أستمتع باستكشاف التقنيات والأدوات الجديدة، وفهم طريقة عملها، وتجربتها وتحويل الأفكار إلى مشاريع وحلول عملية. تتنوع اهتماماتي بين تقنية المعلومات والأنظمة والشبكات، وتطوير تطبيقات الويب وقواعد البيانات والأتمتة، والأمن السيبراني بما يشمل الحوكمة والمخاطر والامتثال (GRC) والعمليات الأمنية (SOC). يدفعني الفضول إلى مواصلة التعلّم، والربط بين مجالات مختلفة، وتوسيع مهاراتي بحسب الفكرة أو المشكلة التي أعمل عليها." data-en="Technology is a hobby and a passion for discovery. I enjoy exploring new technologies and tools, understanding how they work, experimenting, and turning ideas into projects and practical solutions. My interests span IT, systems and networking, web development, databases, automation, and cybersecurity, including governance, risk and compliance (GRC) and security operations (SOC). Curiosity drives me to keep learning, connect different disciplines, and expand my skills around the idea or problem I am working on.">Technology is a hobby and a passion for discovery. I enjoy exploring new technologies and tools, understanding how they work, experimenting, and turning ideas into projects and practical solutions. My interests span IT, systems and networking, web development, databases, automation, and cybersecurity, including governance, risk and compliance (GRC) and security operations (SOC). Curiosity drives me to keep learning, connect different disciplines, and expand my skills around the idea or problem I am working on.</p>
     <a href="#selected-projects" class="project-link-btn" style="margin:16px 0 0"><span data-ar="شاهد التطبيق في مشاريعي" data-en="See This in My Projects">See This in My Projects</span> <i class="fas fa-arrow-down"></i></a>
 </section>
 <div class="bento-card profile-intro">
@@ -377,10 +352,6 @@ body{font-size:var(--size-body);line-height:1.8}
                     </div>
                     <p class="summary-text" data-ar="متخصص في تقنية المعلومات والأمن السيبراني بخلفية في نظم المعلومات. أجمع بين دعم الأنظمة، والحوكمة والمخاطر والامتثال (GRC)، ومعرفة العمليات الأمنية (SOC). أتعلم التقنيات الجديدة بحسب متطلبات العمل، وأستخدمها لتحويل المشكلات إلى حلول قابلة للتطبيق." data-en="IT and cybersecurity professional with a background in Information Systems. I combine systems support, governance, risk and compliance (GRC), and knowledge of security operations (SOC). I learn new technologies to meet work requirements and use them to turn problems into practical solutions.">IT and cybersecurity professional with a background in Information Systems. I combine systems support, governance, risk and compliance (GRC), and knowledge of security operations (SOC). I learn new technologies to meet work requirements and use them to turn problems into practical solutions.</p>
                 </div>
-<section class="bento-card" id="selected-projects"><div class="section-header"><div class="section-icon"><i class="fas fa-layer-group"></i></div><h2 class="section-title" data-ar="مشاريعي وما أنجزته" data-en="My Projects &amp; Deliverables">My Projects &amp; Deliverables</h2></div><div class="apple-timeline"><article class="timeline-card case-study" id="task-governance-project"><div class="timeline-top"><h3 class="job-title" data-ar="نظام ويب لإدارة المهام والحوكمة" data-en="Task Management &amp; Governance Web System">Task Management &amp; Governance Web System</h3><span class="date-chip" data-ar="أكتوبر 2025 – فبراير 2026" data-en="Oct 2025 – Feb 2026">Oct 2025 – Feb 2026</span></div><div class="company-row"><span class="company-label" data-ar="أمانة منطقة عسير | مشروع خلال فترة التطوع" data-en="Asir Municipality | Project during volunteer experience">Asir Municipality | Project during volunteer experience</span></div><div class="case-metrics"><div><strong>Laravel</strong><span data-ar="نظام ويب" data-en="Web system">Web system</span></div><div><strong>RBAC</strong><span data-ar="إدارة الصلاحيات" data-en="Access management">Access management</span></div></div><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I delivered">What I delivered</h3><p data-ar="صممت وطورت نظام ويب باستخدام Laravel لإدارة المهام والحوكمة، مع تحكم في الوصول مبني على الأدوار." data-en="Designed and developed a Laravel web system for task management and governance, with role-based access control.">Designed and developed a Laravel web system for task management and governance, with role-based access control.</p></div><div class="case-field"><h3 data-ar="المخرجات" data-en="Deliverables">Deliverables</h3><p data-ar="صلاحيات موزعة على خمسة أدوار، ولوحات تحكم لمؤشرات الأداء، وتقارير آلية بصيغتي PDF وExcel." data-en="Access permissions across five roles, KPI dashboards, and automated reports in PDF and Excel formats.">Access permissions across five roles, KPI dashboards, and automated reports in PDF and Excel formats.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="توحيد متابعة المهام والصلاحيات والتقارير في نظام واحد وتقليل الجهد اليدوي لإعداد التقارير." data-en="Brings task tracking, permissions, and reporting into one system and reduces manual report preparation.">Brings task tracking, permissions, and reporting into one system and reduces manual report preparation.</p></div><a href="https://drive.google.com/drive/folders/18WCLLiGQQ_fYNvAYo7yE2rkrKVEHioOe?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وثائق مشروع الأمانة" data-en="View Municipality Project Documents">View Municipality Project Documents</span> <i class="fas fa-arrow-up-right-from-square"></i></a></article><article class="timeline-card case-study" id="grc-excel-project"><div class="timeline-top"><h3 class="job-title" data-ar="أداة Excel لحوكمة الأمن السيبراني والمخاطر والامتثال" data-en="Cybersecurity GRC Excel Toolkit">Cybersecurity GRC Excel Toolkit</h3><span class="date-chip" data-ar="17 يوليو – 17 أكتوبر 2026" data-en="17 Jul – 17 Oct 2026">17 Jul – 17 Oct 2026</span></div><div class="company-row"><span class="company-label" data-ar="مشروع شخصي مستقل | ثلاثة أشهر" data-en="Independent Personal Project | Three months">Independent Personal Project | Three months</span></div><div class="case-metrics"><div><strong>25</strong><span data-ar="ورقة أساسية" data-en="Core worksheets">Core worksheets</span></div><div><strong>12</strong><span data-ar="رسمًا بيانيًا" data-en="Charts">Charts</span></div></div><p class="worksheet-count-note" data-ar="يتضمن الملف 31 ورقة إجمالًا، منها 25 ورقة أساسية: 20 للسجلات وإدارة أعمال GRC، و5 للمؤشرات والتحليلات، إلى جانب 6 صفحات مساندة للغلاف والتنقّل والتوثيق والجودة." data-en="The file contains 31 worksheets in total: 25 core worksheets comprising 20 GRC registers and management sheets and 5 dashboard and analytics sheets, plus 6 supporting sheets for the cover, navigation, documentation, and quality assurance.">The file contains 31 worksheets in total: 25 core worksheets comprising 20 GRC registers and management sheets and 5 dashboard and analytics sheets, plus 6 supporting sheets for the cover, navigation, documentation, and quality assurance.</p><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I delivered">What I delivered</h3><p data-ar="طورت ملف Excel قابلًا للتخصيص لتنظيم أعمال الحوكمة والمخاطر والامتثال للأمن السيبراني." data-en="Developed a customizable Excel file to organize cybersecurity governance, risk, and compliance activities.">Developed a customizable Excel file to organize cybersecurity governance, risk, and compliance activities.</p></div><div class="case-field"><h3 data-ar="المخرجات" data-en="Deliverables">Deliverables</h3><p data-ar="سجلات للضوابط والتقييمات والأدلة، وحساب المخاطر الكامنة والمتبقية وخطط المعالجة، ومتابعة التدقيق والإجراءات والاستثناءات. يشمل سجلات الأطراف الخارجية والخصوصية والحوادث واستمرارية الأعمال، مع لوحات مؤشرات وقوائم منسدلة وتنسيق شرطي وروابط تنقل." data-en="Registers for controls, assessments, and evidence; inherent and residual risk scoring and treatment plans; and tracking for audit findings, actions, and exceptions. Includes third-party, privacy, incident, and business continuity records, with dashboards, dropdown lists, conditional formatting, and navigation links.">Registers for controls, assessments, and evidence; inherent and residual risk scoring and treatment plans; and tracking for audit findings, actions, and exceptions. Includes third-party, privacy, incident, and business continuity records, with dashboards, dropdown lists, conditional formatting, and navigation links.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="جمع سجلات GRC في ملف واحد لتسهيل مراجعة البيانات المُدخلة ومتابعة المخاطر والإجراءات. يتضمن مراجع لأطر NCA وSAMA وPDPL وISO/IEC 27001 وNIST CSF وCIS Controls." data-en="Brings GRC records into one file to simplify review of entered data and follow-up on risks and actions. References NCA, SAMA, PDPL, ISO/IEC 27001, NIST CSF, and CIS Controls.">Brings GRC records into one file to simplify review of entered data and follow-up on risks and actions. References NCA, SAMA, PDPL, ISO/IEC 27001, NIST CSF, and CIS Controls.</p></div><a href="https://lnkd.in/dJSwSh-A" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وتنزيل مشروع Excel" data-en="View &amp; Download Excel Project">View &amp; Download Excel Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a></article></div><div class="other-projects"><article class="timeline-card case-study" id="agri-zone-project"><div class="timeline-top"><h3 class="job-title" data-ar="أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة" data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">Agri Zone – Full-Stack Agricultural E-Commerce Platform</h3><span class="date-chip" data-ar="أبريل 2024 – مايو 2025" data-en="Apr 2024 – May 2025">Apr 2024 – May 2025</span></div><div class="company-row"><span class="company-label" data-ar="مشروع التخرج | جامعة الملك خالد" data-en="Graduation Project | King Khalid University">Graduation Project | King Khalid University</span></div><div class="case-metrics"><div><strong>PHP</strong><span data-ar="تطوير الواجهة الخلفية" data-en="Backend development">Backend development</span></div><div><strong>SQL</strong><span data-ar="قاعدة بيانات علائقية" data-en="Relational database">Relational database</span></div></div><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I delivered">What I delivered</h3><p data-ar="طورت الواجهة الخلفية وصممت قاعدة البيانات العلائقية لمنصة تجارة إلكترونية زراعية." data-en="Developed the backend and designed the relational database for an agricultural e-commerce platform.">Developed the backend and designed the relational database for an agricultural e-commerce platform.</p></div><div class="case-field"><h3 data-ar="المخرجات" data-en="Deliverables">Deliverables</h3><p data-ar="منطق التطبيق باستخدام PHP ومخطط قاعدة البيانات، مع قيادة تخطيط دورات التطوير وتوزيع المهام والتسليم التدريجي للميزات." data-en="PHP application logic and a database schema, alongside leading sprint planning, task coordination, and iterative feature delivery.">PHP application logic and a database schema, alongside leading sprint planning, task coordination, and iterative feature delivery.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="ربط العملاء بالبائعين مباشرة عبر منصة تجارة إلكترونية زراعية، دون الحاجة إلى وسطاء." data-en="Connects customers directly with sellers through an agricultural e-commerce platform, without intermediaries.">Connects customers directly with sellers through an agricultural e-commerce platform, without intermediaries.</p></div><a href="https://drive.google.com/drive/folders/14KsbEnfKMFHTkZa6H7P2HfrxGGnfnKP2?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وثائق المشروع" data-en="View Project Documents">View Project Documents</span> <i class="fas fa-arrow-up-right-from-square"></i></a></article></div></section>
-
-
-
 <section class="bento-card" id="selected-projects"><div class="section-header"><div class="section-icon"><i class="fas fa-layer-group"></i></div><h2 class="section-title" data-ar="المشاريع" data-en="Projects">Projects</h2></div><div class="apple-timeline"><article class="timeline-card case-study" id="task-governance-project"><div class="project-summary"><div class="timeline-top"><h3 class="job-title" data-ar="نظام ويب لإدارة المهام والحوكمة" data-en="Task Management &amp; Governance Web System">Task Management &amp; Governance Web System</h3><span class="date-chip" data-ar="أكتوبر 2025 – فبراير 2026" data-en="Oct 2025 – Feb 2026">Oct 2025 – Feb 2026</span></div><div class="company-row"><span class="company-label" data-ar="أمانة منطقة عسير | مشروع خلال فترة التطوع" data-en="Asir Municipality | Project during volunteer experience">Asir Municipality | Project during volunteer experience</span></div><div class="case-metrics"><div><strong>Laravel</strong><span data-ar="نظام ويب" data-en="Web system">Web system</span></div><div><strong>RBAC</strong><span data-ar="إدارة الصلاحيات" data-en="Access management">Access management</span></div></div></div><div class="project-details"><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I Delivered">What I Delivered</h3><p data-ar="صممت وطورت نظام ويب باستخدام Laravel لإدارة المهام والحوكمة، مع تحكم في الوصول مبني على الأدوار. صلاحيات موزعة على خمسة أدوار، ولوحات تحكم لمؤشرات الأداء، وتقارير آلية بصيغتي PDF وExcel." data-en="Designed and developed a Laravel web system for task management and governance, with role-based access control. Access permissions across five roles, KPI dashboards, and automated reports in PDF and Excel formats.">Designed and developed a Laravel web system for task management and governance, with role-based access control. Access permissions across five roles, KPI dashboards, and automated reports in PDF and Excel formats.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="توحيد متابعة المهام والصلاحيات والتقارير في نظام واحد وتقليل الجهد اليدوي لإعداد التقارير." data-en="Brings task tracking, permissions, and reporting into one system and reduces manual report preparation.">Brings task tracking, permissions, and reporting into one system and reduces manual report preparation.</p></div><a href="https://drive.google.com/drive/folders/18WCLLiGQQ_fYNvAYo7yE2rkrKVEHioOe?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وثائق مشروع الأمانة" data-en="View Municipality Project Documents">View Municipality Project Documents</span> <i class="fas fa-arrow-up-right-from-square"></i></a></div></article><article class="timeline-card case-study" id="grc-excel-project"><div class="project-summary"><div class="timeline-top"><h3 class="job-title" data-ar="أداة Excel لحوكمة الأمن السيبراني والمخاطر والامتثال" data-en="Cybersecurity GRC Excel Toolkit">Cybersecurity GRC Excel Toolkit</h3><span class="date-chip" data-ar="17 يوليو – 17 أكتوبر 2026" data-en="17 Jul – 17 Oct 2026">17 Jul – 17 Oct 2026</span></div><div class="company-row"><span class="company-label" data-ar="مشروع شخصي مستقل | ثلاثة أشهر" data-en="Independent Personal Project | Three months">Independent Personal Project | Three months</span></div><div class="case-metrics"><div><strong>25</strong><span data-ar="ورقة أساسية" data-en="Core worksheets">Core worksheets</span></div><div><strong>12</strong><span data-ar="رسمًا بيانيًا" data-en="Charts">Charts</span></div></div></div><div class="project-details"><p class="worksheet-count-note" data-ar="يتضمن الملف 31 ورقة إجمالًا، منها 25 ورقة أساسية: 20 للسجلات وإدارة أعمال GRC، و5 للمؤشرات والتحليلات، إلى جانب 6 صفحات مساندة للغلاف والتنقّل والتوثيق والجودة." data-en="The file contains 31 worksheets in total: 25 core worksheets comprising 20 GRC registers and management sheets and 5 dashboard and analytics sheets, plus 6 supporting sheets for the cover, navigation, documentation, and quality assurance.">The file contains 31 worksheets in total: 25 core worksheets comprising 20 GRC registers and management sheets and 5 dashboard and analytics sheets, plus 6 supporting sheets for the cover, navigation, documentation, and quality assurance.</p><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I Delivered">What I Delivered</h3><p data-ar="طورت ملف Excel قابلًا للتخصيص لتنظيم أعمال الحوكمة والمخاطر والامتثال للأمن السيبراني. سجلات للضوابط والتقييمات والأدلة، وحساب المخاطر الكامنة والمتبقية وخطط المعالجة، ومتابعة التدقيق والإجراءات والاستثناءات. يشمل سجلات الأطراف الخارجية والخصوصية والحوادث واستمرارية الأعمال، مع لوحات مؤشرات وقوائم منسدلة وتنسيق شرطي وروابط تنقل." data-en="Developed a customizable Excel file to organize cybersecurity governance, risk, and compliance activities. Registers for controls, assessments, and evidence; inherent and residual risk scoring and treatment plans; and tracking for audit findings, actions, and exceptions. Includes third-party, privacy, incident, and business continuity records, with dashboards, dropdown lists, conditional formatting, and navigation links.">Developed a customizable Excel file to organize cybersecurity governance, risk, and compliance activities. Registers for controls, assessments, and evidence; inherent and residual risk scoring and treatment plans; and tracking for audit findings, actions, and exceptions. Includes third-party, privacy, incident, and business continuity records, with dashboards, dropdown lists, conditional formatting, and navigation links.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="جمع سجلات GRC في ملف واحد لتسهيل مراجعة البيانات المُدخلة ومتابعة المخاطر والإجراءات. يتضمن مراجع لأطر NCA وSAMA وPDPL وISO/IEC 27001 وNIST CSF وCIS Controls." data-en="Brings GRC records into one file to simplify review of entered data and follow-up on risks and actions. References NCA, SAMA, PDPL, ISO/IEC 27001, NIST CSF, and CIS Controls.">Brings GRC records into one file to simplify review of entered data and follow-up on risks and actions. References NCA, SAMA, PDPL, ISO/IEC 27001, NIST CSF, and CIS Controls.</p></div><a href="https://lnkd.in/dJSwSh-A" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وتنزيل مشروع Excel" data-en="View &amp; Download Excel Project">View &amp; Download Excel Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a></div></article></div><div class="other-projects"><article class="timeline-card case-study" id="agri-zone-project"><div class="project-summary"><div class="timeline-top"><h3 class="job-title" data-ar="أجري زون (Agri Zone) – منصة تجارة إلكترونية زراعية متكاملة" data-en="Agri Zone – Full-Stack Agricultural E-Commerce Platform">Agri Zone – Full-Stack Agricultural E-Commerce Platform</h3><span class="date-chip" data-ar="أبريل 2024 – مايو 2025" data-en="Apr 2024 – May 2025">Apr 2024 – May 2025</span></div><div class="company-row"><span class="company-label" data-ar="مشروع التخرج | جامعة الملك خالد" data-en="Graduation Project | King Khalid University">Graduation Project | King Khalid University</span></div><div class="case-metrics"><div><strong>PHP</strong><span data-ar="تطوير الواجهة الخلفية" data-en="Backend development">Backend development</span></div><div><strong>SQL</strong><span data-ar="قاعدة بيانات علائقية" data-en="Relational database">Relational database</span></div></div></div><div class="project-details"><div class="case-field"><h3 data-ar="ما أنجزته" data-en="What I Delivered">What I Delivered</h3><p data-ar="طورت الواجهة الخلفية وصممت قاعدة البيانات العلائقية لمنصة تجارة إلكترونية زراعية. منطق التطبيق باستخدام PHP ومخطط قاعدة البيانات، مع قيادة تخطيط دورات التطوير وتوزيع المهام والتسليم التدريجي للميزات." data-en="Developed the backend and designed the relational database for an agricultural e-commerce platform. PHP application logic and a database schema, alongside leading sprint planning, task coordination, and iterative feature delivery.">Developed the backend and designed the relational database for an agricultural e-commerce platform. PHP application logic and a database schema, alongside leading sprint planning, task coordination, and iterative feature delivery.</p></div><div class="case-field"><h3 data-ar="الفائدة" data-en="The value">The value</h3><p data-ar="ربط العملاء بالبائعين مباشرة عبر منصة تجارة إلكترونية زراعية، دون الحاجة إلى وسطاء." data-en="Connects customers directly with sellers through an agricultural e-commerce platform, without intermediaries.">Connects customers directly with sellers through an agricultural e-commerce platform, without intermediaries.</p></div><a href="https://drive.google.com/drive/folders/14KsbEnfKMFHTkZa6H7P2HfrxGGnfnKP2?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وثائق المشروع" data-en="View Project Documents">View Project Documents</span> <i class="fas fa-arrow-up-right-from-square"></i></a></div></article></div></section>
 <div class="bento-card" id="experience">
                     <div class="section-header">
@@ -399,8 +370,12 @@ body{font-size:var(--size-body);line-height:1.8}
                             <div class="company-row">
                                 <span class="company-label" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</span>
                             </div>
-                            <ul class="apple-list tangible-work"><li data-ar="راجعت ودققت أكثر من 100 تقرير ومستند أمني لدعم دقة المعلومات وجودة التوثيق المرتبط بمتطلبات الضوابط الأساسية للأمن السيبراني (NCA ECC)." data-en="Reviewed and audited 100+ security reports and documents to support information accuracy and documentation quality related to the NCA Essential Cybersecurity Controls (ECC).">Reviewed and audited 100+ security reports and documents to support information accuracy and documentation quality related to the NCA Essential Cybersecurity Controls (ECC).</li><li data-ar="جمعت متابعة المهام وإدارة الصلاحيات في نظام ويب واحد يدعم 5 أدوار، مع لوحات لمؤشرات الأداء." data-en="Brought task tracking and access management into one web system supporting 5 roles, with KPI dashboards.">Brought task tracking and access management into one web system supporting 5 roles, with KPI dashboards.</li><li data-ar="أتمتُّ إعداد التقارير بصيغتي PDF وExcel، لتقليل العمل اليدوي في تجهيز التقارير." data-en="Automated reporting in PDF and Excel formats to reduce manual report preparation.">Automated reporting in PDF and Excel formats to reduce manual report preparation.</li><li data-ar="ساهمت في تطبيق متطلبات NCA والمبادرات التي دعمت تحوّل الإدارة إلى إدارة عامة مستقلة." data-en="Contributed to NCA requirements and initiatives supporting the transition to an independent General Directorate.">Contributed to NCA requirements and initiatives supporting the transition to an independent General Directorate.</li></ul><div class="role-result"><strong data-ar="النتيجة" data-en="Result">Result</strong><p data-ar="نظام موحّد لمتابعة المهام والصلاحيات والتقارير، وتوثيق أمني تمت مراجعته لدعم أعمال الامتثال لـNCA ECC." data-en="A unified system for tracking tasks, permissions, and reports, alongside reviewed security documentation supporting NCA ECC compliance activities.">A unified system for tracking tasks, permissions, and reports, alongside reviewed security documentation supporting NCA ECC compliance activities.</p></div><a class="project-link-btn" href="#task-governance-project"><span data-ar="شاهد النظام الذي طورته" data-en="See the system I developed">See the system I developed</span> <i class="fas fa-arrow-down"></i></a>
-                            <ul class="apple-list tangible-work"><li data-ar="راجعت ودققت أكثر من 100 تقرير ومستند أمني لدعم دقة المعلومات وجودة التوثيق المرتبط بمتطلبات الضوابط الأساسية للأمن السيبراني (NCA ECC)." data-en="Reviewed and audited 100+ security reports and documents to support information accuracy and documentation quality related to the NCA Essential Cybersecurity Controls (ECC).">Reviewed and audited 100+ security reports and documents to support information accuracy and documentation quality related to the NCA Essential Cybersecurity Controls (ECC).</li><li data-ar="ساهمت في تطبيق متطلبات NCA والمبادرات التي دعمت تحوّل الإدارة إلى إدارة عامة مستقلة." data-en="Contributed to NCA requirements and initiatives supporting the transition to an independent General Directorate.">Contributed to NCA requirements and initiatives supporting the transition to an independent General Directorate.</li></ul><a class="project-link-btn" href="#task-governance-project"><span data-ar="مشروع ضمن هذه الخبرة: نظام إدارة المهام والحوكمة" data-en="Related project: Task Management &amp; Governance System">Related project: Task Management &amp; Governance System</span> <i class="fas fa-arrow-down"></i></a>
+                            <ul class="apple-list tangible-work">
+                                <li data-ar="راجعت ودققت أكثر من 100 تقرير ومستند أمني لدعم دقة المعلومات وجودة التوثيق المرتبط بمتطلبات الضوابط الأساسية للأمن السيبراني (NCA ECC)." data-en="Reviewed and audited 100+ security reports and documents to support information accuracy and documentation quality related to the NCA Essential Cybersecurity Controls (ECC).">Reviewed and audited 100+ security reports and documents to support information accuracy and documentation quality related to the NCA Essential Cybersecurity Controls (ECC).</li>
+                                <li data-ar="ساهمت في تطبيق متطلبات NCA والمبادرات التي دعمت تحوّل الإدارة إلى إدارة عامة مستقلة." data-en="Contributed to NCA requirements and initiatives supporting the transition to an independent General Directorate.">Contributed to NCA requirements and initiatives supporting the transition to an independent General Directorate.</li>
+                            </ul>
+                            <div class="role-result"><strong data-ar="النتيجة" data-en="Result">Result</strong><p data-ar="نظام موحّد لمتابعة المهام والصلاحيات والتقارير، وتوثيق أمني تمت مراجعته لدعم أعمال الامتثال لـNCA ECC." data-en="A unified system for tracking tasks, permissions, and reports, alongside reviewed security documentation supporting NCA ECC compliance activities.">A unified system for tracking tasks, permissions, and reports, alongside reviewed security documentation supporting NCA ECC compliance activities.</p></div>
+                            <a class="project-link-btn" href="#task-governance-project"><span data-ar="مشروع ضمن هذه الخبرة: نظام إدارة المهام والحوكمة" data-en="Related project: Task Management &amp; Governance System">Related project: Task Management &amp; Governance System</span> <i class="fas fa-arrow-down"></i></a>
                         </div>
 
                         <div class="timeline-card">
@@ -413,8 +388,11 @@ body{font-size:var(--size-body);line-height:1.8}
                             <div class="company-row">
                                 <span class="company-label" data-ar="أمانة منطقة عسير" data-en="Asir Municipality">Asir Municipality</span>
                             </div>
-                            <ul class="apple-list tangible-work"><li data-ar="دعمت أكثر من 20 موظفًا بحل مشكلات الأجهزة والبرامج، ومساعدتهم على استئناف أعمالهم عند حدوث أعطال تقنية." data-en="Supported 20+ employees by resolving hardware and software issues and helping them resume work after technical disruptions.">Supported 20+ employees by resolving hardware and software issues and helping them resume work after technical disruptions.</li><li data-ar="راقبت شبكات المؤسسة وعالجت المشكلات الفنية لدعم استمرارية الخدمة وتقليل أثر الأعطال على العمل اليومي." data-en="Monitored enterprise networks and addressed technical issues to support service continuity and limit disruption to daily work.">Monitored enterprise networks and addressed technical issues to support service continuity and limit disruption to daily work.</li></ul><div class="role-result"><strong data-ar="النتيجة" data-en="Result">Result</strong><p data-ar="حل الأعطال التقنية لدى المستخدمين والشبكات، ومساعدة الموظفين على استئناف العمل واستمرار استخدام الخدمات التقنية." data-en="Resolved user and network technical issues, helping employees resume work and continue using IT services.">Resolved user and network technical issues, helping employees resume work and continue using IT services.</p></div>
-                            <ul class="apple-list tangible-work"><li data-ar="دعمت أكثر من 20 موظفًا بحل مشكلات الأجهزة والبرامج، ومساعدتهم على استئناف أعمالهم عند حدوث أعطال تقنية." data-en="Supported 20+ employees by resolving hardware and software issues and helping them resume work after technical disruptions.">Supported 20+ employees by resolving hardware and software issues and helping them resume work after technical disruptions.</li><li data-ar="راقبت شبكات المؤسسة وعالجت المشكلات الفنية لدعم استمرارية الخدمة وتقليل أثر الأعطال على العمل اليومي." data-en="Monitored enterprise networks and addressed technical issues to support service continuity and limit disruption to daily work.">Monitored enterprise networks and addressed technical issues to support service continuity and limit disruption to daily work.</li></ul>
+                            <ul class="apple-list tangible-work">
+                                <li data-ar="دعمت أكثر من 20 موظفًا بحل مشكلات الأجهزة والبرامج، ومساعدتهم على استئناف أعمالهم عند حدوث أعطال تقنية." data-en="Supported 20+ employees by resolving hardware and software issues and helping them resume work after technical disruptions.">Supported 20+ employees by resolving hardware and software issues and helping them resume work after technical disruptions.</li>
+                                <li data-ar="راقبت شبكات المؤسسة وعالجت المشكلات الفنية لدعم استمرارية الخدمة وتقليل أثر الأعطال على العمل اليومي." data-en="Monitored enterprise networks and addressed technical issues to support service continuity and limit disruption to daily work.">Monitored enterprise networks and addressed technical issues to support service continuity and limit disruption to daily work.</li>
+                            </ul>
+                            <div class="role-result"><strong data-ar="النتيجة" data-en="Result">Result</strong><p data-ar="حل الأعطال التقنية لدى المستخدمين والشبكات، ومساعدة الموظفين على استئناف العمل واستمرار استخدام الخدمات التقنية." data-en="Resolved user and network technical issues, helping employees resume work and continue using IT services.">Resolved user and network technical issues, helping employees resume work and continue using IT services.</p></div>
                         </div>
                     </div>
                 </div>
@@ -528,179 +506,129 @@ body{font-size:var(--size-body);line-height:1.8}
                         </div>
                     </div>
                 </div>
-<div class="credential-grid"><div class="bento-card" id="education-card">
-                    <div class="section-header" style="margin-bottom: 16px;">
-                        <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h2 class="section-title" data-ar="التعليم الأكاديمي" data-en="Education">Education</h2>
-                    </div>
+<div class="credential-grid">
+    <div class="bento-card" id="education-card">
+        <div class="section-header" style="margin-bottom: 16px;">
+            <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h2 class="section-title" data-ar="التعليم الأكاديمي" data-en="Education">Education</h2>
+        </div>
 
-                    <div class="side-item-box">
-                        <h3 class="side-title" data-ar="درجة البكالوريوس في نظم المعلومات" data-en="Bachelor's Degree in Information Systems">
-                            Bachelor's Degree in Information Systems
-                        </h3>
-                        <div class="side-sub" data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid University</div>
-                        <p class="side-desc" data-ar="كلية علوم الحاسب الآلي" data-en="College of Computer Science">College of Computer Science</p>
-                    </div>
-                </div><div class="bento-card" id="certifications-card">
-                    <div class="section-header" style="margin-bottom: 16px;">
-                        <div class="section-icon"><i class="fas fa-award"></i></div>
-                        <h2 class="section-title" data-ar="شهاداتي ومعارفي" data-en="Credentials & Knowledge">Credentials &amp; Knowledge</h2>
-                    </div>
-
-                    <div class="side-item-box">
-                        <h3 class="side-title" data-ar="تخصص الأمن السيبراني" data-en="Cybersecurity Specialization">Cybersecurity Specialization</h3>
-                        <p class="side-sub" data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid University</p>
-                    </div>
-
-                    <div class="side-item-box">
-                        <h3 class="side-title" data-ar="الشهادة الاحترافية في الأمن السيبراني من IBM" data-en="IBM Cybersecurity Professional Certificate">IBM Cybersecurity Professional Certificate</h3>
-                        <p class="side-sub">IBM</p>
-                        <p class="side-desc" data-ar="برنامج مكثف لمدة 77 ساعة يغطي:" data-en="77-Hour Intensive Program covering:">77-Hour Intensive Program covering:</p>
-                        <div class="cert-specs">
-                            <div><span class="dot">•</span> <span data-ar="الحوكمة والمخاطر والامتثال (GRC) وخصوصية البيانات" data-en="Governance, Risk, Compliance (GRC) & Data Privacy">Governance, Risk, Compliance (GRC) & Data Privacy</span></div>
-                            <div><span class="dot">•</span> <span data-ar="الاستجابة للحوادث والتحقيق الجنائي الرقمي" data-en="Incident Response & Digital Forensics">Incident Response & Digital Forensics</span></div>
-                            <div><span class="dot">•</span> <span data-ar="إدارة وعمليات الأمان (SOC)" data-en="Security Operations & Management (SOC)">Security Operations & Management (SOC)</span></div>
-                            <div><span class="dot">•</span> <span data-ar="إدارة الثغرات الأمنية" data-en="Vulnerability Management">Vulnerability Management</span></div>
-                            <div><span class="dot">•</span> <span data-ar="أمن الأنظمة والشبكات" data-en="System & Network Security">System & Network Security</span></div>
-                            <div><span class="dot">•</span> <span data-ar="الأمن السحابي" data-en="Cloud Security">Cloud Security</span></div>
-                        </div>
-                    </div>
-
-                    <div class="side-item-box">
-                        <h3 class="side-title" data-ar="دورات إضافية" data-en="Additional Courses">Additional Courses</h3>
-                        <p class="side-desc" style="padding-top: 4px;" data-ar="أساسيات الويب • أساسيات البيانات • أساسيات إدارة المشاريع" data-en="Fundamentals of Web • Data Fundamentals • Project Management Foundations">
-                            Fundamentals of Web • Data Fundamentals • Project Management Foundations
-                        </p>
-                    </div>
-<a class="project-link-btn" href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="عرض الشهادات والدورات" data-en="View Certificates &amp; Courses">View Certificates &amp; Courses</span> <i class="fas fa-arrow-up-right-from-square"></i></a>                </div><div class="bento-card" id="languages-card">
-                    <div class="section-header" style="margin-bottom: 16px;">
-                        <div class="section-icon"><i class="fas fa-globe"></i></div>
-                        <h2 class="section-title" data-ar="اللغات" data-en="Languages">Languages</h2>
-                    </div>
-
-                    <div class="lang-row">
-                        <span class="lang-name" data-ar="العربية" data-en="Arabic">Arabic</span>
-                        <i class="fas fa-check-circle lang-check"></i>
-                    </div>
-
-                    <div class="lang-row">
-                        <span class="lang-name" data-ar="الإنجليزية" data-en="English">English</span>
-                        <i class="fas fa-check-circle lang-check"></i>
-                    </div>
-                </div></div>
-<div class="bento-card" id="documents">
-                    <div class="section-header">
-                        <div class="section-icon"><i class="fas fa-arrow-down-to-bracket"></i></div>
-                        <h2 class="section-title" data-ar="اطّلع على ما يدعم خبرتي" data-en="Explore My Supporting Documents">Explore My Supporting Documents</h2>
-                    </div>
-                    <div class="files-grid">
-                        <a href="https://drive.google.com/drive/folders/1UPtBHmH5r9QP1vgTyrR3FqllVOXvVRdk?usp=drive_link"
-                            target="_blank" class="file-item">
-                            target="_blank" class="file-item" rel="noopener noreferrer">
-                            <div class="file-item-icon"><i class="fas fa-file-pdf"></i></div>
-                            <h4 data-ar="السيرة الذاتية" data-en="Resume/CV">Resume/CV</h4>
-                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
-                        </a>
-                        <a href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link"
-                            target="_blank" class="file-item">
-                            target="_blank" class="file-item" rel="noopener noreferrer">
-                            <div class="file-item-icon"><i class="fas fa-award"></i></div>
-                            <h4 data-ar="الشهادات" data-en="Certificates">Certificates</h4>
-                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
-                        </a>
-                        <a href="https://drive.google.com/drive/folders/1A7ngWTAsWx_I2FbM71088numn6M-mHzC?usp=drive_link"
-                            target="_blank" class="file-item">
-                            target="_blank" class="file-item" rel="noopener noreferrer">
-                            <div class="file-item-icon"><i class="fas fa-folder-open"></i></div>
-                            <h4 data-ar="المشاريع" data-en="Projects">Projects</h4>
-                            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
-                        </a>
-                    </div>
-                </div>
-<div class="bento-card qr-card" id="qr-code-card">
-                    <div class="section-header" style="justify-content: center; margin-bottom: 14px;">
-                        <h2 class="section-title" style="font-size: 1.05em;" data-ar="المجلد الشامل والمرفقات" data-en="All Files & Attachments">All Files & Attachments</h2>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link"
-                        target="_blank" title="View all files">
-                        target="_blank" title="View all files" rel="noopener noreferrer">
-                        <img src="QR.png" alt="QR Code" class="qr-code-img" onerror="this.style.display='none'">
-                    </a>
-                    <p style="font-size: 12.5px; color: var(--text-secondary);"
-                        data-ar="راجع ملفات المشاريع والشهادات والمرفقات من المجلد الشامل" 
-                        data-en="Explore project files, certificates, and supporting attachments in one folder.">Explore project files, certificates, and supporting attachments in one folder.
-                    </p>
-<a class="project-link-btn" style="margin:14px 0 0" href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="افتح ملفات أعمالي" data-en="Open My Work Files">Open My Work Files</span> <i class="fas fa-arrow-up-right-from-square"></i></a>                </div>
-<footer class="bento-card" style="text-align:center"><h2 class="section-title" data-ar="لنناقش كيف أقدر أساهم مع فريقك" data-en="Let’s discuss how I can contribute to your team">Let’s discuss how I can contribute to your team</h2><button type="button" class="apple-pill-btn primary-action" onclick="openContactModal()" aria-haspopup="dialog" aria-controls="contactModal"><i class="fas fa-envelope"></i><span data-ar="تواصل معي" data-en="Contact Me">Contact Me</span></button></footer>
-</main>
-<div id="contactModal" class="modal-overlay" onclick="closeContactModal(event)">
-<div id="contactModal" class="modal-overlay" aria-hidden="true" onclick="closeContactModal(event)">
-        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="contact-title" onclick="event.stopPropagation()">
-            <div class="modal-title-row">
-                <h3 id="contact-title" data-ar="خيارات التواصل" data-en="Contact Options">Contact Options</h3>
-                <button type="button" class="modal-close-icon" aria-label="Close" onclick="closeContactModal()">&times;</button>
-            </div>
-            <div class="modal-actions">
-                <a href="tel:+966566833453" class="modal-action-btn btn-call" onclick="closeContactModal()">
-                    <i class="fas fa-phone"></i>
-                    <span data-ar="اتصال مباشر" data-en="Direct Call">Direct Call</span>
-                </a>
-                <a href="https://wa.me/966566833453" target="_blank" class="modal-action-btn btn-wa" onclick="closeContactModal()">
-                <a href="https://wa.me/966566833453" target="_blank" class="modal-action-btn btn-wa" onclick="closeContactModal()" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                    <span data-ar="محادثة واتساب" data-en="WhatsApp">WhatsApp</span>
-                </a>
-            <a href="mailto:mbnq1@outlook.com" class="modal-action-btn btn-email" onclick="closeContactModal()"><i class="fas fa-envelope"></i><span data-ar="البريد الإلكتروني" data-en="Email">Email</span></a>
-</div>
+        <div class="side-item-box">
+            <h3 class="side-title" data-ar="درجة البكالوريوس في نظم المعلومات" data-en="Bachelor's Degree in Information Systems">
+                Bachelor's Degree in Information Systems
+            </h3>
+            <div class="side-sub" data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid University</div>
+            <p class="side-desc" data-ar="كلية علوم الحاسب الآلي" data-en="College of Computer Science">College of Computer Science</p>
         </div>
     </div>
-<script>
-        window.addEventListener('scroll', () => {
-            const scrollBar = document.querySelector('.scroll-indicator');
-            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            scrollBar.style.width = scrollPercentage + '%';
-        });
+    <div class="bento-card" id="certifications-card">
+        <div class="section-header" style="margin-bottom: 16px;">
+            <div class="section-icon"><i class="fas fa-award"></i></div>
+            <h2 class="section-title" data-ar="شهاداتي ومعارفي" data-en="Credentials & Knowledge">Credentials &amp; Knowledge</h2>
+        </div>
 
-        let currentLanguage = 'en';
+        <div class="side-item-box">
+            <h3 class="side-title" data-ar="تخصص الأمن السيبراني" data-en="Cybersecurity Specialization">Cybersecurity Specialization</h3>
+            <p class="side-sub" data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid University</p>
+        </div>
 
-        function toggleLanguage() {
-            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-            applyLanguage();
-            updateDirection();
-        }
+        <div class="side-item-box">
+            <h3 class="side-title" data-ar="الشهادة الاحترافية في الأمن السيبراني من IBM" data-en="IBM Cybersecurity Professional Certificate">IBM Cybersecurity Professional Certificate</h3>
+            <p class="side-sub">IBM</p>
+            <p class="side-desc" data-ar="برنامج مكثف لمدة 77 ساعة يغطي:" data-en="77-Hour Intensive Program covering:">77-Hour Intensive Program covering:</p>
+            <div class="cert-specs">
+                <div><span class="dot">•</span> <span data-ar="الحوكمة والمخاطر والامتثال (GRC) وخصوصية البيانات" data-en="Governance, Risk, Compliance (GRC) & Data Privacy">Governance, Risk, Compliance (GRC) & Data Privacy</span></div>
+                <div><span class="dot">•</span> <span data-ar="الاستجابة للحوادث والتحقيق الجنائي الرقمي" data-en="Incident Response & Digital Forensics">Incident Response & Digital Forensics</span></div>
+                <div><span class="dot">•</span> <span data-ar="إدارة وعمليات الأمان (SOC)" data-en="Security Operations & Management (SOC)">Security Operations & Management (SOC)</span></div>
+                <div><span class="dot">•</span> <span data-ar="إدارة الثغرات الأمنية" data-en="Vulnerability Management">Vulnerability Management</span></div>
+                <div><span class="dot">•</span> <span data-ar="أمن الأنظمة والشبكات" data-en="System & Network Security">System & Network Security</span></div>
+                <div><span class="dot">•</span> <span data-ar="الأمن السحابي" data-en="Cloud Security">Cloud Security</span></div>
+            </div>
+        </div>
 
-        function applyLanguage() {
-            document.querySelectorAll('[data-ar][data-en]').forEach(el => {
-                el.innerHTML = currentLanguage === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-            });
-            document.getElementById('langBtn').textContent = currentLanguage === 'en' ? 'العربية' : 'English';
-        }
+        <div class="side-item-box">
+            <h3 class="side-title" data-ar="دورات إضافية" data-en="Additional Courses">Additional Courses</h3>
+            <p class="side-desc" style="padding-top: 4px;" data-ar="أساسيات الويب • أساسيات البيانات • أساسيات إدارة المشاريع" data-en="Fundamentals of Web • Data Fundamentals • Project Management Foundations">
+                Fundamentals of Web • Data Fundamentals • Project Management Foundations
+            </p>
+        </div>
+        <a class="project-link-btn" href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="عرض الشهادات والدورات" data-en="View Certificates &amp; Courses">View Certificates &amp; Courses</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+    </div>
+    <div class="bento-card" id="languages-card">
+        <div class="section-header" style="margin-bottom: 16px;">
+            <div class="section-icon"><i class="fas fa-globe"></i></div>
+            <h2 class="section-title" data-ar="اللغات" data-en="Languages">Languages</h2>
+        </div>
 
-        function updateDirection() {
-            document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
-            document.documentElement.lang = currentLanguage;
-            document.body.style.fontFamily = currentLanguage === 'ar' 
-                ? "'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif" 
-                : "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif";
-        }
+        <div class="lang-row">
+            <span class="lang-name" data-ar="العربية" data-en="Arabic">Arabic</span>
+            <i class="fas fa-check-circle lang-check"></i>
+        </div>
 
-        function openContactModal() {
-            document.getElementById('contactModal').classList.add('active');
-        }
-
-        function closeContactModal(e) {
-            document.getElementById('contactModal').classList.remove('active');
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeContactModal();
-        });
-
-        window.addEventListener('load', () => {
-            applyLanguage();
-            updateDirection();
-        });
-    </script>
+        <div class="lang-row">
+            <span class="lang-name" data-ar="الإنجليزية" data-en="English">English</span>
+            <i class="fas fa-check-circle lang-check"></i>
+        </div>
+    </div>
+</div>
+<div class="bento-card" id="documents">
+    <div class="section-header">
+        <div class="section-icon"><i class="fas fa-arrow-down-to-bracket"></i></div>
+        <h2 class="section-title" data-ar="اطّلع على ما يدعم خبرتي" data-en="Explore My Supporting Documents">Explore My Supporting Documents</h2>
+    </div>
+    <div class="files-grid">
+        <a href="https://drive.google.com/drive/folders/1UPtBHmH5r9QP1vgTyrR3FqllVOXvVRdk?usp=drive_link" target="_blank" class="file-item" rel="noopener noreferrer">
+            <div class="file-item-icon"><i class="fas fa-file-pdf"></i></div>
+            <h4 data-ar="السيرة الذاتية" data-en="Resume/CV">Resume/CV</h4>
+            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" class="file-item" rel="noopener noreferrer">
+            <div class="file-item-icon"><i class="fas fa-award"></i></div>
+            <h4 data-ar="الشهادات" data-en="Certificates">Certificates</h4>
+            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1A7ngWTAsWx_I2FbM71088numn6M-mHzC?usp=drive_link" target="_blank" class="file-item" rel="noopener noreferrer">
+            <div class="file-item-icon"><i class="fas fa-folder-open"></i></div>
+            <h4 data-ar="المشاريع" data-en="Projects">Projects</h4>
+            <p data-ar="عرض وتنزيل" data-en="View & Download">View & Download</p>
+        </a>
+    </div>
+</div>
+<div class="bento-card qr-card" id="qr-code-card">
+    <div class="section-header" style="justify-content: center; margin-bottom: 14px;">
+        <h2 class="section-title" style="font-size: 1.05em;" data-ar="المجلد الشامل والمرفقات" data-en="All Files & Attachments">All Files & Attachments</h2>
+    </div>
+    <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" title="View all files" rel="noopener noreferrer">
+        <img src="QR.png" alt="QR Code" class="qr-code-img" onerror="this.style.display='none'">
+    </a>
+    <p style="font-size: 12.5px; color: var(--text-secondary);" data-ar="راجع ملفات المشاريع والشهادات والمرفقات من المجلد الشامل" data-en="Explore project files, certificates, and supporting attachments in one folder.">Explore project files, certificates, and supporting attachments in one folder.
+    </p>
+    <a class="project-link-btn" style="margin:14px 0 0" href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="افتح ملفات أعمالي" data-en="Open My Work Files">Open My Work Files</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+</div>
+<footer class="bento-card" style="text-align:center">
+    <h2 class="section-title" data-ar="لنناقش كيف أقدر أساهم مع فريقك" data-en="Let’s discuss how I can contribute to your team">Let’s discuss how I can contribute to your team</h2>
+    <button type="button" class="apple-pill-btn primary-action" onclick="openContactModal()" aria-haspopup="dialog" aria-controls="contactModal"><i class="fas fa-envelope"></i><span data-ar="تواصل معي" data-en="Contact Me">Contact Me</span></button>
+</footer>
+</main>
+<div id="contactModal" class="modal-overlay" aria-hidden="true" onclick="closeContactModal(event)">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="contact-title" onclick="event.stopPropagation()">
+        <div class="modal-title-row">
+            <h3 id="contact-title" data-ar="خيارات التواصل" data-en="Contact Options">Contact Options</h3>
+            <button type="button" class="modal-close-icon" aria-label="Close" onclick="closeContactModal()">&times;</button>
+        </div>
+        <div class="modal-actions">
+            <a href="tel:+966566833453" class="modal-action-btn btn-call" onclick="closeContactModal()">
+                <i class="fas fa-phone"></i>
+                <span data-ar="اتصال مباشر" data-en="Direct Call">Direct Call</span>
+            </a>
+            <a href="https://wa.me/966566833453" target="_blank" class="modal-action-btn btn-wa" onclick="closeContactModal()" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                <span data-ar="محادثة واتساب" data-en="WhatsApp">WhatsApp</span>
+            </a>
+            <a href="mailto:mbnq1@outlook.com" class="modal-action-btn btn-email" onclick="closeContactModal()"><i class="fas fa-envelope"></i><span data-ar="البريد الإلكتروني" data-en="Email">Email</span></a>
+        </div>
+    </div>
+</div>
 <script>
 let currentLanguage = 'en';
 let contactTrigger = null;
