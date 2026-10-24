@@ -78,6 +78,29 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
 .role-result{margin-top:20px;padding:14px 16px;background:var(--apple-blue-light);border-radius:12px}.role-result strong{display:block;font-size:12px;color:var(--apple-blue);margin-bottom:5px}.role-result p{font-size:13px;line-height:1.9;color:var(--text-primary)}
 .hero-signature{display:block;width:clamp(190px,27vw,300px);height:auto;margin:6px auto 20px;mix-blend-mode:multiply;object-fit:contain}
 @media(max-width:600px){.hero-signature{width:220px;max-width:80%;margin:4px auto 18px}}
+/* Portrait framing tuned for the supplied black-and-white photograph. */
+.hero-card .hero-avatar-wrap{width:156px;height:156px;min-width:156px;min-height:156px;padding:0;border:5px solid #fff;background:#090909;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.05),0 12px 30px rgba(0,0,0,.09);isolation:isolate;flex-shrink:0}
+.hero-card .hero-avatar{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.45);transform-origin:50% 40%;border-radius:0;background:#090909}
+.hero-card .avatar-fallback{color:#c3c3c8;background:#090909;font-size:32px}
+.hero-card{gap:22px}
+.hero-signature{width:clamp(200px,26vw,280px);margin:8px auto 20px}
+@media(max-width:600px){.hero-card .hero-avatar-wrap{width:128px;height:128px;min-width:128px;min-height:128px;border-width:4px;box-shadow:0 0 0 1px rgba(0,0,0,.05),0 8px 22px rgba(0,0,0,.08)}.hero-card{gap:20px}.hero-signature{width:210px;max-width:80%;margin:6px auto 18px}}
+/* Balanced credential sections and the new transparent portrait. */
+.credential-grid{display:flex;flex-direction:column;gap:20px;align-items:stretch}
+.credential-grid>.bento-card{width:100%;padding:28px 30px}
+.credential-grid #certifications-card{grid-row:auto}
+.credential-grid .section-header{margin-bottom:20px}
+.credential-grid .side-item-box{margin-bottom:18px;padding-bottom:18px}
+#certifications-card .cert-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;max-width:850px}
+#languages-card{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+#languages-card .section-header{grid-column:1/-1;margin-bottom:8px!important}
+#languages-card .lang-row{padding:10px 0;margin:0}
+
+
+
+@media(max-width:600px){.credential-grid{gap:16px}.credential-grid>.bento-card{padding:24px 20px}#certifications-card .cert-specs{grid-template-columns:minmax(0,1fr);gap:5px}#languages-card{gap:0 22px}}
+
+.btn-email{background:var(--apple-blue-light);color:var(--apple-blue)}.modal-action-btn{min-height:48px}
 </style>
 </head>
 
@@ -127,7 +150,7 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
 
             <div class="hero-avatar-wrap">
     <span class="avatar-fallback" aria-hidden="true" data-ar="م ن" data-en="MN">MN</span>
-    <img src="Mohammed%20Nawaf.png" alt="Mohammed Nawaf" class="hero-avatar" onerror="this.style.display='none'">
+    <img src="profile-photo.jpg" alt="Mohammed Nawaf" class="hero-avatar" width="3464" height="3464" decoding="async" fetchpriority="high" onerror="this.style.display='none'">
 </div>
         </div>
 <section class="bento-card adaptable-card" id="learning-and-soc">
@@ -387,13 +410,13 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
                         data-en="Explore project files, certificates, and supporting attachments in one folder.">Explore project files, certificates, and supporting attachments in one folder.
                     </p>
 <a class="project-link-btn" style="margin:14px 0 0" href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="افتح ملفات أعمالي" data-en="Open My Work Files">Open My Work Files</span> <i class="fas fa-arrow-up-right-from-square"></i></a>                </div>
-<footer class="bento-card" style="text-align:center"><h2 class="section-title" data-ar="لنناقش كيف أقدر أساهم مع فريقك" data-en="Let’s discuss how I can contribute to your team">Let’s discuss how I can contribute to your team</h2><a class="apple-pill-btn primary-action" href="mailto:mbnq1@outlook.com"><i class="fas fa-envelope"></i><span data-ar="تواصل معي" data-en="Contact Me">Contact Me</span></a></footer>
+<footer class="bento-card" style="text-align:center"><h2 class="section-title" data-ar="لنناقش كيف أقدر أساهم مع فريقك" data-en="Let’s discuss how I can contribute to your team">Let’s discuss how I can contribute to your team</h2><button type="button" class="apple-pill-btn primary-action" onclick="openContactModal()" aria-haspopup="dialog" aria-controls="contactModal"><i class="fas fa-envelope"></i><span data-ar="تواصل معي" data-en="Contact Me">Contact Me</span></button></footer>
 </main>
 <div id="contactModal" class="modal-overlay" onclick="closeContactModal(event)">
-        <div class="modal-card" onclick="event.stopPropagation()">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="contact-title" onclick="event.stopPropagation()">
             <div class="modal-title-row">
-                <h3 data-ar="خيارات التواصل" data-en="Contact Options">Contact Options</h3>
-                <button class="modal-close-icon" onclick="closeContactModal()">&times;</button>
+                <h3 id="contact-title" data-ar="خيارات التواصل" data-en="Contact Options">Contact Options</h3>
+                <button type="button" class="modal-close-icon" aria-label="Close" onclick="closeContactModal()">&times;</button>
             </div>
             <div class="modal-actions">
                 <a href="tel:+966566833453" class="modal-action-btn btn-call" onclick="closeContactModal()">
@@ -404,7 +427,8 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
                     <i class="fab fa-whatsapp"></i>
                     <span data-ar="محادثة واتساب" data-en="WhatsApp">WhatsApp</span>
                 </a>
-            </div>
+            <a href="mailto:mbnq1@outlook.com" class="modal-action-btn btn-email" onclick="closeContactModal()"><i class="fas fa-envelope"></i><span data-ar="البريد الإلكتروني" data-en="Email">Email</span></a>
+</div>
         </div>
     </div>
 <script>
@@ -414,11 +438,10 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}body{font-family:-apple-syst
             scrollBar.style.width = scrollPercentage + '%';
         });
 
-        let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+        let currentLanguage = 'en';
 
         function toggleLanguage() {
             currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-            localStorage.setItem('selectedLanguage', currentLanguage);
             applyLanguage();
             updateDirection();
         }
