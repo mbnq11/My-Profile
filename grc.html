@@ -2330,7 +2330,7 @@
             </div>
             <div class="skills-grid">
                 <!-- Cybersecurity -->
-                <details class="skill-group">
+                <details class="skill-group" name="skills">
                     <summary class="skill-group-title">
                         <i class="fas fa-shield-alt"></i>
                         <span data-ar="الأمن السيبراني والحوكمة" data-en="Cybersecurity &amp; GRC">Cybersecurity &amp;
@@ -2358,7 +2358,7 @@
                 </details>
 
                 <!-- Security Tools -->
-                <details class="skill-group">
+                <details class="skill-group" name="skills">
                     <summary class="skill-group-title">
                         <i class="fas fa-toolbox"></i>
                         <span data-ar="أدوات الأمن السيبراني" data-en="Security Tools">Security Tools</span>
@@ -2377,7 +2377,7 @@
                 </details>
 
                 <!-- SOC Operations -->
-                <details class="skill-group">
+                <details class="skill-group" name="skills">
                     <summary class="skill-group-title">
                         <i class="fas fa-binoculars"></i>
                         <span data-ar="العمليات الأمنية (SOC)" data-en="SOC Operations">SOC Operations</span>
@@ -2396,7 +2396,7 @@
                 </details>
 
                 <!-- IT Support & Systems Administration (Merged Card) -->
-                <details class="skill-group">
+                <details class="skill-group" name="skills">
                     <summary class="skill-group-title">
                         <i class="fas fa-network-wired"></i>
                         <span data-ar="الدعم التقني وإدارة الأنظمة" data-en="IT Support &amp; Systems Administration">IT
@@ -2677,6 +2677,15 @@
         updateDirection();
         updateProgress();
     </script>
-</body>
+<script>
+document.querySelectorAll('#skills-section details.skill-group').forEach((group) => {
+  group.addEventListener('toggle', () => {
+    if (!group.open) return;
+    document.querySelectorAll('#skills-section details.skill-group').forEach((other) => {
+      if (other !== group) other.open = false;
+    });
+  });
+});
+</script></body>
 
 </html>
