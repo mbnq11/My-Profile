@@ -1,0 +1,2693 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Nawaf | SOC CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --apple-bg: #f5f5f7;
+            --apple-card: #fff;
+            --apple-border: #e6e6e9;
+            --apple-blue: #0071e3;
+            --apple-blue-light: #edf5ff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-tertiary: #86868b;
+            --success-light: #effaf2
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Tajawal", "Segoe UI", sans-serif;
+            background: var(--apple-bg);
+            color: var(--text-primary);
+            font-size: 15px;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 48px
+        }
+
+        a {
+            color: var(--apple-blue)
+        }
+
+        button {
+            font: inherit
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #59a4ff;
+            outline-offset: 5px
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        [id] {
+            scroll-margin-top: 80px
+        }
+
+        .apple-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 62px;
+            background: rgba(250, 250, 252, .88);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border-bottom: 1px solid rgba(0, 0, 0, .06)
+        }
+
+        .nav-content {
+            height: 100%;
+            max-width: 1160px;
+            margin: auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px
+        }
+
+        .nav-brand {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .01em
+        }
+
+        .nav-brand>i {
+            display: none
+        }
+
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            border: 1px solid var(--apple-border);
+            background: white;
+            color: var(--text-primary);
+            border-radius: 50px;
+            padding: 8px 15px;
+            min-height: 38px;
+            font-size: 12px;
+            cursor: pointer
+        }
+
+        .scroll-indicator {
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            inset-inline-start: 0;
+            background: var(--apple-blue);
+            width: 0
+        }
+
+        .container {
+            max-width: 1160px;
+            padding: 0 28px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 56px
+        }
+
+        .bento-card {
+            min-width: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0
+        }
+
+        .hero-card {
+            position: relative;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            text-align: center;
+            gap: 24px;
+            padding: 56px 0 10px
+        }
+
+        .hero-info {
+            width: 100%;
+            min-width: 0
+        }
+
+        .hero-name {
+            font-size: clamp(40px, 6vw, 68px);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -.045em;
+            margin-bottom: 14px
+        }
+
+        .hero-role {
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 500;
+            color: var(--text-secondary);
+            line-height: 1.6
+        }
+
+        .hero-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin: 12px 0 24px
+        }
+
+        .hero-avatar-wrap {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 50%;
+            background: white;
+            padding: 4px;
+            border: 1px solid var(--apple-border)
+        }
+
+        .hero-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block
+        }
+
+        .hero-avatar-wrap:has(img[data-missing]) {
+            display: none
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px
+        }
+
+        .apple-pill-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 21px;
+            min-height: 46px;
+            border: 1px solid var(--apple-border);
+            border-radius: 50px;
+            background: white;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            line-height: 1.5;
+            transition: background .2s, transform .2s
+        }
+
+        .apple-pill-btn:hover {
+            background: #ebebef;
+            transform: translateY(-1px)
+        }
+
+        .primary-action {
+            background: var(--apple-blue);
+            border-color: var(--apple-blue);
+            color: white
+        }
+
+        .primary-action:hover {
+            background: #0077ed
+        }
+
+        .hero-actions .apple-pill-btn i {
+            display: none
+        }
+
+        .hero-pills {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px 18px;
+            flex-wrap: wrap
+        }
+
+        .hero-pills .apple-pill-btn {
+            min-height: 36px;
+            padding: 5px 0;
+            border: 0;
+            border-radius: 0;
+            background: none;
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 400;
+            overflow-wrap: anywhere
+        }
+
+        .hero-pills .apple-pill-btn:hover {
+            color: var(--apple-blue);
+            transform: none
+        }
+
+        .hero-pills i {
+            font-size: 12px;
+            color: var(--text-tertiary)
+        }
+
+        .layout-grid,
+        .main-column {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+            min-width: 0
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px
+        }
+
+        .section-icon {
+            display: none
+        }
+
+        .section-title {
+            font-size: clamp(24px, 3vw, 32px);
+            line-height: 1.35;
+            font-weight: 650;
+            letter-spacing: -.035em
+        }
+
+        .summary-text {
+            color: var(--text-secondary);
+            font-size: 15.5px;
+            line-height: 1.9;
+            text-align: start;
+            max-width: 82ch
+        }
+
+        .profile-intro {
+            max-width: 770px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .profile-intro .section-header {
+            justify-content: center;
+            margin-bottom: 14px
+        }
+
+        .profile-intro .section-title {
+            font-size: 17px;
+            color: var(--text-primary);
+            letter-spacing: 0
+        }
+
+        .profile-intro .summary-text {
+            text-align: center;
+            font-size: 15.5px;
+            line-height: 1.85
+        }
+
+        .apple-timeline {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px
+        }
+
+        .timeline-card {
+            min-width: 0;
+            background: white;
+            border-radius: 24px;
+            padding: 28px;
+            border: 1px solid rgba(0, 0, 0, .035)
+        }
+
+        .timeline-top {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px
+        }
+
+        .job-title {
+            font-size: 19px;
+            font-weight: 650;
+            line-height: 1.5;
+            letter-spacing: -.02em;
+            overflow-wrap: anywhere
+        }
+
+        .date-chip {
+            display: inline-block;
+            font-size: 11px;
+            line-height: 1.6;
+            color: var(--text-tertiary);
+            font-weight: 500
+        }
+
+        .company-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px
+        }
+
+        .company-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.7
+        }
+
+        .apple-tag {
+            font-size: 11px;
+            background: #f0f0f3;
+            color: var(--text-secondary);
+            border-radius: 6px;
+            padding: 3px 8px
+        }
+
+        .project-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 44px;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            line-height: 1.6;
+            overflow-wrap: anywhere
+        }
+
+        .project-link-btn:hover {
+            text-decoration: underline
+        }
+
+        .project-link-btn i {
+            font-size: 10px
+        }
+
+        .case-study {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 0 28px 24px
+        }
+
+        .case-study>.timeline-top {
+            padding-top: 26px
+        }
+
+        .case-metrics {
+            display: flex;
+            gap: 24px;
+            padding: 24px 0;
+            margin: 0 0 8px;
+            border-top: 1px solid var(--apple-border);
+            border-bottom: 1px solid var(--apple-border)
+        }
+
+        .case-metrics>div {
+            flex: 1;
+            min-width: 0
+        }
+
+        .case-metrics strong {
+            display: block;
+            font-size: clamp(26px, 4vw, 40px);
+            letter-spacing: -.04em;
+            font-weight: 650;
+            line-height: 1.2
+        }
+
+        .case-metrics span {
+            display: block;
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 6px
+        }
+
+        .case-field {
+            margin: 14px 0
+        }
+
+        .case-field h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: var(--text-tertiary);
+            font-weight: 600;
+            margin-bottom: 6px
+        }
+
+        .case-field p {
+            font-size: 13.5px;
+            line-height: 1.85;
+            color: var(--text-secondary)
+        }
+
+        .case-study>.project-link-btn {
+            margin-top: auto;
+            padding-top: 16px
+        }
+
+        #task-governance-project {
+            background: #17232f;
+            color: #f5f5f7;
+            border: 0
+        }
+
+        #task-governance-project .date-chip,
+        #task-governance-project .company-label,
+        #task-governance-project .case-metrics span,
+        #task-governance-project .case-field h3 {
+            color: #aab7c6
+        }
+
+        #task-governance-project .case-field p {
+            color: #d1d9e2
+        }
+
+        #task-governance-project .case-metrics {
+            border-color: #37434f
+        }
+
+        #task-governance-project .project-link-btn {
+            color: #72b7ff
+        }
+
+        #grc-excel-project {
+            background: #edf4ee;
+            border: 0
+        }
+
+        #grc-excel-project .case-metrics {
+            border-color: #ceddd1
+        }
+
+        #grc-excel-project .case-metrics strong {
+            color: #2e6547
+        }
+
+        .other-projects {
+            margin-top: 20px
+        }
+
+        .other-projects .timeline-card {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 0 28px
+        }
+
+        .other-projects .timeline-top {
+            grid-column: 1;
+            grid-row: 1/3
+        }
+
+        .other-projects .company-row {
+            grid-column: 1;
+            grid-row: 3
+        }
+
+        .other-projects .summary-text {
+            grid-column: 2;
+            grid-row: 1/3;
+            font-size: 14px
+        }
+
+        .other-projects .project-link-btn {
+            grid-column: 2;
+            grid-row: 3;
+            justify-self: start
+        }
+
+        #experience .job-title {
+            font-size: 17px
+        }
+
+        #experience .summary-text {
+            font-size: 14px
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            padding: 28px 0;
+            border-top: 1px solid var(--apple-border);
+            border-bottom: 1px solid var(--apple-border)
+        }
+
+        .focus-card {
+            min-width: 0;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            color: inherit;
+            background: transparent;
+            padding: 0
+        }
+
+        .focus-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--apple-blue);
+            font-size: 18px;
+            margin-bottom: 14px
+        }
+
+        .focus-top span {
+            font-size: 11px;
+            letter-spacing: .12em;
+            font-weight: 600
+        }
+
+        .focus-card h2 {
+            font-size: 16.5px;
+            line-height: 1.55;
+            margin-bottom: 8px
+        }
+
+        .focus-card p {
+            font-size: 13px;
+            line-height: 1.85;
+            color: var(--text-secondary);
+            margin-bottom: 16px
+        }
+
+        .focus-proof {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            margin-top: auto;
+            line-height: 1.65
+        }
+
+        .focus-arrow {
+            display: none
+        }
+
+        .adaptable-card {
+            padding: 34px 0 0;
+            border-top: 1px solid var(--apple-border)
+        }
+
+        .adaptable-card .summary-text {
+            max-width: 92ch;
+            font-size: 15px
+        }
+
+        .adaptable-card .section-title {
+            font-size: 25px
+        }
+
+        /* Skills White Cards Grid & Styling */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 24px
+        }
+
+        .skill-group {
+            background: white;
+            border-radius: 24px;
+            padding: 26px;
+            border: 1px solid rgba(0, 0, 0, .035);
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px
+        }
+
+        .skill-group-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 650;
+            color: var(--text-primary)
+        }
+
+        .skill-group-title>i {
+            color: var(--apple-blue)
+        }
+
+        .tags-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .apple-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border: 1px solid #dedee3;
+            border-radius: 8px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            background: #fafafc
+        }
+
+        .apple-chip>i {
+            display: none
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px
+        }
+
+        .file-item {
+            min-width: 0;
+            background: white;
+            padding: 22px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: inherit
+        }
+
+        .file-item-icon {
+            font-size: 21px;
+            color: var(--apple-blue)
+        }
+
+        .file-item h4 {
+            font-size: 14px;
+            font-weight: 550
+        }
+
+        .file-item p {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            margin-inline-start: auto
+        }
+
+        .side-column {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            align-items: start
+        }
+
+        .side-column>.bento-card {
+            padding: 26px;
+            background: white;
+            border-radius: 24px
+        }
+
+        .side-column .section-title {
+            font-size: 20px
+        }
+
+        .side-column .section-header {
+            margin-bottom: 18px
+        }
+
+        #certifications-card {
+            grid-row: span 2
+        }
+
+        .side-item-box {
+            margin-bottom: 20px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--apple-border)
+        }
+
+        .side-item-box:last-child {
+            border: 0;
+            padding-bottom: 0;
+            margin-bottom: 0
+        }
+
+        .side-title {
+            font-size: 14.5px;
+            font-weight: 600;
+            line-height: 1.65;
+            margin-bottom: 6px
+        }
+
+        .side-sub {
+            font-size: 12px;
+            color: var(--apple-blue);
+            margin-bottom: 6px
+        }
+
+        .side-desc {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            line-height: 1.8
+        }
+
+        .cert-specs {
+            font-size: 11.5px;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-top: 10px
+        }
+
+        .dot {
+            color: var(--apple-blue)
+        }
+
+        .qr-card {
+            text-align: center
+        }
+
+        .qr-code-img {
+            width: 110px;
+            height: 110px;
+            display: block;
+            margin: 0 auto 14px
+        }
+
+        .qr-card .section-header {
+            justify-content: center
+        }
+
+        .lang-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+            padding: 9px 0
+        }
+
+        .lang-name {
+            font-size: 13.5px
+        }
+
+        .lang-check {
+            font-size: 12.5px;
+            color: #3e8b60
+        }
+
+        footer.bento-card {
+            padding: 36px 0 0;
+            border-top: 1px solid var(--apple-border)
+        }
+
+        footer .section-title {
+            font-size: clamp(22px, 3vw, 32px);
+            margin-bottom: 22px
+        }
+
+        body>.container:last-of-type {
+            margin-top: 56px !important
+        }
+
+        .apple-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .apple-list li {
+            font-size: 13.5px;
+            line-height: 1.8;
+            color: var(--text-secondary)
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, .3);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .2s
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-card {
+            width: 100%;
+            max-width: 340px;
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 20px 80px #0002
+        }
+
+        .modal-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px
+        }
+
+        .modal-title-row h3 {
+            font-size: 17px
+        }
+
+        .modal-close-icon {
+            border: 0;
+            background: #f1f1f4;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px
+        }
+
+        .modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-action-btn {
+            min-height: 46px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 14px;
+            text-decoration: none
+        }
+
+        .btn-call {
+            background: var(--apple-blue);
+            color: white
+        }
+
+        .btn-wa {
+            background: #eef8f0;
+            color: #128c54
+        }
+
+        @media(max-width:820px) {
+
+            .container,
+            .layout-grid,
+            .main-column {
+                gap: 40px
+            }
+
+            .container {
+                padding: 0 20px
+            }
+
+            .hero-card {
+                padding-top: 40px
+            }
+
+            .apple-timeline {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            .case-study {
+                padding: 0 24px 24px
+            }
+
+            .case-metrics strong {
+                font-size: 34px
+            }
+
+            .side-column {
+                gap: 18px
+            }
+
+            .focus-grid {
+                gap: 18px
+            }
+
+            .other-projects .timeline-card {
+                display: block
+            }
+
+            .other-projects .summary-text {
+                margin: 10px 0
+            }
+
+            .skills-grid {
+                grid-template-columns: minmax(0, 1fr)
+            }
+        }
+
+        @media(max-width:600px) {
+            body {
+                padding-bottom: max(24px, env(safe-area-inset-bottom))
+            }
+
+            .container {
+                padding: 0 16px;
+                gap: 28px
+            }
+
+            .layout-grid,
+            .main-column {
+                gap: 28px
+            }
+
+            .nav-content {
+                padding: 0 16px
+            }
+
+            .apple-nav {
+                height: 54px
+            }
+
+            .hero-card {
+                padding: 28px 0 0;
+                gap: 16px
+            }
+
+            .hero-name {
+                font-size: 32px;
+                margin-bottom: 8px
+            }
+
+            .hero-role {
+                font-size: 13.5px
+            }
+
+            .hero-location {
+                font-size: 11px;
+                margin: 8px 0 16px
+            }
+
+            .hero-avatar-wrap {
+                width: 90px;
+                height: 90px;
+                min-width: 90px;
+                min-height: 90px
+            }
+
+            .hero-actions {
+                gap: 8px;
+                margin-bottom: 14px;
+                width: 100%
+            }
+
+            .hero-actions .apple-pill-btn {
+                flex: 1;
+                min-height: 42px;
+                padding: 10px 14px;
+                font-size: 12px
+            }
+
+            .hero-pills {
+                gap: 6px 12px;
+                justify-content: center
+            }
+
+            .hero-pills .apple-pill-btn {
+                min-height: 32px;
+                font-size: 11px
+            }
+
+            .section-header {
+                margin-bottom: 14px
+            }
+
+            .section-title {
+                font-size: 21px
+            }
+
+            .profile-intro .summary-text {
+                font-size: 13.5px;
+                line-height: 1.8
+            }
+
+            /* توحيد مقاسات ومساحات جميع البطاقات على الجوال لتكون بوزن وتناسق مثالي */
+            .timeline-card,
+            .case-study,
+            .focus-card,
+            .skill-group,
+            .credential-grid>.bento-card,
+            .file-item,
+            #qr-code-card,
+            .adaptable-card {
+                padding: 20px 18px;
+                border-radius: 20px;
+                background: #fff;
+                border: 1px solid rgba(0, 0, 0, .04);
+            }
+
+            #task-governance-project {
+                background: #17232f !important;
+                border: 0 !important;
+            }
+
+            #grc-excel-project {
+                background: #edf4ee !important;
+                border: 0 !important;
+            }
+
+            #agri-zone-project {
+                background: #f0edf6 !important;
+                border: 0 !important;
+            }
+
+            .adaptable-card {
+                background: transparent;
+                border: 0;
+                border-top: 1px solid var(--apple-border);
+                padding-top: 24px;
+            }
+
+            .case-study>.timeline-top {
+                padding-top: 0
+            }
+
+            .job-title {
+                font-size: 17.5px
+            }
+
+            .company-label {
+                font-size: 11px
+            }
+
+            .case-field p {
+                font-size: 13px
+            }
+
+            .case-field {
+                margin: 10px 0
+            }
+
+            .case-metrics {
+                padding: 16px 0;
+                gap: 14px
+            }
+
+            .case-metrics strong {
+                font-size: 28px
+            }
+
+            .focus-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 16px;
+                padding: 16px 0
+            }
+
+            .focus-top {
+                margin-bottom: 8px
+            }
+
+            .focus-card p {
+                margin-bottom: 10px
+            }
+
+            .focus-proof {
+                font-size: 11px
+            }
+
+            .skills-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 16px
+            }
+
+            .skill-group {
+                gap: 12px
+            }
+
+            .apple-chip {
+                padding: 5px 10px;
+                font-size: 11.5px;
+                border-radius: 7px
+            }
+
+            .side-column {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            #certifications-card {
+                grid-row: auto
+            }
+
+            .files-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 10px
+            }
+
+            .file-item {
+                min-height: auto
+            }
+
+            #certifications-card .cert-specs {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 4px
+            }
+
+            #languages-card {
+                gap: 0 16px
+            }
+
+            .modal-card {
+                padding-bottom: max(22px, env(safe-area-inset-bottom))
+            }
+        }
+
+        @media(max-width:350px) {
+            .container {
+                padding: 0 10px
+            }
+
+            .hero-name {
+                font-size: 28px
+            }
+
+            .hero-actions {
+                width: 100%
+            }
+
+            .hero-actions .apple-pill-btn {
+                flex: 1;
+                min-width: 100px
+            }
+
+            .case-study {
+                padding-inline: 14px
+            }
+
+            .hero-pills {
+                gap: 4px 8px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            * {
+                transition: none !important
+            }
+        }
+
+        .other-projects #agri-zone-project {
+            display: flex;
+            grid-template-columns: none;
+            background: #f0edf6;
+            border: 0
+        }
+
+        .other-projects #agri-zone-project>.timeline-top {
+            grid-column: auto;
+            grid-row: auto
+        }
+
+        .other-projects #agri-zone-project>.company-row {
+            grid-column: auto;
+            grid-row: auto
+        }
+
+        .other-projects #agri-zone-project>.project-link-btn {
+            grid-column: auto;
+            grid-row: auto;
+            align-self: flex-start
+        }
+
+        .other-projects #agri-zone-project .case-metrics {
+            border-color: #dbd3e8
+        }
+
+        .other-projects #agri-zone-project .case-metrics strong {
+            color: #70568c
+        }
+
+        .hero-avatar-wrap {
+            position: relative;
+            width: 124px;
+            height: 124px;
+            display: block;
+            isolation: isolate;
+            background: linear-gradient(145deg, #edf3fa, #dde7f1);
+            padding: 5px;
+            box-shadow: 0 8px 28px rgba(30, 60, 90, .08)
+        }
+
+        .hero-avatar-wrap:has(img[data-missing]) {
+            display: block
+        }
+
+        .avatar-fallback {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: 600;
+            letter-spacing: -.03em;
+            color: #61768d;
+            z-index: 0
+        }
+
+        .hero-avatar {
+            position: relative;
+            z-index: 1;
+            background: #fff
+        }
+
+        @media(max-width:600px) {
+            .hero-avatar-wrap {
+                width: 90px;
+                height: 90px
+            }
+
+            .avatar-fallback {
+                font-size: 26px
+            }
+        }
+
+        .page-content {
+            margin-top: 0 !important
+        }
+
+        .page-content>.adaptable-card {
+            border-top: 0;
+            padding-top: 0;
+            max-width: 820px;
+            align-self: center;
+            text-align: center
+        }
+
+        .page-content>.adaptable-card .section-header {
+            justify-content: center
+        }
+
+        .page-content>.adaptable-card .section-title {
+            font-size: clamp(24px, 3.5vw, 36px)
+        }
+
+        .page-content>.adaptable-card .summary-text {
+            text-align: center;
+            font-size: 15.5px;
+            line-height: 1.9
+        }
+
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            align-items: start
+        }
+
+        .credential-grid>.bento-card {
+            padding: 26px;
+            background: white;
+            border-radius: 24px;
+            min-width: 0
+        }
+
+        .credential-grid #certifications-card {
+            grid-row: span 2
+        }
+
+        .credential-grid .section-title {
+            font-size: 21px
+        }
+
+        .page-content>#qr-code-card {
+            padding: 22px;
+            border: 1px solid var(--apple-border);
+            border-radius: 22px
+        }
+
+        .worksheet-count-note {
+            font-size: 12px;
+            line-height: 1.85;
+            color: var(--text-secondary);
+            margin: 10px 0 6px
+        }
+
+        .tangible-work {
+            gap: 12px
+        }
+
+        .tangible-work li {
+            position: relative;
+            padding-inline-start: 14px;
+            font-size: 13.5px;
+            line-height: 1.85
+        }
+
+        .tangible-work li::before {
+            content: "";
+            position: absolute;
+            inset-inline-start: 0;
+            top: .8em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--apple-blue)
+        }
+
+        #experience .project-link-btn {
+            margin-top: 14px
+        }
+
+        .role-result {
+            margin-top: 18px;
+            padding: 12px 14px;
+            background: var(--apple-blue-light);
+            border-radius: 12px
+        }
+
+        .role-result strong {
+            display: block;
+            font-size: 11.5px;
+            color: var(--apple-blue);
+            margin-bottom: 4px
+        }
+
+        .role-result p {
+            font-size: 12.5px;
+            line-height: 1.8;
+            color: var(--text-primary)
+        }
+
+        .hero-signature {
+            display: block;
+            width: clamp(180px, 26vw, 280px);
+            height: auto;
+            margin: 6px auto 18px;
+            mix-blend-mode: multiply;
+            object-fit: contain
+        }
+
+        @media(max-width:600px) {
+            .hero-signature {
+                width: 190px;
+                max-width: 80%;
+                margin: 4px auto 14px
+            }
+        }
+
+        .hero-card .hero-avatar-wrap {
+            width: 144px;
+            height: 144px;
+            min-width: 144px;
+            min-height: 144px;
+            padding: 0;
+            border: 4px solid #fff;
+            background: #090909;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 10px 26px rgba(0, 0, 0, .08);
+            isolation: isolate;
+            flex-shrink: 0
+        }
+
+        .hero-card .hero-avatar {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+            transform: scale(1.35);
+            transform-origin: 50% 40%;
+            border-radius: 0;
+            background: #090909
+        }
+
+        .hero-card .avatar-fallback {
+            color: #c3c3c8;
+            background: #090909;
+            font-size: 30px
+        }
+
+        .hero-card {
+            gap: 20px
+        }
+
+        .credential-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: stretch
+        }
+
+        .credential-grid>.bento-card {
+            width: 100%;
+            padding: 26px 28px
+        }
+
+        .credential-grid #certifications-card {
+            grid-row: auto
+        }
+
+        .credential-grid .section-header {
+            margin-bottom: 18px
+        }
+
+        .credential-grid .side-item-box {
+            margin-bottom: 16px;
+            padding-bottom: 16px
+        }
+
+        #certifications-card .cert-specs {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 4px 22px;
+            max-width: 850px
+        }
+
+        #languages-card {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0 28px
+        }
+
+        #languages-card .section-header {
+            grid-column: 1/-1;
+            margin-bottom: 8px !important
+        }
+
+        #languages-card .lang-row {
+            padding: 9px 0;
+            margin: 0
+        }
+
+        .btn-email {
+            background: var(--apple-blue-light);
+            color: var(--apple-blue)
+        }
+
+        .modal-action-btn {
+            min-height: 46px
+        }
+
+        .hero-card .hero-name {
+            font-size: clamp(32px, 4vw, 46px);
+            line-height: 1.2;
+            letter-spacing: -.03em;
+            margin-bottom: 10px
+        }
+
+        .project-summary,
+        .project-details {
+            display: contents
+        }
+
+        @media(min-width:1024px) {
+            .container.page-content {
+                max-width: 1160px;
+                display: grid;
+                grid-template-columns: repeat(12, minmax(0, 1fr));
+                column-gap: 26px;
+                row-gap: 48px;
+                padding-inline: 36px
+            }
+
+            .page-content>* {
+                grid-column: 1/-1;
+                min-width: 0
+            }
+
+            .nav-content {
+                max-width: 1160px;
+                padding-inline: 36px
+            }
+
+            .hero-card {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) 190px;
+                gap: 52px;
+                align-items: center;
+                padding: 48px 0 20px;
+                text-align: start
+            }
+
+            .hero-info {
+                grid-column: 1;
+                grid-row: 1;
+                max-width: 760px
+            }
+
+            .hero-card .hero-avatar-wrap {
+                grid-column: 2;
+                grid-row: 1;
+                justify-self: center;
+                width: 170px;
+                height: 170px;
+                min-width: 170px;
+                min-height: 170px;
+                margin: 0;
+                order: initial
+            }
+
+            .hero-card .hero-name {
+                font-size: 42px;
+                line-height: 1.2;
+                letter-spacing: -.035em;
+                margin-bottom: 6px
+            }
+
+            .hero-signature {
+                width: 220px;
+                height: auto;
+                margin: 0 0 12px;
+                margin-inline-start: 0
+            }
+
+            .hero-role {
+                font-size: 16.5px;
+                line-height: 1.65
+            }
+
+            .hero-location,
+            .hero-actions,
+            .hero-pills {
+                justify-content: flex-start
+            }
+
+            .hero-location {
+                margin: 10px 0 20px
+            }
+
+            .hero-actions {
+                margin-bottom: 16px
+            }
+
+            .hero-pills {
+                max-width: 700px;
+                gap: 4px 18px
+            }
+
+            .hero-pills .apple-pill-btn {
+                font-size: 12px;
+                min-height: 34px
+            }
+
+            .page-content>.adaptable-card {
+                grid-column: 1/9;
+                max-width: none;
+                width: 100%;
+                align-self: stretch;
+                text-align: start;
+                padding: 24px 28px;
+                border: 1px solid var(--apple-border);
+                border-radius: 20px;
+                background: #fff
+            }
+
+            .page-content>.adaptable-card .section-header {
+                justify-content: flex-start;
+                margin-bottom: 14px
+            }
+
+            .page-content>.adaptable-card .section-title {
+                font-size: 26px;
+                line-height: 1.4;
+                max-width: none
+            }
+
+            .page-content>.adaptable-card .summary-text {
+                text-align: start;
+                font-size: 13.5px;
+                line-height: 1.9;
+                max-width: none
+            }
+
+            .page-content>.profile-intro {
+                grid-column: 9/13;
+                max-width: none;
+                margin: 0;
+                align-self: stretch;
+                text-align: start;
+                padding: 24px 0;
+                padding-inline-start: 6px
+            }
+
+            .profile-intro .section-header {
+                justify-content: flex-start;
+                margin-bottom: 12px
+            }
+
+            .profile-intro .section-title {
+                font-size: 17px;
+                font-weight: 600
+            }
+
+            .profile-intro .summary-text {
+                text-align: start;
+                font-size: 13.5px;
+                line-height: 1.9
+            }
+
+            .section-title {
+                font-size: 26px;
+                line-height: 1.35
+            }
+
+            .section-header {
+                margin-bottom: 22px
+            }
+
+            #selected-projects>.apple-timeline {
+                display: flex;
+                flex-direction: column;
+                gap: 20px
+            }
+
+            #selected-projects .case-study,
+            .other-projects #agri-zone-project {
+                display: grid;
+                grid-template-columns: 230px minmax(0, 1fr);
+                gap: 0 32px;
+                padding: 26px 28px;
+                border-radius: 22px;
+                align-items: start
+            }
+
+            .project-summary {
+                display: flex;
+                flex-direction: column;
+                min-width: 0
+            }
+
+            .project-details {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                column-gap: 20px;
+                align-items: start;
+                min-width: 0
+            }
+
+            .project-summary>.timeline-top {
+                padding: 0;
+                margin-bottom: 10px;
+                gap: 10px
+            }
+
+            .project-summary .job-title {
+                font-size: 18px;
+                line-height: 1.55;
+                letter-spacing: -.015em
+            }
+
+            .project-summary .date-chip {
+                font-size: 11.5px
+            }
+
+            .project-summary>.company-row {
+                margin-bottom: 16px
+            }
+
+            .project-summary .company-label {
+                font-size: 11.5px;
+                line-height: 1.75
+            }
+
+            .project-summary>.case-metrics {
+                gap: 14px;
+                padding: 16px 0 0;
+                margin: 0;
+                border-bottom: 0
+            }
+
+            .case-metrics strong {
+                font-size: 27px;
+                line-height: 1.2
+            }
+
+            .case-metrics span {
+                font-size: 11px;
+                line-height: 1.6
+            }
+
+            .project-details>.worksheet-count-note {
+                grid-column: 1/-1;
+                font-size: 11.5px;
+                margin: 0 0 16px;
+                padding-bottom: 14px;
+                border-bottom: 1px solid #ceddd1
+            }
+
+            .project-details>.case-field {
+                margin: 0;
+                min-width: 0
+            }
+
+            .project-details .case-field h3 {
+                font-size: 11px;
+                line-height: 1.65;
+                margin-bottom: 8px
+            }
+
+            .project-details .case-field p {
+                font-size: 12.5px;
+                line-height: 1.9
+            }
+
+            .project-details>.project-link-btn {
+                grid-column: 1/-1;
+                justify-self: start;
+                align-self: end;
+                margin-top: 18px;
+                padding-top: 12px;
+                min-height: 38px;
+                border-top: 1px solid #0001;
+                width: 100%;
+                justify-content: space-between
+            }
+
+            #task-governance-project .project-details>.project-link-btn {
+                border-color: #ffffff20
+            }
+
+            .other-projects {
+                margin-top: 20px
+            }
+
+            #experience>.apple-timeline {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+                align-items: stretch
+            }
+
+            #experience .timeline-card {
+                padding: 26px;
+                display: flex;
+                flex-direction: column
+            }
+
+            #experience .timeline-top {
+                min-height: 104px;
+                margin-bottom: 10px
+            }
+
+            #experience .job-title {
+                font-size: 15.5px;
+                line-height: 1.6
+            }
+
+            #experience .date-chip {
+                font-size: 11.5px
+            }
+
+            #experience .tangible-work {
+                flex: 1;
+                gap: 10px;
+                margin-bottom: 18px
+            }
+
+            #experience .tangible-work li {
+                font-size: 12.5px;
+                line-height: 1.85
+            }
+
+            #experience .role-result {
+                margin-top: auto
+            }
+
+            #experience .project-link-btn {
+                margin-top: 10px
+            }
+
+            .focus-grid {
+                gap: 26px;
+                padding: 26px 0
+            }
+
+            .skills-grid {
+                gap: 22px 32px
+            }
+
+            .credential-grid {
+                gap: 18px
+            }
+
+            .credential-grid>.bento-card {
+                padding: 24px 28px
+            }
+
+            #certifications-card .side-item-box {
+                display: grid;
+                grid-template-columns: 260px minmax(0, 1fr);
+                column-gap: 26px;
+                align-items: start
+            }
+
+            #certifications-card .side-title {
+                grid-column: 1;
+                grid-row: 1;
+                font-size: 13.5px
+            }
+
+            #certifications-card .side-sub {
+                grid-column: 1;
+                grid-row: 2
+            }
+
+            #certifications-card .side-desc {
+                grid-column: 2;
+                grid-row: 1;
+                font-size: 11.5px
+            }
+
+            #certifications-card .cert-specs {
+                grid-column: 2;
+                grid-row: 2/4;
+                margin-top: 4px;
+                gap: 4px 18px;
+                font-size: 11.5px
+            }
+
+            #languages-card {
+                grid-template-columns: 220px 1fr 1fr;
+                gap: 26px;
+                align-items: center
+            }
+
+            #languages-card .section-header {
+                grid-column: 1;
+                margin: 0 !important
+            }
+
+            #languages-card .lang-row {
+                padding: 0
+            }
+
+            #documents .files-grid {
+                gap: 18px
+            }
+
+            .file-item {
+                padding: 20px;
+                min-height: 84px
+            }
+
+            #qr-code-card {
+                display: grid;
+                grid-template-columns: 1fr 120px;
+                gap: 0 26px;
+                text-align: start;
+                align-items: center;
+                padding: 24px 28px
+            }
+
+            #qr-code-card .section-header {
+                grid-column: 1;
+                grid-row: 1;
+                justify-content: flex-start !important;
+                margin: 0 0 10px !important
+            }
+
+            #qr-code-card>a:not(.project-link-btn) {
+                grid-column: 2;
+                grid-row: 1/4;
+                justify-self: center
+            }
+
+            #qr-code-card>.qr-code-img {
+                margin: 0
+            }
+
+            #qr-code-card>p {
+                grid-column: 1;
+                grid-row: 2
+            }
+
+            #qr-code-card>.project-link-btn {
+                grid-column: 1;
+                grid-row: 3;
+                justify-self: start;
+                margin-top: 8px !important
+            }
+
+            footer.bento-card {
+                padding-top: 32px;
+                margin-top: 0
+            }
+
+            footer .section-title {
+                font-size: 26px
+            }
+        }
+
+        .apple-nav .nav-content {
+            align-items: center;
+            gap: 12px
+        }
+
+        .apple-nav .nav-brand,
+        .apple-nav .language-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 42px;
+            height: 42px;
+            padding: 0 15px;
+            border: 1px solid var(--apple-border);
+            border-radius: 999px;
+            background: #fff;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1;
+            text-decoration: none;
+            letter-spacing: 0;
+            white-space: nowrap;
+            box-sizing: border-box
+        }
+
+        .apple-nav .nav-symbol {
+            display: block;
+            flex: 0 0 18px;
+            width: 18px;
+            height: 18px;
+            color: var(--text-secondary)
+        }
+
+        .apple-nav .nav-brand span,
+        .apple-nav #langBtn {
+            display: block;
+            line-height: 1.3
+        }
+
+        .apple-nav .nav-brand:hover,
+        .apple-nav .language-toggle:hover {
+            background: #ededf1;
+            border-color: #d6d6dc
+        }
+
+        @media(max-width:600px) {
+
+            .apple-nav .nav-brand,
+            .apple-nav .language-toggle {
+                height: 38px;
+                min-height: 38px;
+                padding: 0 12px;
+                font-size: 12px;
+                gap: 6px
+            }
+
+            .apple-nav .nav-symbol {
+                width: 16px;
+                height: 16px;
+                flex-basis: 16px
+            }
+
+            .apple-nav {
+                height: 54px
+            }
+        }
+
+        @media(min-width:1024px) {
+            .page-content>.adaptable-card {
+                grid-column: 1/-1;
+                max-width: none;
+                display: grid;
+                grid-template-columns: 280px minmax(0, 1fr);
+                gap: 0 32px;
+                align-items: start
+            }
+
+            .page-content>.adaptable-card .section-header {
+                grid-column: 1;
+                grid-row: 1/3;
+                margin-bottom: 0
+            }
+
+            .page-content>.adaptable-card .summary-text {
+                grid-column: 2;
+                grid-row: 1
+            }
+
+            .page-content>.adaptable-card>.project-link-btn {
+                grid-column: 2;
+                grid-row: 2;
+                justify-self: start;
+                margin-top: 10px !important
+            }
+        }
+
+        .hero-avatar-wrap:has(.hero-avatar:not([style*="display: none"])) .avatar-fallback {
+            visibility: hidden
+        }
+
+        .hero-avatar-wrap:has(.hero-avatar[style*="display: none"]) .avatar-fallback {
+            visibility: visible
+        }
+
+#certifications-card .other-courses{border-top:1px solid #e5e5e7;padding-top:18px;margin-top:4px}#certifications-card .other-courses h3{font-size:13.5px;font-weight:700;margin:0 0 12px;color:#1d1d1f}#certifications-card .other-course-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}#certifications-card .other-course{background:#f7f7f9;border:1px solid #e9e9ed;border-radius:14px;padding:13px 14px;font-size:12px;line-height:1.6;color:#424249;min-height:60px;display:flex;align-items:center}@media(max-width:700px){#certifications-card .other-course-list{grid-template-columns:1fr}#certifications-card .other-course{min-height:0}}
+
+.focus-grid{border:1px solid #e5e5e7;border-radius:28px;background:#fff;padding:28px;gap:16px}.focus-heading-block{grid-column:1/-1;margin-bottom:4px}.focus-heading-block h2{font-size:23px;line-height:1.35;margin:0 0 5px;color:#1d1d1f}.focus-heading-block p{font-size:13px;line-height:1.7;color:#6e6e73;margin:0}.focus-grid .focus-card{background:#f7f7f9;border:1px solid #e9e9ed;border-radius:20px;padding:22px;min-height:210px;transition:background .18s ease,transform .18s ease,box-shadow .18s ease}.focus-grid .focus-card:hover{background:#f0f0f3;transform:translateY(-2px);box-shadow:0 10px 24px #0000000a}.focus-grid .focus-card:focus-visible{outline:2px solid #1d1d1f;outline-offset:3px}.focus-grid .focus-top{justify-content:flex-start;gap:10px;color:#6e6e73;margin-bottom:15px}.focus-grid .focus-top i{font-size:17px}.focus-grid .focus-top span{font-size:11px;letter-spacing:.1em}.focus-grid .focus-card h2{font-size:17px;margin-bottom:10px}.focus-grid .focus-card p{font-size:13px;line-height:1.8;margin-bottom:18px}.focus-grid .focus-proof{border-top:1px solid #e2e2e7;padding-top:12px;font-size:11.5px;color:#62626a}.focus-grid .focus-arrow{display:none}@media(max-width:850px){.focus-grid{grid-template-columns:1fr;padding:20px;gap:12px}.focus-grid .focus-card{min-height:0;padding:20px}.focus-heading-block h2{font-size:21px}}@media(prefers-reduced-motion:reduce){.focus-grid .focus-card{transition:none}}
+
+.resume-modal-card{max-width:440px}.resume-modal-note{color:var(--text-secondary);line-height:1.7;margin:-4px 0 18px}.resume-modal-card .modal-action-btn{justify-content:flex-start;padding-inline:18px;border:0;width:100%;font:inherit;cursor:pointer;text-align:start;transition:transform .18s ease,box-shadow .18s ease}.resume-modal-card .modal-action-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px #00000012}.resume-modal-card .modal-action-btn:focus-visible,.resume-back:focus-visible{outline:3px solid #1d1d1f;outline-offset:3px}.resume-modal-card .modal-action-btn i{width:20px;text-align:center}.resume-chevron{margin-inline-start:auto;font-size:11px}.resume-choice{font-weight:700;margin:0 0 14px;color:#1d1d1f}.resume-back{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:none;border:0;color:#6e6e73;cursor:pointer;font:inherit;padding:8px 0}#resumeTrackStep[hidden],#resumeLanguageStep[hidden],.resume-modal-note[hidden]{display:none}@media(max-width:600px){.resume-modal-card{max-width:100%;padding:22px;border-radius:22px}.resume-modal-card .modal-action-btn{min-height:54px}.resume-modal-note{font-size:14px}}@media(prefers-reduced-motion:reduce){.resume-modal-card .modal-action-btn{transition:none}}
+
+.resume-modal-card .modal-action-btn,.resume-modal-card .btn-call,.resume-modal-card .btn-email{background:#f5f5f7;color:#1d1d1f;border:1px solid #e5e5e7}.resume-modal-card .modal-action-btn:hover{background:#ececf0}.resume-modal-card .modal-action-btn i{color:inherit}
+</style>
+</head>
+
+<body>
+    <header class="apple-nav" id="top">
+        <div class="scroll-indicator"></div>
+        <div class="nav-content">
+            <a class="nav-brand" href="#top"><svg class="nav-symbol" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="8" r="3.25"></circle>
+                    <path d="M5.5 20v-1.25a6.5 6.5 0 0 1 13 0V20"></path>
+                </svg><span data-ar="ملف أعمالي" data-en="Portfolio">Portfolio</span></a>
+            <button type="button" class="language-toggle" onclick="toggleLanguage()"><svg class="nav-symbol" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <ellipse cx="12" cy="12" rx="3.7" ry="9"></ellipse>
+                    <path d="M3 12h18"></path>
+                </svg>
+                <span id="langBtn">العربية</span>
+            </button>
+        </div>
+    </header>
+    <main class="container page-content">
+        <div class="bento-card hero-card">
+            <div class="hero-info">
+                <h1 class="hero-name" data-ar="محمد نواف" data-en="Mohammed Nawaf">Mohammed Nawaf</h1>
+                <img class="hero-signature" src="download.png" alt="Mohammed Nawaf signature" width="666" height="278" onerror="this.style.display='none'">
+                <div class="hero-location">
+                    <i class="fas fa-location-dot" style="color: var(--apple-blue);"></i>
+                    <span data-ar="المملكة العربية السعودية - الرياض" data-en="Saudi Arabia - Riyadh">Saudi Arabia -
+                        Riyadh</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a class="apple-pill-btn primary-action" href="#selected-projects"><span data-ar="شاهد أعمالي" data-en="Explore My Work">Explore My Work</span></a>
+                    <a class="apple-pill-btn" href="#resumeModal" target="_blank" rel="noopener noreferrer" onclick="openResumeModal(event)" aria-haspopup="dialog" aria-controls="resumeModal"><span data-ar="عرض السيرة الذاتية" data-en="View Resume">View Resume</span></a>
+                </div>
+
+                <div class="hero-pills">
+                    <a href="mailto:mbnq1@outlook.com" class="apple-pill-btn">
+                        <i class="fas fa-envelope"></i> mbnq1@outlook.com
+                    </a>
+                    <button type="button" class="apple-pill-btn" onclick="openContactModal()">
+                        <i class="fas fa-phone"></i> <span dir="ltr">+966 566 833 453</span>
+                    </button>
+                    <a href="https://linkedin.com/in/mbnq" target="_blank" class="apple-pill-btn" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> linkedin.com/in/mbnq
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" rel="noopener noreferrer" class="apple-pill-btn">
+                        <i class="fab fa-google-drive"></i> <span data-ar="الملفات والمرفقات" data-en="Files &amp; Attachments">Files &amp; Attachments</span>
+                    </a>
+                    <a href="https://github.com/mbnq11" target="_blank" class="apple-pill-btn" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> github.com/mbnq11
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-avatar-wrap">
+                <span class="avatar-fallback" aria-hidden="true" data-ar="م ن" data-en="MN">MN</span>
+                <img src="Mohammed%20Nawaf.png" alt="Mohammed Nawaf" class="hero-avatar" width="3464" height="3464" decoding="async" fetchpriority="high" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <section class="bento-card adaptable-card" id="learning-and-soc">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-shield-halved"></i></div>
+                <h2 class="section-title" data-ar="شغف بالاكتشاف… وقدرة على الإنجاز" data-en="Curious to Explore. Ready to Deliver.">Curious to Explore. Ready to Deliver.</h2>
+            </div>
+            <p class="summary-text" data-ar="أحب أن أفهم الصورة كاملة قبل أن أبدأ. أسأل، وأتحقق من التفاصيل، ثم أحوّل ما أتعلمه إلى خطوات واضحة يمكن تنفيذها ومتابعتها. يهمني أن يفيد عملي الناس فعلًا، وأن أترك كل مهمة أوضح وأكثر تنظيمًا مما وجدتها." data-en="I like to understand the whole picture before I begin. I ask questions, check the details, and turn what I learn into clear steps people can use and follow. I care about making work useful to others and leaving each task clearer and better organized.">I like to understand the whole picture before I begin. I ask questions, check the details, and turn what I learn into clear steps people can use and follow. I care about making work useful to others and leaving each task clearer and better organized.</p>
+            <a href="#experience" class="project-link-btn" style="margin:16px 0 0"><span data-ar="شاهد كيف طبّقت ذلك" data-en="See how I put this into practice">See how I put this into practice</span>
+                <i class="fas fa-arrow-down"></i></a>
+        </section>
+
+        <section class="bento-card" id="selected-projects">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-layer-group"></i></div>
+                <h2 class="section-title" data-ar="أعمال تقدر تطّلع عليها" data-en="Work I can show you">Work I can show you</h2>
+            </div>
+            <div class="apple-timeline">
+                <article class="timeline-card case-study" id="grc-excel-project">
+                    <div class="project-summary">
+                        <div class="timeline-top">
+                            <h3 class="job-title" data-ar="أدوات حوكمة الأمن السيبراني والامتثال لـNCA" data-en="Cybersecurity GRC &amp; NCA Toolkit">Cybersecurity GRC &amp; NCA Toolkit</h3>
+                            <span class="date-chip" data-ar="17 يوليو – 17 أكتوبر 2026" data-en="17 Jul – 17 Oct 2026">17 Jul – 17 Oct 2026</span>
+                        </div>
+                        <div class="company-row">
+                            <span class="company-label" data-ar="مشروع شخصي مستقل | ثلاثة أشهر" data-en="Independent Personal Project | Three months">Independent Personal Project |
+                                Three months</span>
+                        </div>
+                        <div class="case-metrics">
+                            <div><strong>2</strong><span data-en="Excel workbooks" data-ar="ملفا Excel">Excel workbooks</span></div><div><strong>8</strong><span data-en="NCA frameworks" data-ar="أطر NCA">NCA frameworks</span></div><div><strong>897</strong><span data-en="control entries" data-ar="مدخلة للضوابط">control entries</span></div></div>
+                    </div>
+                    <div class="project-details">
+                        <div class="case-field">
+                            <h3 data-ar="ما أنجزته" data-en="What I Delivered">What I Delivered</h3>
+                            <p data-ar="بدأ المشروع بسؤال بسيط: هل يستطيع المراجع الانتقال من الضابط الأمني إلى تقييمه ودليله ومخاطره والإجراء التالي؟ أنشأت ملفَّي Excel متكاملين في الغرض. ينظّم ملف GRC العام سجلات الضوابط والمخاطر ونتائج التدقيق والمتابعة. ويضيف ملف NCA مكتبة ضوابط موثّقة بالمصادر مع واجهات للتقييم وربط الأدلة والإجراءات والمخاطر." data-en="The question behind this project was simple: can a reviewer move from a security control to its assessment, evidence, risk, and next action? I created two complementary Excel workbooks. The general GRC file organizes registers for controls, risks, audit findings, and follow-up. The NCA file adds a sourced control library with assessment, evidence-link, action, and risk views.">The question behind this project was simple: can a reviewer move from a security control to its assessment, evidence, risk, and next action? I created two complementary Excel workbooks. The general GRC file organizes registers for controls, risks, audit findings, and follow-up. The NCA file adds a sourced control library with assessment, evidence-link, action, and risk views.</p>
+                        </div>
+                        <div class="case-field">
+                            <h3 data-ar="الفائدة" data-en="The value">The value</h3>
+                            <p data-ar="يضم ملف NCA عدد 897 مدخلة للضوابط ضمن ثمانية أطر. وتفصل لوحاته بين تغطية التقييم والتنفيذ المعلن والتنفيذ المسنود بالأدلة. ويوفر الملف العام سجلات وتحليلات للبيانات المُدخلة. تدعم الأداتان المراجعة، وعلى كل جهة التحقق من النطاق والربط قبل استخدامهما لتقييم الامتثال." data-en="The NCA workbook includes 897 control-library entries across eight frameworks. Its dashboards separate assessment coverage, declared implementation, and evidence-backed implementation. The general workbook provides registers and analytics for entered records. These tools support review; an organization must validate scope and mappings before using them to assess compliance.">The NCA workbook includes 897 control-library entries across eight frameworks. Its dashboards separate assessment coverage, declared implementation, and evidence-backed implementation. The general workbook provides registers and analytics for entered records. These tools support review; an organization must validate scope and mappings before using them to assess compliance.</p>
+                        </div>
+                        <a href="https://drive.google.com/drive/folders/14c992G56kacj55_p5fxEk22bkNqD7kbC" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض ملفات Excel" data-en="View the Excel workbooks">View the Excel workbooks</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+            <article class="timeline-card case-study" id="task-governance-project">
+                    <div class="project-summary">
+                        <div class="timeline-top">
+                            <h3 class="job-title" data-ar="نظام إدارة المهام والحوكمة" data-en="Task Management &amp; Governance System">Task Management &amp; Governance System</h3>
+                            <span class="date-chip" data-ar="أكتوبر 2025 – فبراير 2026" data-en="Oct 2025 – Feb 2026">Oct 2025 – Feb 2026</span>
+                        </div>
+                        <div class="company-row">
+                            <span class="company-label" data-ar="قطاع حكومي | مشروع خلال فترة التطوع" data-en="Government Sector | Project during volunteer experience">Government Sector |
+                                Project during volunteer experience</span>
+                        </div>
+                        <div class="case-metrics">
+                            <div><strong>5</strong><span data-en="access roles" data-ar="أدوار وصول">access roles</span></div><div><strong>3 PDF + 1 Excel</strong><span data-en="report formats" data-ar="مخرجات التقارير">report formats</span></div><div><strong>~20 min</strong><span data-en="saved per report" data-ar="توفير لكل تقرير">saved per report</span></div></div>
+                    </div>
+                    <div class="project-details">
+                        <div class="case-field">
+                            <h3 data-ar="ما أنجزته" data-en="What I Delivered">What I Delivered</h3>
+                            <p data-ar="بدأ المشروع بسؤال بسيط: هل يقدر الفريق يعرف من المسؤول عن كل مهمة، وأين توقفت؟ عملت على جمع المسؤوليات والاعتمادات ومتابعة أداء الموظفين والفرق والإدارة العامة في مكان واحد. للنظام خمسة أدوار بصلاحيات واضحة، منها مراجع مستقل يطّلع على العمل دون أن يغيّر مساره." data-en="The question behind this project was simple: can a team see who owns each task and what is holding it up? I built a shared view of task ownership, approvals, and performance for employees, teams, and the General Administration. It has five access roles, including an independent auditor who can review without changing the workflow.">The question behind this project was simple: can a team see who owns each task and what is holding it up? I built a shared view of task ownership, approvals, and performance for employees, teams, and the General Administration. It has five access roles, including an independent auditor who can review without changing the workflow.</p>
+                        </div>
+                        <div class="case-field">
+                            <h3 data-ar="الفائدة" data-en="The value">The value</h3>
+                            <p data-ar="صار من الأسهل ملاحظة المهام المتأخرة والمعادة وتتبع مسار الاعتماد. التقارير تشمل ثلاثة ملفات PDF منفصلة وملف Excel واحدًا بثلاث أوراق. وفّرت نحو 20 دقيقة من الإعداد اليدوي لكل تقرير، واختبرت النظام بأكثر من 8,000 سجل مهمة." data-en="Overdue and returned tasks became easier to spot, and the approval trail became easier to follow. Reporting includes three separate PDFs and one Excel workbook with three sheets. It saved about 20 minutes of manual preparation per report; I also tested it with more than 8,000 task records.">Overdue and returned tasks became easier to spot, and the approval trail became easier to follow. Reporting includes three separate PDFs and one Excel workbook with three sheets. It saved about 20 minutes of manual preparation per report; I also tested it with more than 8,000 task records.</p>
+                        </div>
+                        <a href="https://drive.google.com/drive/folders/18WCLLiGQQ_fYNvAYo7yE2rkrKVEHioOe?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وثائق المشروع" data-en="View Project Documents">View Project
+                                Documents</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                </div>
+
+            <div class="other-projects">
+                <article class="timeline-card case-study" id="agri-zone-project">
+                    <div class="project-summary">
+                        <div class="timeline-top">
+                            <h3 class="job-title" data-ar="أجري زون | سوق زراعي إلكتروني" data-en="Agri Zone | Agricultural Marketplace">Agri Zone | Agricultural Marketplace</h3>
+                            <span class="date-chip" data-ar="أبريل 2024 – مايو 2025" data-en="Apr 2024 – May 2025">Apr
+                                2024 – May 2025</span>
+                        </div>
+                        <div class="company-row">
+                            <span class="company-label" data-ar="مشروع التخرج | جامعة الملك خالد" data-en="Graduation Project | King Khalid University">Graduation Project | King Khalid
+                                University</span>
+                        </div>
+                        <div class="case-metrics">
+                            <div><strong>Direct</strong><span data-en="buyer–seller connection" data-ar="تواصل المشتري والبائع">buyer–seller connection</span></div><div><strong>PHP + SQL</strong><span data-en="technical contribution" data-ar="مساهمتي التقنية">technical contribution</span></div></div>
+                    </div>
+                    <div class="project-details">
+                        <div class="case-field">
+                            <h3 data-ar="ما أنجزته" data-en="What I Delivered">What I Delivered</h3>
+                            <p data-ar="بدأ مشروع التخرج بسؤال بسيط: هل يمكن للمشترين والبائعين في القطاع الزراعي التواصل مباشرة دون وسيط داخل المنصة؟ ساهمت في الواجهة الخلفية وقاعدة البيانات، وشاركت في تخطيط مهام الفريق وتنسيقها." data-en="The question behind this graduation project was simple: can agricultural buyers and sellers connect directly without a broker in the platform flow? I contributed to the PHP backend and database, and helped plan and coordinate the team’s tasks.">The question behind this graduation project was simple: can agricultural buyers and sellers connect directly without a broker in the platform flow? I contributed to the PHP backend and database, and helped plan and coordinate the team’s tasks.</p>
+                        </div>
+                        <div class="case-field">
+                            <h3 data-ar="الفائدة" data-en="The value">The value</h3>
+                            <p data-ar="كانت النتيجة مسارًا في السوق الإلكتروني يتيح للمشتري الوصول مباشرة إلى البائع ويسهّل العثور على المعروضات الزراعية. ركّزت مساهمتي على الأساس التقني للمنصة وتنسيق عمل الفريق." data-en="The result was a marketplace flow that lets buyers reach sellers directly and makes the available agricultural offerings easier to find. My contribution centered on the platform’s technical foundation and team coordination.">The result was a marketplace flow that lets buyers reach sellers directly and makes the available agricultural offerings easier to find. My contribution centered on the platform’s technical foundation and team coordination.</p>
+                        </div>
+                        <a href="https://drive.google.com/drive/folders/14KsbEnfKMFHTkZa6H7P2HfrxGGnfnKP2?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn"><span data-ar="عرض وثائق المشروع" data-en="View Project Documents">View Project
+                                Documents</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="bento-card" id="experience">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+                <h2 class="section-title" data-ar="من واقع خبرتي" data-en="Where I have worked">Where I have worked</h2>
+            </div>
+
+            <div class="apple-timeline">
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <span class="job-title" data-ar="أخصائي الأمن السيبراني والحوكمة وإدارة المخاطر والامتثال (GRC) " data-en="Cybersecurity &amp; GRC Specialist ">Cybersecurity &amp; GRC Specialist –
+                            Volunteer (11 months)</span>
+                        <span class="date-chip" data-ar="يونيو 2025 – مايو 2026" data-en="Jun 2025 – May 2026">Jun 2025
+                            – May 2026</span>
+                    </div>
+                    <div class="company-row">
+                        <span class="company-label" data-ar="قطاع حكومي" data-en="Government Sector">Government Sector</span>
+                    </div>
+                    <ul class="apple-list tangible-work">
+                        <li data-ar="كان السؤال العملي: كيف تبقى المستندات الأمنية المرتبطة بـNCA دقيقة وجاهزة للمراجعة؟ راجعت ودققت أكثر من 100 تقرير ومستند للأمن السيبراني في الإدارة العامة، مع التحقق من دقة المعلومات وجودة التوثيق." data-en="The practical question was how to keep NCA-related security records accurate and ready for review. I reviewed and audited 100+ cybersecurity reports and documents for the General Administration, checking information accuracy and documentation quality.">The practical question was how to keep NCA-related security records accurate and ready for review. I reviewed and audited 100+ cybersecurity reports and documents for the General Administration, checking information accuracy and documentation quality.</li>
+                        <li data-ar="دعمت أعمال متطلبات NCA وحوكمة الأمن السيبراني، ومنها مبادرات ارتبطت بتحوّل الإدارة إلى إدارة عامة مستقلة." data-en="I supported NCA-related requirements and cybersecurity governance activities, including initiatives tied to the transition to an independent General Administration.">I supported NCA-related requirements and cybersecurity governance activities, including initiatives tied to the transition to an independent General Administration.</li>
+                    </ul>
+                    <div class="role-result"><strong data-ar="النتيجة" data-en="Result">Result</strong>
+                        <p data-ar="النتيجة كانت توثيقًا أمنيًا تمت مراجعته، ونظامًا موحّدًا لمتابعة المهام والصلاحيات والتقارير، بما يدعم وضوح المتابعة المرتبطة بمتطلبات NCA." data-en="The output was reviewed security documentation and a shared system for following tasks, permissions, and reports, supporting clearer NCA-related follow-up.">The output was reviewed security documentation and a shared system for following tasks, permissions, and reports, supporting clearer NCA-related follow-up.</p>
+                    </div>
+                    <a class="project-link-btn" href="#task-governance-project"><span data-ar="مشروع ضمن هذه الخبرة: نظام إدارة المهام والحوكمة" data-en="Related project: Task Management &amp; Governance System">Related project: Task
+                            Management &amp; Governance System</span> <i class="fas fa-arrow-down"></i></a>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <span class="job-title" data-ar="تقنية معلومات " data-en="Information Technology ">Information Technology - COOP</span>
+                        <span class="date-chip" data-ar="يونيو 2024 – أغسطس 2024" data-en="Jun 2024 – Aug 2024">Jun 2024
+                            – Aug 2024</span>
+                    </div>
+                    <div class="company-row">
+                        <span class="company-label" data-ar="قطاع حكومي" data-en="Government Sector">Government
+                            Sector</span>
+                    </div>
+                    <ul class="apple-list tangible-work">
+                        <li data-ar="في الدعم التقني اليومي كان السؤال بسيطًا: كيف يعود الموظف إلى عمله عندما يعطّله جهاز أو برنامج؟ دعمت أكثر من 20 موظفًا باستكشاف أعطال الأجهزة والبرامج وحلّها." data-en="The question in daily IT support was simple: how can employees get back to work when a device or application interrupts them? I supported 20+ employees by troubleshooting hardware and software issues.">The question in daily IT support was simple: how can employees get back to work when a device or application interrupts them? I supported 20+ employees by troubleshooting hardware and software issues.</li>
+                        <li data-ar="وراقبت شبكات المؤسسة وعالجت المشكلات الفنية لدعم استقرار الخدمات التقنية اليومية." data-en="I also monitored enterprise networks and addressed technical issues to support reliable day-to-day IT services.">I also monitored enterprise networks and addressed technical issues to support reliable day-to-day IT services.</li>
+                    </ul>
+                    <div class="role-result"><strong data-ar="النتيجة" data-en="Result">Result</strong>
+                        <p data-ar="ساعد حلّ الأعطال الموظفين على استئناف أعمالهم، مع معالجة مشكلات الشبكة لاستمرار توفر الخدمات." data-en="Employees were able to resume work after troubleshooting, while network issues were addressed to keep services available.">Employees were able to resume work after troubleshooting, while network issues were addressed to keep services available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم المهارات المدمجة -->
+        <section class="bento-card" id="skills-section">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+                <h2 class="section-title" data-ar="مهاراتي" data-en="My Skills">My Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <!-- Cybersecurity -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-ar="الأمن السيبراني والحوكمة" data-en="Cybersecurity &amp; GRC">Cybersecurity &amp;
+                            GRC</span>
+                    </div>
+                    <div class="tags-wrapper">
+                        <div class="apple-chip"><i class="fas fa-balance-scale"></i> <span data-ar="حوكمة الأمن السيبراني" data-en="Cybersecurity Governance">Cybersecurity
+                                Governance</span></div>
+                        <div class="apple-chip"><i class="fas fa-exclamation-triangle"></i> <span data-ar="تقييم المخاطر" data-en="Risk Assessment">Risk Assessment</span></div>
+                        <div class="apple-chip"><i class="fas fa-clipboard-list"></i> <span data-ar="إدارة سجل المخاطر" data-en="Risk Register Management">Risk Register Management</span></div>
+                        <div class="apple-chip"><i class="fas fa-tasks"></i> <span data-ar="معالجة المخاطر" data-en="Risk Treatment">Risk Treatment</span></div>
+                        <div class="apple-chip"><i class="fas fa-check-circle"></i> <span data-ar="تقييم الامتثال" data-en="Compliance Assessment">Compliance Assessment</span></div>
+                        <div class="apple-chip"><i class="fas fa-search"></i> <span data-ar="تحليل الفجوات" data-en="Gap Analysis">Gap Analysis</span></div>
+                        <div class="apple-chip"><i class="fas fa-lock"></i> <span data-ar="تقييم الضوابط الأمنية" data-en="Security Controls Assessment">Security Controls Assessment</span></div>
+                        <div class="apple-chip"><i class="fas fa-file-alt"></i> <span data-ar="دعم التدقيق" data-en="Audit Support">Audit Support</span></div>
+                        <div class="apple-chip"><i class="fas fa-folder-open"></i> <span data-ar="جمع الأدلة" data-en="Evidence Collection">Evidence Collection</span></div>
+                        <div class="apple-chip"><i class="fas fa-clipboard-check"></i> <span data-ar="متابعة الإجراءات التصحيحية" data-en="Corrective Action Tracking">Corrective
+                                Action Tracking</span></div>
+                        <div class="apple-chip"><i class="fas fa-chart-bar"></i> <span data-ar="تقارير الامتثال" data-en="Compliance Reporting">Compliance Reporting</span></div>
+                        <div class="apple-chip"><i class="fas fa-shield-alt"></i> <span>NCA</span></div>
+                        <div class="apple-chip"><i class="fas fa-book"></i> <span>NIST CSF</span></div>
+                        <div class="apple-chip"><i class="fas fa-certificate"></i> <span>ISO/IEC 27001</span></div>
+                        <div class="apple-chip"><i class="fas fa-user-shield"></i> <span data-ar="خصوصية البيانات" data-en="Data Privacy">Data Privacy</span></div>
+                    </div>
+                </div>
+
+                <!-- Security Tools -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <i class="fas fa-toolbox"></i>
+                        <span data-ar="أدوات الأمن السيبراني" data-en="Security Tools">Security Tools</span>
+                    </div>
+                    <div class="tags-wrapper">
+                        <div class="apple-chip"><i class="fas fa-chart-area"></i> <span>Splunk</span></div>
+                        <div class="apple-chip"><i class="fas fa-network-wired"></i> <span>Nmap</span></div>
+                        <div class="apple-chip"><i class="fas fa-search"></i> <span>OpenVAS</span></div>
+                        <div class="apple-chip"><i class="fas fa-terminal"></i> <span>Kali Linux</span></div>
+                        <div class="apple-chip"><i class="fas fa-bug"></i> <span>Burp Suite</span></div>
+                        <div class="apple-chip"><i class="fas fa-desktop"></i> <span>SIEM</span></div>
+                        <div class="apple-chip"><i class="fas fa-network-wired"></i> <span>Wireshark</span></div>
+                        <div class="apple-chip"><i class="fas fa-globe"></i> <span>VirusTotal</span></div>
+                        <div class="apple-chip"><i class="fas fa-shield-virus"></i> <span data-ar="أدوات تقييم الثغرات" data-en="Vulnerability Assessment Tools">Vulnerability Assessment Tools</span></div>
+                    </div>
+                </div>
+
+                <!-- SOC Operations -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <i class="fas fa-binoculars"></i>
+                        <span data-ar="العمليات الأمنية (SOC)" data-en="SOC Operations">SOC Operations</span>
+                    </div>
+                    <div class="tags-wrapper">
+                        <div class="apple-chip"><i class="fas fa-eye"></i> <span data-ar="المراقبة الأمنية" data-en="Security Monitoring">Security Monitoring</span></div>
+                        <div class="apple-chip"><i class="fas fa-bell"></i> <span data-ar="فرز التنبيهات" data-en="Alert Triage">Alert Triage</span></div>
+                        <div class="apple-chip"><i class="fas fa-file-alt"></i> <span data-ar="تحليل السجلات" data-en="Log Analysis">Log Analysis</span></div>
+                        <div class="apple-chip"><i class="fas fa-search"></i> <span data-ar="اكتشاف التهديدات" data-en="Threat Detection">Threat Detection</span></div>
+                        <div class="apple-chip"><i class="fas fa-magnifying-glass-chart"></i> <span data-ar="التحقيق في الحوادث" data-en="Incident Investigation">Incident
+                                Investigation</span></div>
+                        <div class="apple-chip"><i class="fas fa-shield-alt"></i> <span data-ar="الاستجابة للحوادث" data-en="Incident Response">Incident Response</span></div>
+                        <div class="apple-chip"><i class="fas fa-fingerprint"></i> <span data-ar="تحليل مؤشرات الاختراق" data-en="IOC Analysis">IOC Analysis</span></div>
+                        <div class="apple-chip"><i class="fas fa-share-square"></i> <span data-ar="تصعيد الحوادث" data-en="Incident Escalation">Incident Escalation</span></div>
+                    </div>
+                </div>
+
+                <!-- IT Support & Systems Administration (Merged Card) -->
+                <div class="skill-group" style="grid-column: 1 / -1;">
+                    <div class="skill-group-title">
+                        <i class="fas fa-network-wired"></i>
+                        <span data-ar="الدعم التقني وإدارة الأنظمة" data-en="IT Support &amp; Systems Administration">IT
+                            Support &amp; Systems Administration</span>
+                    </div>
+                    <div class="tags-wrapper">
+                        <div class="apple-chip"><i class="fas fa-user-cog"></i> <span data-ar="دعم المستخدمين" data-en="End-User Support">End-User Support</span></div>
+                        <div class="apple-chip"><i class="fas fa-headset"></i> <span>Help Desk</span></div>
+                        <div class="apple-chip"><i class="fas fa-tools"></i> <span data-ar="استكشاف مشكلات الأجهزة والبرامج وإصلاحها" data-en="Hardware &amp; Software Troubleshooting">Hardware &amp; Software Troubleshooting</span>
+                        </div>
+                        <div class="apple-chip"><i class="fas fa-download"></i> <span data-ar="تثبيت البرامج وتحديثها" data-en="Software Installation &amp; Updates">Software Installation &amp; Updates</span></div>
+                        <div class="apple-chip"><i class="fas fa-print"></i> <span data-ar="دعم الطابعات" data-en="Printer Support">Printer Support</span></div>
+                        <div class="apple-chip"><i class="fas fa-ticket-alt"></i> <span data-ar="إدارة تذاكر الدعم" data-en="Ticket Management">Ticket Management</span></div>
+                        <div class="apple-chip"><i class="fas fa-file-alt"></i> <span data-ar="التوثيق التقني" data-en="Technical Documentation">Technical Documentation</span></div>
+
+                        <div class="apple-chip"><i class="fas fa-server"></i> <span>Windows Server</span></div>
+                        <div class="apple-chip"><i class="fas fa-users-cog"></i> <span>Active Directory</span></div>
+                        <div class="apple-chip"><i class="fas fa-user-lock"></i> <span data-ar="إدارة حسابات المستخدمين" data-en="User Account Management">User Account Management</span></div>
+                        <div class="apple-chip"><i class="fas fa-key"></i> <span data-ar="صلاحيات الوصول" data-en="Access Permissions">Access Permissions</span></div>
+                        <div class="apple-chip"><i class="fas fa-sitemap"></i> <span>Group Policy (GPO)</span></div>
+                        <div class="apple-chip"><i class="fab fa-microsoft"></i> <span>Microsoft 365</span></div>
+                        <div class="apple-chip"><i class="fas fa-database"></i> <span data-ar="النسخ الاحتياطي والاستعادة" data-en="Backup &amp; Recovery">Backup &amp;
+                                Recovery</span></div>
+                        <div class="apple-chip"><i class="fas fa-boxes"></i> <span data-ar="إدارة أصول تقنية المعلومات" data-en="IT Asset Management">IT Asset Management</span></div>
+                        <div class="apple-chip"><i class="fas fa-chart-line"></i> <span data-ar="مراقبة الأنظمة" data-en="System Monitoring">System Monitoring</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="credential-grid">
+            <div class="bento-card" id="education-card">
+                <div class="section-header" style="margin-bottom: 16px;">
+                    <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h2 class="section-title" data-ar="التعليم الأكاديمي" data-en="Education">Education</h2>
+                </div>
+
+                <div class="side-item-box">
+                    <h3 class="side-title" data-ar="درجة البكالوريوس في نظم المعلومات" data-en="Bachelor's Degree in Information Systems">Bachelor's Degree in Information Systems</h3>
+                    <div class="side-sub" data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid
+                        University</div>
+                    <p class="side-desc" data-ar="كلية علوم الحاسب الآلي" data-en="College of Computer Science">College
+                        of Computer Science</p>
+                </div>
+            </div>
+
+            <div class="bento-card" id="certifications-card">
+                <div class="section-header" style="margin-bottom: 16px;">
+                    <div class="section-icon"><i class="fas fa-award"></i></div>
+                    <h2 class="section-title" data-ar="الشهادات والدورات" data-en="Credentials &amp; Knowledge">Credentials
+                        &amp; Knowledge</h2>
+                </div>
+
+                <div class="side-item-box">
+                    <h3 class="side-title" data-ar="تخصص الأمن السيبراني" data-en="Cybersecurity Specialization">
+                        Cybersecurity Specialization</h3>
+                    <p class="side-sub" data-ar="جامعة الملك خالد" data-en="King Khalid University">King Khalid
+                        University</p>
+                </div>
+
+                <div class="side-item-box">
+                    <h3 class="side-title" data-ar="الشهادة المهنية في الأمن السيبراني" data-en="Professional Certificate in Cybersecurity">Professional Certificate in Cybersecurity</h3>
+                    <p class="side-sub">IBM</p>
+                    <p class="side-desc" data-ar="77 ساعة تدريبية تشمل ستة موضوعات في الأمن السيبراني:" data-en="77 hours of learning across six cybersecurity topics:">77 hours of learning across six cybersecurity topics:</p>
+                    <div class="cert-specs">
+                        <div><span class="dot">•</span> <span data-ar="الحوكمة والمخاطر والامتثال (GRC) وخصوصية البيانات" data-en="Governance, Risk, Compliance (GRC) &amp; Data Privacy">Governance, Risk, Compliance
+                                (GRC) &amp; Data Privacy</span></div>
+                        <div><span class="dot">•</span> <span data-ar="الاستجابة للحوادث والتحقيق الجنائي الرقمي" data-en="Incident Response &amp; Digital Forensics">Incident Response &amp; Digital
+                                Forensics</span></div>
+                        <div><span class="dot">•</span> <span data-ar="إدارة وعمليات الأمان (SOC)" data-en="Security Operations &amp; Management (SOC)">Security Operations &amp; Management
+                                (SOC)</span></div>
+                        <div><span class="dot">•</span> <span data-ar="إدارة الثغرات الأمنية" data-en="Vulnerability Management">Vulnerability Management</span></div>
+                        <div><span class="dot">•</span> <span data-ar="أمن الأنظمة والشبكات" data-en="System &amp; Network Security">System &amp; Network Security</span></div>
+                        <div><span class="dot">•</span> <span data-ar="الأمن السحابي" data-en="Cloud Security">Cloud
+                                Security</span></div>
+                    </div>
+                </div>
+
+                <div class="side-item-box">
+                               <h3 class="side-title" data-ar="تطبيق ATT&amp;CK Navigator" data-en="Application of ATT&amp;CK Navigator">Application of ATT&amp;CK Navigator</h3>
+                        <p class="side-sub">AttackIQ Academy</p>
+                </div>
+
+                <div class="other-courses">
+  <h3 data-en="Other courses" data-ar="دورات أخرى">Other courses</h3>
+  <div class="other-course-list">
+    <div class="other-course" data-en="Web Fundamentals" data-ar="أساسيات الويب">Web Fundamentals</div>
+    <div class="other-course" data-en="Data Fundamentals" data-ar="أساسيات البيانات">Data Fundamentals</div>
+    <div class="other-course" data-en="Project Management Foundations" data-ar="أساسيات إدارة المشاريع">Project Management Foundations</div>
+  </div>
+</div><a class="project-link-btn" href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="عرض الشهادات والدورات" data-en="View Certificates &amp; Courses">View Certificates &amp; Courses</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+            <div class="bento-card" id="languages-card">
+                <div class="section-header" style="margin-bottom: 16px;">
+                    <div class="section-icon"><i class="fas fa-globe"></i></div>
+                    <h2 class="section-title" data-ar="اللغات" data-en="Languages">Languages</h2>
+                </div>
+
+                <div class="lang-row">
+                    <span class="lang-name" data-ar="العربية" data-en="Arabic">Arabic</span>
+                    <i class="fas fa-check-circle lang-check"></i>
+                </div>
+
+                <div class="lang-row">
+                    <span class="lang-name" data-ar="الإنجليزية" data-en="English">English</span>
+                    <i class="fas fa-check-circle lang-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-card" id="documents">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-arrow-down-to-bracket"></i></div>
+                <h2 class="section-title" data-ar="اطّلع على ما يدعم خبرتي" data-en="Explore My Supporting Documents">
+                    Explore My Supporting Documents</h2>
+            </div>
+            <div class="files-grid">
+                <a href="#resumeModal" target="_blank" class="file-item" rel="noopener noreferrer" onclick="openResumeModal(event)" aria-haspopup="dialog" aria-controls="resumeModal">
+                    <div class="file-item-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h4 data-ar="السيرة الذاتية" data-en="Resume/CV">Resume/CV</h4>
+                    <p data-ar="عرض وتنزيل" data-en="View &amp; Download">View &amp; Download</p>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" class="file-item" rel="noopener noreferrer">
+                    <div class="file-item-icon"><i class="fas fa-award"></i></div>
+                    <h4 data-ar="الشهادات" data-en="Certificates">Certificates</h4>
+                    <p data-ar="عرض وتنزيل" data-en="View &amp; Download">View &amp; Download</p>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1A7ngWTAsWx_I2FbM71088numn6M-mHzC?usp=drive_link" target="_blank" class="file-item" rel="noopener noreferrer">
+                    <div class="file-item-icon"><i class="fas fa-folder-open"></i></div>
+                    <h4 data-ar="المشاريع" data-en="Projects">Projects</h4>
+                    <p data-ar="عرض وتنزيل" data-en="View &amp; Download">View &amp; Download</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="bento-card qr-card" id="qr-code-card">
+            <div class="section-header" style="justify-content: center; margin-bottom: 14px;">
+                <h2 class="section-title" style="font-size: 1.05em;" data-ar="المجلد الشامل والمرفقات" data-en="All Files &amp; Attachments">All Files &amp; Attachments</h2>
+            </div>
+            <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" title="View all files" rel="noopener noreferrer">
+                <img src="QR.png" alt="QR Code" class="qr-code-img" onerror="this.style.display='none'">
+            </a>
+            <p style="font-size: 12.5px; color: var(--text-secondary);" data-ar="راجع ملفات المشاريع والشهادات والمرفقات من المجلد الشامل" data-en="Explore project files, certificates, and supporting attachments in one folder.">Explore project
+                files, certificates, and supporting attachments in one folder.</p>
+            <a class="project-link-btn" style="margin:14px 0 0" href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="افتح ملفات أعمالي" data-en="Open My Work Files">Open My Work Files</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+
+        <footer class="bento-card" style="text-align:center">
+            <h2 class="section-title" data-ar="لنناقش كيف أقدر أساهم مع فريقك" data-en="Let’s discuss how I can contribute to your team">Let’s discuss how I can contribute to your
+                team</h2>
+            <button type="button" class="apple-pill-btn primary-action" onclick="openContactModal()" aria-haspopup="dialog" aria-controls="contactModal"><i class="fas fa-envelope"></i><span data-ar="تواصل معي" data-en="Contact Me">Contact Me</span></button>
+        </footer>
+    </main>
+
+    <div id="contactModal" class="modal-overlay" aria-hidden="true" onclick="closeContactModal(event)">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="contact-title" onclick="event.stopPropagation()">
+            <div class="modal-title-row">
+                <h3 id="contact-title" data-ar="خيارات التواصل" data-en="Contact Options">Contact Options</h3>
+                <button type="button" class="modal-close-icon" aria-label="Close" onclick="closeContactModal()">×</button>
+            </div>
+            <div class="modal-actions">
+                <a href="tel:+966566833453" class="modal-action-btn btn-call" onclick="closeContactModal()">
+                    <i class="fas fa-phone"></i>
+                    <span data-ar="اتصال مباشر" data-en="Direct Call">Direct Call</span>
+                </a>
+                <a href="https://wa.me/966566833453" target="_blank" class="modal-action-btn btn-wa" onclick="closeContactModal()" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-ar="محادثة واتساب" data-en="WhatsApp">WhatsApp</span>
+                </a>
+                <a href="mailto:mbnq1@outlook.com" class="modal-action-btn btn-email" onclick="closeContactModal()"><i class="fas fa-envelope"></i><span data-ar="البريد الإلكتروني" data-en="Email">Email</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="resumeModal" class="modal-overlay" aria-hidden="true" onclick="closeResumeModal(event)">
+  <div class="modal-card resume-modal-card" role="dialog" aria-modal="true" aria-labelledby="resume-title" onclick="event.stopPropagation()">
+    <div class="modal-title-row">
+      <h3 id="resume-title" data-en="What matters most for this role?" data-ar="ما الجانب الأقرب لهذا الدور؟">What matters most for this role?</h3>
+      <button type="button" class="modal-close-icon" aria-label="Close" onclick="closeResumeModal()">×</button>
+    </div>
+    <p class="resume-modal-note" data-en="Pick what you would like to explore. You can choose the language next." data-ar="اختر ما يهمك الاطلاع عليه، ثم حدد اللغة.">Pick what you would like to explore. You can choose the language next.</p>
+    <div class="modal-actions" id="resumeTrackStep">
+      <button type="button" class="modal-action-btn btn-call" onclick="chooseResumeTrack('grc')"><i class="fas fa-file-lines"></i><span data-en="GRC" data-ar="GRC — الحوكمة والمخاطر والامتثال">GRC</span><i class="fas fa-chevron-right resume-chevron"></i></button>
+      <button type="button" class="modal-action-btn btn-email" onclick="chooseResumeTrack('soc')"><i class="fas fa-file-lines"></i><span data-en="SOC" data-ar="SOC — مركز العمليات الأمنية">SOC</span><i class="fas fa-chevron-right resume-chevron"></i></button>
+      <button type="button" class="modal-action-btn btn-email" onclick="chooseResumeTrack('it')"><i class="fas fa-file-lines"></i><span data-en="IT" data-ar="IT — تقنية المعلومات">IT</span><i class="fas fa-chevron-right resume-chevron"></i></button>
+      <button type="button" class="modal-action-btn btn-email" onclick="chooseResumeTrack('general')"><i class="fas fa-file-lines"></i><span data-en="Public" data-ar="العامة — سيرة شاملة">Public</span><i class="fas fa-chevron-right resume-chevron"></i></button>
+    </div>
+    <div id="resumeLanguageStep" hidden>
+      <p class="resume-choice" id="resumeChoice"></p>
+      <div class="modal-actions">
+        <a id="resumeArabic" class="modal-action-btn btn-call" target="_blank" rel="noopener noreferrer" onclick="closeResumeModal()"><i class="fas fa-file-lines"></i><span data-en="Arabic CV" data-ar="السيرة العربية">Arabic CV</span></a>
+        <a id="resumeEnglish" class="modal-action-btn btn-email" target="_blank" rel="noopener noreferrer" onclick="closeResumeModal()"><i class="fas fa-file-lines"></i><span data-en="English CV" data-ar="السيرة الإنجليزية">English CV</span></a>
+      </div>
+      <button type="button" class="resume-back" onclick="resetResumeStep()"><i class="fas fa-arrow-left"></i><span data-en="Back to options" data-ar="العودة للخيارات">Back to options</span></button>
+    </div>
+  </div>
+</div>
+<script>
+        let currentLanguage = 'en';
+        let contactTrigger = null;
+        let previousOverflow = '';
+        let progressFrame = 0;
+        const contactOverlay = document.getElementById('contactModal');
+        const contactDialog = contactOverlay.querySelector('[role="dialog"]');
+        const pageMain = document.querySelector('main');
+        const pageHeader = document.querySelector('header');
+        function updateProgress() {
+            progressFrame = 0;
+            const bar = document.querySelector('.scroll-indicator');
+            const distance = document.documentElement.scrollHeight - window.innerHeight;
+            const percentage = distance > 0 ? Math.max(0, Math.min(100, window.scrollY / distance * 100)) : 0;
+            if (bar) bar.style.width = percentage + '%';
+        }
+        function scheduleProgress() {
+            if (!progressFrame) progressFrame = requestAnimationFrame(updateProgress);
+        }
+        function applyLanguage() {
+            document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+                el.textContent = el.getAttribute(currentLanguage === 'ar' ? 'data-ar' : 'data-en');
+            });
+            const label = document.getElementById('langBtn');
+            label.textContent = currentLanguage === 'en' ? 'العربية' : 'English';
+            const button = document.querySelector('.language-toggle');
+            button.setAttribute('aria-label', currentLanguage === 'en' ? 'Switch to Arabic' : 'التبديل إلى الإنجليزية');
+            button.setAttribute('lang', currentLanguage === 'en' ? 'ar' : 'en');
+            document.querySelectorAll('.modal-close-icon').forEach(el => el.setAttribute('aria-label', currentLanguage === 'ar' ? 'إغلاق' : 'Close'));
+        }
+        function updateDirection() {
+            document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLanguage;
+            document.body.style.fontFamily = currentLanguage === 'ar'
+                ? "'Tajawal', 'Segoe UI', sans-serif"
+                : "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif";
+        }
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+            applyLanguage();
+            updateDirection();
+            scheduleProgress();
+        }
+        function openContactModal() {
+            if (contactOverlay.classList.contains('active')) return;
+            contactTrigger = document.activeElement;
+            previousOverflow = document.body.style.overflow;
+            contactOverlay.classList.add('active');
+            contactOverlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            if (pageMain) pageMain.inert = true;
+            if (pageHeader) pageHeader.inert = true;
+            contactDialog.querySelector('button, a[href]').focus();
+        }
+        function closeContactModal(event) {
+            if (pageMain) pageMain.inert = false;
+            if (pageHeader) pageHeader.inert = false;
+            document.body.style.overflow = previousOverflow;
+            contactOverlay.classList.remove('active');
+            contactOverlay.setAttribute('aria-hidden', 'true');
+            if (contactTrigger) contactTrigger.focus();
+        }
+        const resumeOverlay = document.getElementById('resumeModal');
+        let resumeTrigger = null;
+        let resumePreviousOverflow = '';
+        const resumeFolders = {
+            grc: { ar: '1_MObBxI7EpmBZ5P1iL9UiE1ziCUG4N7h', en: '1P5DeavNokMCo6Bxw2ZOKXAdd_R0EnxLD', arLabel: 'GRC — الحوكمة والمخاطر والامتثال', enLabel: 'GRC' },
+            soc: { ar: '1uY-ona9jKg43itzlSSnad7YbLKJxVlUu', en: '1GBVsnVSG7NC4KzBxfhK_y4gVtQfSqIP9', arLabel: 'SOC — مركز العمليات الأمنية', enLabel: 'SOC' },
+            it: { ar: '16nUlHVLamFD1zwH4q7wO9zEb6ZKpYuaj', en: '12lY6M18INh7X_1Z4s7JqOEFpJ7ll_OAd', arLabel: 'IT — تقنية المعلومات', enLabel: 'IT' },
+            general: { ar: '1SUY_mOKnwgdJk6TQeZ6fLRz0wOedlvNM', en: '1p5Fy4UYQzDd5_BCzhEp_maXlvLbk-YeJ', arLabel: 'العامة — سيرة شاملة', enLabel: 'Public' }
+        };
+        function resetResumeStep() {
+            document.getElementById('resumeTrackStep').hidden = false;
+            document.getElementById('resumeLanguageStep').hidden = true;
+            document.getElementById('resume-title').textContent = currentLanguage === 'ar' ? 'ما الجانب الأقرب لهذا الدور؟' : 'What matters most for this role?';
+            resumeOverlay.querySelector('.resume-modal-note').hidden = false;
+            resumeOverlay.querySelector('#resumeTrackStep button').focus();
+        }
+        function chooseResumeTrack(track) {
+            const selected = resumeFolders[track];
+            if (!selected) return;
+            document.getElementById('resumeArabic').href = 'https://drive.google.com/drive/folders/' + selected.ar;
+            document.getElementById('resumeEnglish').href = 'https://drive.google.com/drive/folders/' + selected.en;
+            document.getElementById('resumeChoice').textContent = currentLanguage === 'ar' ? selected.arLabel : selected.enLabel;
+            document.getElementById('resume-title').textContent = currentLanguage === 'ar' ? 'أي لغة تفضّل؟' : 'Which language works for you?';
+            resumeOverlay.querySelector('.resume-modal-note').hidden = true;
+            document.getElementById('resumeTrackStep').hidden = true;
+            document.getElementById('resumeLanguageStep').hidden = false;
+            document.getElementById(currentLanguage === 'ar' ? 'resumeArabic' : 'resumeEnglish').focus();
+        }
+        function openResumeModal(event) {
+            if (event) event.preventDefault();
+            resumeTrigger = document.activeElement;
+            resumePreviousOverflow = document.body.style.overflow;
+            resumeOverlay.classList.add('active');
+            resumeOverlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            if (pageMain) pageMain.inert = true;
+            if (pageHeader) pageHeader.inert = true;
+            resetResumeStep();
+            chooseResumeTrack('soc');
+            resumeOverlay.querySelector('.modal-close-icon').focus();
+        }
+        function closeResumeModal() {
+            resumeOverlay.classList.remove('active');
+            resumeOverlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = resumePreviousOverflow;
+            if (pageMain) pageMain.inert = false;
+            if (pageHeader) pageHeader.inert = false;
+            if (resumeTrigger) resumeTrigger.focus();
+        }
+        window.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && resumeOverlay.classList.contains('active')) closeResumeModal();
+        });
+        window.addEventListener('scroll', scheduleProgress);
+        window.addEventListener('resize', scheduleProgress);
+        applyLanguage();
+        updateDirection();
+        updateProgress();
+    </script>
+</body>
+
+</html>
