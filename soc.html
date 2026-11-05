@@ -2076,6 +2076,20 @@
         .hero-avatar-wrap:has(.hero-avatar[style*="display: none"]) .avatar-fallback {
             visibility: visible
         }
+    </style>
+<style>
+#skills-section .skills-grid { position: relative; gap: 30px; isolation: isolate; }
+#skills-section .skills-grid::before {
+    content: ""; position: absolute; inset: 8px 7%; z-index: 0; pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700' preserveAspectRatio='none'%3E%3Cpath d='M250 80 C460 -20 550 200 750 100 S930 240 750 310 C530 400 460 225 250 360 S20 560 250 600 C470 660 550 520 750 610' fill='none' stroke='%23b6bdc8' stroke-width='2' stroke-linecap='round' opacity='.65'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+#skills-section .skill-group { position: relative; z-index: 1; }
+@media (max-width: 800px) {
+    #skills-section .skills-grid::before {
+        inset: 0 10%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 1000' preserveAspectRatio='none'%3E%3Cpath d='M150 0 C35 180 265 290 150 480 S35 790 150 1000' fill='none' stroke='%23b6bdc8' stroke-width='1.5' stroke-linecap='round' opacity='.65'/%3E%3C/svg%3E");
+    }
+}
 
 #certifications-card .other-courses{border-top:1px solid #e5e5e7;padding-top:18px;margin-top:4px}#certifications-card .other-courses h3{font-size:13.5px;font-weight:700;margin:0 0 12px;color:#1d1d1f}#certifications-card .other-course-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}#certifications-card .other-course{background:#f7f7f9;border:1px solid #e9e9ed;border-radius:14px;padding:13px 14px;font-size:12px;line-height:1.6;color:#424249;min-height:60px;display:flex;align-items:center}@media(max-width:700px){#certifications-card .other-course-list{grid-template-columns:1fr}#certifications-card .other-course{min-height:0}}
 
@@ -2086,8 +2100,7 @@
 .resume-modal-card .modal-action-btn,.resume-modal-card .btn-call,.resume-modal-card .btn-email{background:#f5f5f7;color:#1d1d1f;border:1px solid #e5e5e7}.resume-modal-card .modal-action-btn:hover{background:#ececf0}.resume-modal-card .modal-action-btn i{color:inherit}
 
 @media(max-width:600px){.hero-actions .apple-pill-btn:nth-child(3){flex-basis:100%}}
-</style>
-</head>
+</style></head>
 
 <body>
     <header class="apple-nav" id="top">
@@ -2379,11 +2392,8 @@
                     </div>
                     <div class="tags-wrapper">
                         <div class="apple-chip"><i class="fas fa-user-cog"></i> <span data-ar="دعم المستخدمين" data-en="End-User Support">End-User Support</span></div>
-                        <div class="apple-chip"><i class="fas fa-headset"></i> <span>Help Desk</span></div>
                         <div class="apple-chip"><i class="fas fa-tools"></i> <span data-ar="استكشاف مشكلات الأجهزة والبرامج وإصلاحها" data-en="Hardware &amp; Software Troubleshooting">Hardware &amp; Software Troubleshooting</span>
                         </div>
-                        <div class="apple-chip"><i class="fas fa-download"></i> <span data-ar="تثبيت البرامج وتحديثها" data-en="Software Installation &amp; Updates">Software Installation &amp; Updates</span></div>
-                        <div class="apple-chip"><i class="fas fa-print"></i> <span data-ar="دعم الطابعات" data-en="Printer Support">Printer Support</span></div>
                         <div class="apple-chip"><i class="fas fa-ticket-alt"></i> <span data-ar="إدارة تذاكر الدعم" data-en="Ticket Management">Ticket Management</span></div>
                         <div class="apple-chip"><i class="fas fa-file-alt"></i> <span data-ar="التوثيق التقني" data-en="Technical Documentation">Technical Documentation</span></div>
 
