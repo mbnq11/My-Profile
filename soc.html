@@ -2119,6 +2119,19 @@
     #documents .file-item p { display: none; }
     #documents .file-item::after { margin-inline-start: auto; }
 }
+.back-to-top {
+    position: fixed; right: 24px; bottom: max(24px, env(safe-area-inset-bottom));
+    z-index: 50; width: 46px; height: 46px; display: grid; place-items: center;
+    border-radius: 50%; background: #fff; color: #20232a; text-decoration: none;
+    border: 1px solid #e3e5e9; box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    font-size: 22px; line-height: 1; transition: transform .18s ease, box-shadow .18s ease;
+}
+.back-to-top[hidden] { display: none; }
+.back-to-top:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.16); }
+.back-to-top:focus-visible { outline: 2px solid var(--apple-blue); outline-offset: 3px; }
+@media (max-width: 600px) {
+    .back-to-top { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); width: 44px; height: 44px; }
+}
 
 #certifications-card .other-courses{border-top:1px solid #e5e5e7;padding-top:18px;margin-top:4px}#certifications-card .other-courses h3{font-size:13.5px;font-weight:700;margin:0 0 12px;color:#1d1d1f}#certifications-card .other-course-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}#certifications-card .other-course{background:#f7f7f9;border:1px solid #e9e9ed;border-radius:14px;padding:13px 14px;font-size:12px;line-height:1.6;color:#424249;min-height:60px;display:flex;align-items:center}@media(max-width:700px){#certifications-card .other-course-list{grid-template-columns:1fr}#certifications-card .other-course{min-height:0}}
 
@@ -2694,7 +2707,7 @@
         updateDirection();
         updateProgress();
     </script>
-<script>
+<a class="back-to-top" href="#top" aria-label="Back to top / العودة للأعلى" title="Back to top / العودة للأعلى" hidden>↑</a><script>
 document.querySelectorAll('#skills-section details.skill-group').forEach((group) => {
   group.addEventListener('toggle', () => {
     if (!group.open) return;
@@ -2703,6 +2716,11 @@ document.querySelectorAll('#skills-section details.skill-group').forEach((group)
     });
   });
 });
+</script><script>
+const backToTop = document.querySelector('.back-to-top');
+function updateBackToTop() { backToTop.hidden = window.scrollY < 500; }
+window.addEventListener('scroll', updateBackToTop, { passive: true });
+updateBackToTop();
 </script></body>
 
 </html>
