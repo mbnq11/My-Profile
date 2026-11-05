@@ -2506,18 +2506,6 @@
             </div>
         </div>
 
-        <div class="bento-card qr-card" id="qr-code-card">
-            <div class="section-header" style="justify-content: center; margin-bottom: 14px;">
-                <h2 class="section-title" style="font-size: 1.05em;" data-ar="المجلد الشامل والمرفقات" data-en="All Files &amp; Attachments">All Files &amp; Attachments</h2>
-            </div>
-            <a href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" title="View all files" rel="noopener noreferrer">
-                <img src="QR.png" alt="QR Code" class="qr-code-img" onerror="this.style.display='none'">
-            </a>
-            <p style="font-size: 12.5px; color: var(--text-secondary);" data-ar="راجع ملفات المشاريع والشهادات والمرفقات من المجلد الشامل" data-en="Explore project files, certificates, and supporting attachments in one folder.">Explore project
-                files, certificates, and supporting attachments in one folder.</p>
-            <a class="project-link-btn" style="margin:14px 0 0" href="https://drive.google.com/drive/folders/1Us5n7q9_Fv1mAowXAItkS_0TpTstBuDd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="افتح ملفات أعمالي" data-en="Open My Work Files">Open My Work Files</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-
         <footer class="bento-card" style="text-align:center">
             <h2 class="section-title" data-ar="لنناقش كيف أقدر أساهم مع فريقك" data-en="Let’s discuss how I can contribute to your team">Let’s discuss how I can contribute to your
                 team</h2>
@@ -2652,6 +2640,7 @@
             document.getElementById('resumeArabic').href = 'https://drive.google.com/drive/folders/' + selected.ar;
             document.getElementById('resumeEnglish').href = 'https://drive.google.com/drive/folders/' + selected.en;
             document.getElementById('resumeChoice').textContent = currentLanguage === 'ar' ? selected.arLabel : selected.enLabel;
+            document.getElementById('resumeChoice').hidden = track === 'general';
             document.getElementById('resume-title').textContent = currentLanguage === 'ar' ? 'أي لغة تفضّل؟' : 'Which language works for you?';
             resumeOverlay.querySelector('.resume-modal-note').hidden = true;
             document.getElementById('resumeTrackStep').hidden = true;
