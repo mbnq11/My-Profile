@@ -2538,23 +2538,14 @@
     <div id="resumeModal" class="modal-overlay" aria-hidden="true" onclick="closeResumeModal(event)">
   <div class="modal-card resume-modal-card" role="dialog" aria-modal="true" aria-labelledby="resume-title" onclick="event.stopPropagation()">
     <div class="modal-title-row">
-      <h3 id="resume-title" data-en="What matters most for this role?" data-ar="ما الجانب الأقرب لهذا الدور؟">What matters most for this role?</h3>
+      <h3 id="resume-title" data-en="Which language works for you?" data-ar="أي لغة تفضّل؟">Which language works for you?</h3>
       <button type="button" class="modal-close-icon" aria-label="Close" onclick="closeResumeModal()">×</button>
     </div>
-    <p class="resume-modal-note" data-en="Pick what you would like to explore. You can choose the language next." data-ar="اختر ما يهمك الاطلاع عليه، ثم حدد اللغة.">Pick what you would like to explore. You can choose the language next.</p>
-    <div class="modal-actions" id="resumeTrackStep">
-      <button type="button" class="modal-action-btn btn-call" onclick="chooseResumeTrack('grc')"><i class="fas fa-file-lines"></i><span data-en="GRC" data-ar="GRC — الحوكمة والمخاطر والامتثال">GRC</span><i class="fas fa-chevron-right resume-chevron"></i></button>
-      <button type="button" class="modal-action-btn btn-email" onclick="chooseResumeTrack('soc')"><i class="fas fa-file-lines"></i><span data-en="SOC" data-ar="SOC — مركز العمليات الأمنية">SOC</span><i class="fas fa-chevron-right resume-chevron"></i></button>
-      <button type="button" class="modal-action-btn btn-email" onclick="chooseResumeTrack('it')"><i class="fas fa-file-lines"></i><span data-en="IT" data-ar="IT — تقنية المعلومات">IT</span><i class="fas fa-chevron-right resume-chevron"></i></button>
-      <button type="button" class="modal-action-btn btn-email" onclick="chooseResumeTrack('general')"><i class="fas fa-file-lines"></i><span data-en="Public" data-ar="العامة — سيرة شاملة">Public</span><i class="fas fa-chevron-right resume-chevron"></i></button>
-    </div>
-    <div id="resumeLanguageStep" hidden>
-      <p class="resume-choice" id="resumeChoice"></p>
+    <div id="resumeLanguageStep">
       <div class="modal-actions">
         <a id="resumeArabic" class="modal-action-btn btn-call" target="_blank" rel="noopener noreferrer" onclick="closeResumeModal()"><i class="fas fa-file-lines"></i><span data-en="Arabic CV" data-ar="السيرة العربية">Arabic CV</span></a>
         <a id="resumeEnglish" class="modal-action-btn btn-email" target="_blank" rel="noopener noreferrer" onclick="closeResumeModal()"><i class="fas fa-file-lines"></i><span data-en="English CV" data-ar="السيرة الإنجليزية">English CV</span></a>
       </div>
-      <button type="button" class="resume-back" onclick="resetResumeStep()"><i class="fas fa-arrow-left"></i><span data-en="Back to options" data-ar="العودة للخيارات">Back to options</span></button>
     </div>
   </div>
 </div>
@@ -2624,30 +2615,16 @@
         let resumeTrigger = null;
         let resumePreviousOverflow = '';
         const resumeFolders = {
-            grc: { ar: '1_MObBxI7EpmBZ5P1iL9UiE1ziCUG4N7h', en: '1P5DeavNokMCo6Bxw2ZOKXAdd_R0EnxLD', arLabel: 'GRC — الحوكمة والمخاطر والامتثال', enLabel: 'GRC' },
-            soc: { ar: '1uY-ona9jKg43itzlSSnad7YbLKJxVlUu', en: '1GBVsnVSG7NC4KzBxfhK_y4gVtQfSqIP9', arLabel: 'SOC — مركز العمليات الأمنية', enLabel: 'SOC' },
-            it: { ar: '16nUlHVLamFD1zwH4q7wO9zEb6ZKpYuaj', en: '12lY6M18INh7X_1Z4s7JqOEFpJ7ll_OAd', arLabel: 'IT — تقنية المعلومات', enLabel: 'IT' },
-            general: { ar: '1SUY_mOKnwgdJk6TQeZ6fLRz0wOedlvNM', en: '1p5Fy4UYQzDd5_BCzhEp_maXlvLbk-YeJ', arLabel: 'العامة — سيرة شاملة', enLabel: 'Public' }
+            grc: { ar: '1_MObBxI7EpmBZ5P1iL9UiE1ziCUG4N7h', en: '1P5DeavNokMCo6Bxw2ZOKXAdd_R0EnxLD' },
+            soc: { ar: '1uY-ona9jKg43itzlSSnad7YbLKJxVlUu', en: '1GBVsnVSG7NC4KzBxfhK_y4gVtQfSqIP9' },
+            it: { ar: '16nUlHVLamFD1zwH4q7wO9zEb6ZKpYuaj', en: '12lY6M18INh7X_1Z4s7JqOEFpJ7ll_OAd' },
+            general: { ar: '1SUY_mOKnwgdJk6TQeZ6fLRz0wOedlvNM', en: '1p5Fy4UYQzDd5_BCzhEp_maXlvLbk-YeJ' }
         };
-        function resetResumeStep() {
-            document.getElementById('resumeTrackStep').hidden = false;
-            document.getElementById('resumeLanguageStep').hidden = true;
-            document.getElementById('resume-title').textContent = currentLanguage === 'ar' ? 'ما الجانب الأقرب لهذا الدور؟' : 'What matters most for this role?';
-            resumeOverlay.querySelector('.resume-modal-note').hidden = false;
-            resumeOverlay.querySelector('#resumeTrackStep button').focus();
-        }
-        function chooseResumeTrack(track) {
+        function setResumeLinks(track) {
             const selected = resumeFolders[track];
             if (!selected) return;
             document.getElementById('resumeArabic').href = 'https://drive.google.com/drive/folders/' + selected.ar;
             document.getElementById('resumeEnglish').href = 'https://drive.google.com/drive/folders/' + selected.en;
-            document.getElementById('resumeChoice').textContent = currentLanguage === 'ar' ? selected.arLabel : selected.enLabel;
-            document.getElementById('resumeChoice').hidden = track === 'general';
-            document.getElementById('resume-title').textContent = currentLanguage === 'ar' ? 'أي لغة تفضّل؟' : 'Which language works for you?';
-            resumeOverlay.querySelector('.resume-modal-note').hidden = true;
-            document.getElementById('resumeTrackStep').hidden = true;
-            document.getElementById('resumeLanguageStep').hidden = false;
-            document.getElementById(currentLanguage === 'ar' ? 'resumeArabic' : 'resumeEnglish').focus();
         }
         function openResumeModal(event) {
             if (event) event.preventDefault();
@@ -2658,8 +2635,7 @@
             document.body.style.overflow = 'hidden';
             if (pageMain) pageMain.inert = true;
             if (pageHeader) pageHeader.inert = true;
-            resetResumeStep();
-            chooseResumeTrack('soc');
+            setResumeLinks('soc');
             resumeOverlay.querySelector('.modal-close-icon').focus();
         }
         function closeResumeModal() {
