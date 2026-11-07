@@ -2205,9 +2205,9 @@
         <section class="bento-card adaptable-card" id="learning-and-soc">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-shield-halved"></i></div>
-                <h2 class="section-title" data-ar="لا أتوقف عند المشكلة؛ أبحث عمّا وراءها" data-en="I Look Beyond the Problem.">I Look Beyond the Problem.</h2>
+                <h2 class="section-title" data-ar="إلى ما هو أبعد من اليوم" data-en="Beyond Where I Am Today">Beyond Where I Am Today</h2>
             </div>
-            <p class="summary-text" data-ar="عندما لا تكون الصورة واضحة، أسأل وأدقّق حتى أفهم السبب، ثم أحوّل ما أفهمه إلى خطوات عملية تبسّط ما يبدو معقّدًا. أسعى دائمًا إلى ما هو أبعد من واقعي اليوم: أضع لنفسي معايير أعلى، وأتحدى حدود قدراتي، وأعمل باستمرار على تطوير نفسي لأصبح أفضل." data-en="When the picture is unclear, I ask questions and examine the details until I understand the cause. I turn what I learn into practical steps that simplify what seems complex. I aim beyond where I am today: I set higher standards for myself, challenge my limits, and keep developing to become better.">When the picture is unclear, I ask questions and examine the details until I understand the cause. I turn what I learn into practical steps that simplify what seems complex. I aim beyond where I am today: I set higher standards for myself, challenge my limits, and keep developing to become better.</p>
+            <p class="summary-text" data-ar="أسعى دائمًا إلى ما هو أبعد من واقعي اليوم. أضع لنفسي معايير أعلى، وأتحدى حدود قدراتي، وأعمل باستمرار على تطوير نفسي لأصبح أفضل." data-en="I always strive to go beyond where I am today. I set higher standards for myself, challenge the limits of my abilities, and keep working to develop myself and become better.">I always strive to go beyond where I am today. I set higher standards for myself, challenge the limits of my abilities, and keep working to develop myself and become better.</p>
             <a href="#experience" class="project-link-btn" style="margin:16px 0 0"><span data-ar="شاهد كيف طبّقت ذلك" data-en="See how I put this into practice">See how I put this into practice</span>
                 <i class="fas fa-arrow-down"></i></a>
         </section>
@@ -2720,6 +2720,14 @@ document.querySelectorAll('#skills-section details.skill-group').forEach((group)
 const backToTop = document.querySelector('.back-to-top');
 function updateBackToTop() { backToTop.hidden = window.scrollY < 500; }
 window.addEventListener('scroll', updateBackToTop, { passive: true });
+backToTop.addEventListener('click', (event) => {
+  event.preventDefault();
+  const page = document.documentElement;
+  const previous = page.style.scrollBehavior;
+  page.style.scrollBehavior = 'auto';
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => { page.style.scrollBehavior = previous; });
+});
 updateBackToTop();
 </script></body>
 
