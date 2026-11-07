@@ -2122,16 +2122,29 @@
 .back-to-top {
     position: fixed; right: 24px; bottom: max(24px, env(safe-area-inset-bottom));
     z-index: 50; width: 46px; height: 46px; display: grid; place-items: center;
-    border-radius: 50%; background: #202936; color: #fff; text-decoration: none;
-    border: 1px solid #202936; box-shadow: 0 8px 24px rgba(0,0,0,.22);
+    border-radius: 50%; background: rgba(32,41,54,.78); color: #fff; text-decoration: none;
+    border: 1px solid rgba(255,255,255,.24); box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     font-size: 22px; line-height: 1; transition: transform .18s ease, box-shadow .18s ease;
 }
 .back-to-top[hidden] { display: none; }
-.back-to-top:hover { transform: translateY(-3px); background: #111923; box-shadow: 0 12px 28px rgba(0,0,0,.28); }
+.back-to-top:hover { transform: translateY(-3px); background: rgba(32,41,54,.9); box-shadow: 0 12px 28px rgba(0,0,0,.2); }
 .back-to-top:focus-visible { outline: 2px solid var(--apple-blue); outline-offset: 3px; }
 @media (max-width: 600px) {
     .back-to-top { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); width: 44px; height: 44px; }
 }
+#languages-card { display: block; }
+#languages-card > summary.section-header {
+    display: flex; align-items: center; cursor: pointer; list-style: none; margin: 0 !important;
+}
+#languages-card > summary.section-header::-webkit-details-marker { display: none; }
+#languages-card > summary.section-header::after {
+    content: '+'; margin-inline-start: auto; color: #717785; font-size: 21px; font-weight: 400;
+}
+#languages-card[open] > summary.section-header::after { content: '−'; }
+#languages-card > summary.section-header:focus-visible { outline: 2px solid var(--apple-blue); outline-offset: 3px; border-radius: 8px; }
+#languages-card .lang-row { padding: 14px 0; }
+#languages-card > summary + .lang-row { margin-top: 16px; }
 
 #certifications-card .other-courses{border-top:1px solid #e5e5e7;padding-top:18px;margin-top:4px}#certifications-card .other-courses h3{font-size:13.5px;font-weight:700;margin:0 0 12px;color:#1d1d1f}#certifications-card .other-course-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}#certifications-card .other-course{background:#f7f7f9;border:1px solid #e9e9ed;border-radius:14px;padding:13px 14px;font-size:12px;line-height:1.6;color:#424249;min-height:60px;display:flex;align-items:center}@media(max-width:700px){#certifications-card .other-course-list{grid-template-columns:1fr}#certifications-card .other-course{min-height:0}}
 
@@ -2517,22 +2530,22 @@
 </div><a class="project-link-btn" href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="عرض الشهادات والدورات" data-en="View Certificates &amp; Courses">View Certificates &amp; Courses</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
 
-            <div class="bento-card" id="languages-card">
-                <div class="section-header" style="margin-bottom: 16px;">
+            <details class="bento-card" id="languages-card">
+                <summary class="section-header">
                     <div class="section-icon"><i class="fas fa-globe"></i></div>
                     <h2 class="section-title" data-ar="اللغات" data-en="Languages">Languages</h2>
-                </div>
-
-                <div class="lang-row">
-                    <span class="lang-name" data-ar="العربية" data-en="Arabic">Arabic</span>
-                    <i class="fas fa-check-circle lang-check"></i>
-                </div>
+                </summary>
 
                 <div class="lang-row">
                     <span class="lang-name" data-ar="الإنجليزية" data-en="English">English</span>
                     <i class="fas fa-check-circle lang-check"></i>
                 </div>
-            </div>
+            <div class="lang-row">
+                    <span class="lang-name" data-ar="العربية" data-en="Arabic">Arabic</span>
+                    <i class="fas fa-check-circle lang-check"></i>
+                </div>
+
+                </details>
         </div>
 
         <div class="bento-card" id="documents">
