@@ -2122,12 +2122,12 @@
 .back-to-top {
     position: fixed; right: 24px; bottom: max(24px, env(safe-area-inset-bottom));
     z-index: 50; width: 46px; height: 46px; display: grid; place-items: center;
-    border-radius: 50%; background: #fff; color: #20232a; text-decoration: none;
-    border: 1px solid #e3e5e9; box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    border-radius: 50%; background: #202936; color: #fff; text-decoration: none;
+    border: 1px solid #202936; box-shadow: 0 8px 24px rgba(0,0,0,.22);
     font-size: 22px; line-height: 1; transition: transform .18s ease, box-shadow .18s ease;
 }
 .back-to-top[hidden] { display: none; }
-.back-to-top:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.16); }
+.back-to-top:hover { transform: translateY(-3px); background: #111923; box-shadow: 0 12px 28px rgba(0,0,0,.28); }
 .back-to-top:focus-visible { outline: 2px solid var(--apple-blue); outline-offset: 3px; }
 @media (max-width: 600px) {
     .back-to-top { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); width: 44px; height: 44px; }
