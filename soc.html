@@ -2122,13 +2122,13 @@
 .back-to-top {
     position: fixed; right: 24px; bottom: max(24px, env(safe-area-inset-bottom));
     z-index: 50; width: 46px; height: 46px; display: grid; place-items: center;
-    border-radius: 50%; background: rgba(255,255,255,.82); color: #202936; text-decoration: none;
-    border: 1px solid rgba(255,255,255,.9); box-shadow: 0 8px 24px rgba(0,0,0,.11);
+    border-radius: 50%; background: rgba(255,255,255,.42); color: #202936; text-decoration: none;
+    border: 1px solid rgba(255,255,255,.72); box-shadow: 0 8px 24px rgba(0,0,0,.09);
     backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     font-size: 22px; line-height: 1; transition: transform .18s ease, box-shadow .18s ease;
 }
 .back-to-top[hidden] { display: none; }
-.back-to-top:hover { transform: translateY(-3px); background: rgba(255,255,255,.96); box-shadow: 0 12px 28px rgba(0,0,0,.16); }
+.back-to-top:hover { transform: translateY(-3px); background: rgba(255,255,255,.68); box-shadow: 0 12px 28px rgba(0,0,0,.13); }
 .back-to-top:focus-visible { outline: 2px solid var(--apple-blue); outline-offset: 3px; }
 @media (max-width: 600px) {
     .back-to-top { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); width: 44px; height: 44px; }
@@ -2519,7 +2519,13 @@
                         <p class="side-sub">AttackIQ Academy</p>
                 </div>
 
-                <a class="project-link-btn" href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="عرض الشهادات" data-en="View Certificates">View Certificates</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <div class="other-courses">
+  <div class="other-course-list">
+    <div class="other-course" data-en="Web Fundamentals" data-ar="أساسيات الويب">Web Fundamentals</div>
+    <div class="other-course" data-en="Data Fundamentals" data-ar="أساسيات البيانات">Data Fundamentals</div>
+    <div class="other-course" data-en="Project Management Foundations" data-ar="أساسيات إدارة المشاريع">Project Management Foundations</div>
+  </div>
+</div><a class="project-link-btn" href="https://drive.google.com/drive/folders/1nkAK4swdFeavRJTbnzfpcYAwpvvby3Bd?usp=drive_link" target="_blank" rel="noopener noreferrer"><span data-ar="عرض الشهادات والدورات" data-en="View Certificates &amp; Courses">View Certificates &amp; Courses</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
 
             <details class="bento-card" id="languages-card">
